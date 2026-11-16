@@ -1,0 +1,65 @@
+/* Styles globaux : typographie hébraïque et bidirectionnalité (docs/UI_SPEC.md §2). */
+
+@layer vuetify-core.reset {
+  ul, ol, figure, details, summary { padding: 0; margin: 0; }
+  h1, h2, h3, h4, h5, h6, p { margin: 0; }
+}
+
+:root {
+  --he-font-serif: 'Frank Ruehl CLM', 'SBL Hebrew', 'Noto Serif Hebrew', serif;
+  --he-font-rashi: 'Noto Rashi Hebrew', 'Noto Serif Hebrew', serif;
+  /* Remplacée par TosafotPage selon la préférence « police hébraïque ». */
+  --he-font-text: var(--he-font-serif);
+  /* Échelle globale du texte (préférence « taille du texte »). */
+  --text-scale: 1;
+}
+
+html {
+  font-size: calc(16px * var(--text-scale));
+}
+
+/* Hébreu au milieu du français. */
+.he-inline {
+  font-family: var(--he-font-serif);
+  font-size: 1.15em;
+  line-height: 1;
+}
+
+/* Bloc hébreu complet. */
+.he-block {
+  font-family: var(--he-font-serif);
+  font-size: 1.3rem;
+  line-height: 1.9;
+  text-align: right;
+}
+
+/* Texte du תוספות lui-même (police Rashi possible). */
+.he-tosafot {
+  font-family: var(--he-font-text);
+}
+
+/* Abréviation reconnue. */
+.he-abbr {
+  text-decoration: underline dotted;
+  text-underline-offset: 0.25em;
+  cursor: help;
+}
+
+/* Terme expliqué dans `terms`. */
+.he-term {
+  cursor: help;
+  border-radius: 3px;
+  transition: background-color 0.15s;
+}
+.he-term:hover {
+  background-color: rgba(var(--v-theme-accent), 0.18);
+}
+
+/* Segment surligné après un clic dans « Vérifier le texte ». */
+.segment-flash {
+  animation: segment-flash 3s ease-out;
+}
+@keyframes segment-flash {
+  0%, 30% { box-shadow: 0 0 0 3px rgb(var(--v-theme-accent)); }
+  100% { box-shadow: 0 0 0 0 transparent; }
+}

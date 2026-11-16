@@ -1,0 +1,28 @@
+# TODO
+
+## Résumé du שיעור (vue « Cours »)
+
+- [ ] Écrire un résumé du cours enregistré (`notes/Transcription du cours.md`, fichiers `.srt` et `.csv` dans `notes/attachements/`). Le cours ne couvre que la fin du תוספות (parties IV et V de la structure).
+- [ ] Format proposé : un fichier `data/bk56b_shiur_<date>.json` séparé, relié au תוספות par les `nodeId` / `segmentId` :
+  - chapitres (depuis le `.csv` : titre, début en secondes) ;
+  - pour chaque chapitre : résumé, nœuds/segments concernés, exemples du rabbin (la montre de 100 ₪ sur 10 000 ₪, le téléphone, le passeport, la photo de famille), questions des élèves ;
+  - lien vers l'enregistrement audio avec horodatage, si on peut l'héberger.
+- [ ] Dans l'UI : une vue « Cours », ou un badge « 🎧 expliqué au cours (14:44) » sur les nœuds et segments concernés.
+- [ ] Corriger les erreurs de la transcription automatique avant de résumer : « רבא » est souvent écrit à la place de « רבה » ; « רבי ישמעאל » à 14:44 désigne ר׳ אליעזר ; « רב שמואל » désigne רב יוסף.
+- [ ] Faire relire la structure (`structure` et `structureCorrections` dans le JSON) par le rabbin, surtout la partie IV.
+
+## PWA hors ligne
+
+Le front est déjà prêt pour la plus grande partie : routeur en mode hash (pas de serveur nécessaire), JSON de `data/` et polices inclus dans le build. Reste à faire :
+
+- [ ] Ajouter `vite-plugin-pwa` (compatible Vite 8) : service worker Workbox en `generateSW`, précache de tous les assets (JS, CSS, polices, chunks JSON), `registerType: 'prompt'` avec un `v-snackbar` « Nouvelle version disponible ».
+- [ ] Manifest : nom, icônes (générer avec `@vite-pwa/assets-generator`), `theme_color` = `#1e3a5f`, `background_color` = `#f7f3ea`, `lang: fr`.
+- [ ] Alléger les icônes : `@mdi/font` pèse 1,3 Mo (toutes les icônes) ; passer à `@mdi/js` (SVG, seulement celles utilisées) avant de mettre en cache.
+- [ ] « Comparer avec Sefaria » et les liens Sefaria : afficher « hors ligne » au lieu d'échouer (`navigator.onLine`).
+- [ ] Option : charger des JSON locaux choisis par l'utilisateur (`<v-file-input>` → IndexedDB), pour lire un nouveau תוספות sans rebuild.
+
+## Autres
+
+- [x] Porter `tools/check_tosafot.py` en TypeScript pour le bouton « Vérifier le texte » (`front/src/utils/integrity.ts`).
+- [ ] Voir les idées d'évolution du schéma JSON dans `docs/JSON_IDEAS.md`.
+- [ ] Vérifier les textes de ר״ח et de בה״ג (absents de l'archive Sefaria), et du רא״ש / טור sur ce point.

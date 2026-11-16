@@ -1,0 +1,19 @@
+# Personal notes, raw AI output and local tooling: not published
+notes/
+first_try/
+.kiro/
+.vscode/
+
+# Build and dependencies
+node_modules/
+dist/
+*.local
+.vite
+
+# Python
+__pycache__/
+*.py[cod]
+
+# OS / editor
+.DS_Store
+Thumbs.db
