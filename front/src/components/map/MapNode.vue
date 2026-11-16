@@ -1,3 +1,35 @@
+<template>
+  <foreignObject
+    :x="box.x - box.width / 2"
+    :y="box.y - box.height / 2"
+    :width="box.width"
+    :height="box.height"
+  >
+    <div
+      class="map-node"
+      :class="{ 'map-node--selected': selected }"
+      :style="{ '--node-color': colors.color, '--node-tint': colors.tint, '--role-color': roleColor(roleId) }"
+      role="button"
+      tabindex="0"
+      :aria-label="ariaLabel"
+      :aria-pressed="selected"
+      @click="open"
+      @keydown.enter.prevent="open"
+      @keydown.space.prevent="open"
+      @mouseenter="emit('hover', box.id, $event.currentTarget as Element)"
+      @mouseleave="emit('hover', null, null)"
+      @focus="emit('hover', box.id, $event.currentTarget as Element)"
+      @blur="emit('hover', null, null)"
+    >
+      <div class="map-node__head">
+        <span class="map-node__number">{{ data?.number || box.id }}</span>
+        <HebrewText v-if="role(roleId)" class="map-node__role" :text="role(roleId)!.label" />
+      </div>
+      <HebrewText class="map-node__title" tag="div" :text="data?.title ?? ''" />
+    </div>
+  </foreignObject>
+</template>
+
 <script setup lang="ts">
 /**
  * Nœud de la carte : petite carte HTML dans un <foreignObject>, pour que l'hébreu
@@ -34,38 +66,6 @@ function open() {
   openNode(props.box.id)
 }
 </script>
-
-<template>
-  <foreignObject
-    :x="box.x - box.width / 2"
-    :y="box.y - box.height / 2"
-    :width="box.width"
-    :height="box.height"
-  >
-    <div
-      class="map-node"
-      :class="{ 'map-node--selected': selected }"
-      :style="{ '--node-color': colors.color, '--node-tint': colors.tint, '--role-color': roleColor(roleId) }"
-      role="button"
-      tabindex="0"
-      :aria-label="ariaLabel"
-      :aria-pressed="selected"
-      @click="open"
-      @keydown.enter.prevent="open"
-      @keydown.space.prevent="open"
-      @mouseenter="emit('hover', box.id, $event.currentTarget as Element)"
-      @mouseleave="emit('hover', null, null)"
-      @focus="emit('hover', box.id, $event.currentTarget as Element)"
-      @blur="emit('hover', null, null)"
-    >
-      <div class="map-node__head">
-        <span class="map-node__number">{{ data?.number || box.id }}</span>
-        <HebrewText v-if="role(roleId)" class="map-node__role" :text="role(roleId)!.label" />
-      </div>
-      <HebrewText class="map-node__title" tag="div" :text="data?.title ?? ''" />
-    </div>
-  </foreignObject>
-</template>
 
 <style scoped>
 .map-node {

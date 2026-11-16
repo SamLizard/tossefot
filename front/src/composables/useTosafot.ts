@@ -14,6 +14,7 @@ import type {
   TosafotDoc,
 } from '@/types/tosafot'
 import { useTheme } from 'vuetify'
+import { t } from '@/i18n'
 import { flattenNodes } from '@/utils/integrity'
 import { lighten } from '@/utils/color'
 
@@ -89,6 +90,6 @@ export function provideTosafot(docRef: Ref<TosafotDoc>): TosafotContext {
 
 export function useTosafot(): TosafotContext {
   const context = inject(KEY)
-  if (!context) throw new Error('useTosafot() doit être appelé sous TosafotPage')
+  if (!context) throw new Error(t('errors.useTosafotOutside'))
   return context
 }

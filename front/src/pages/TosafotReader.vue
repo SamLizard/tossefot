@@ -1,3 +1,30 @@
+<template>
+  <AppHeader @open-preferences="preferencesOpen = true" />
+
+  <v-app-bar density="compact" flat color="surface" class="tabs-bar">
+    <ViewTabs v-model="tab" />
+  </v-app-bar>
+
+  <v-main>
+    <v-container class="reading-width py-6">
+      <ContextView v-if="currentView === 'context'" />
+      <StructureTree v-else-if="currentView === 'structure'" />
+      <ContinuousText v-else-if="currentView === 'text'" />
+      <SynthesisView v-else-if="currentView === 'synthesis'" />
+      <GlossaryView v-else-if="currentView === 'glossary'" />
+      <PreparationNotes v-else-if="currentView === 'notes'" />
+    </v-container>
+    <!-- La carte a besoin de plus de largeur que le texte. -->
+    <v-container v-if="currentView === 'map'" fluid class="py-6">
+      <ArgumentMap />
+    </v-container>
+  </v-main>
+
+  <SegmentPanel />
+  <TableDialog />
+  <PreferencesDrawer v-model="preferencesOpen" />
+</template>
+
 <script setup lang="ts">
 /**
  * Page de lecture d'un תוספות déjà chargé : fournit le document aux enfants
@@ -46,33 +73,6 @@ onBeforeUnmount(() => {
   panel.highlightedSegmentId.value = null
 })
 </script>
-
-<template>
-  <AppHeader @open-preferences="preferencesOpen = true" />
-
-  <v-app-bar density="compact" flat color="surface" class="tabs-bar">
-    <ViewTabs v-model="tab" />
-  </v-app-bar>
-
-  <v-main>
-    <v-container class="reading-width py-6">
-      <ContextView v-if="currentView === 'context'" />
-      <StructureTree v-else-if="currentView === 'structure'" />
-      <ContinuousText v-else-if="currentView === 'text'" />
-      <SynthesisView v-else-if="currentView === 'synthesis'" />
-      <GlossaryView v-else-if="currentView === 'glossary'" />
-      <PreparationNotes v-else-if="currentView === 'notes'" />
-    </v-container>
-    <!-- La carte a besoin de plus de largeur que le texte. -->
-    <v-container v-if="currentView === 'map'" fluid class="py-6">
-      <ArgumentMap />
-    </v-container>
-  </v-main>
-
-  <SegmentPanel />
-  <TableDialog />
-  <PreferencesDrawer v-model="preferencesOpen" />
-</template>
 
 <style scoped>
 .reading-width {

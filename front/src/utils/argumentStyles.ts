@@ -3,7 +3,8 @@ import type { MapEdgeType } from '@/utils/argumentLayout'
 import { lighten } from '@/utils/color'
 
 export interface EdgeStyle {
-  label: string
+  /** Clé i18n du libellé. */
+  labelKey: string
   color: string
   width: number
   /** Attribut SVG `stroke-dasharray` ; absent = trait plein. */
@@ -15,12 +16,12 @@ export interface EdgeStyle {
 }
 
 export const EDGE_STYLES: Record<MapEdgeType, EdgeStyle> = {
-  prouve: { label: 'Prouve', color: '#16a34a', width: 2 },
-  rejette: { label: 'Rejette', color: '#ea580c', width: 2, cross: true },
-  objecte: { label: 'Objecte', color: '#dc2626', width: 2, dash: '7 5' },
-  répond: { label: 'Répond', color: '#0d9488', width: 2 },
-  fonde: { label: 'Fonde', color: '#6b7280', width: 1.75, dash: '2 4' },
-  hierarchie: { label: 'Sous-partie', color: '#94a3b8', width: 1.25, dash: '1 3', noArrow: true },
+  prouve: { labelKey: 'map.edges.prouve', color: '#16a34a', width: 2 },
+  rejette: { labelKey: 'map.edges.rejette', color: '#ea580c', width: 2, cross: true },
+  objecte: { labelKey: 'map.edges.objecte', color: '#dc2626', width: 2, dash: '7 5' },
+  répond: { labelKey: 'map.edges.repond', color: '#0d9488', width: 2 },
+  fonde: { labelKey: 'map.edges.fonde', color: '#6b7280', width: 1.75, dash: '2 4' },
+  hierarchie: { labelKey: 'map.edges.hierarchie', color: '#94a3b8', width: 1.25, dash: '1 3', noArrow: true },
 }
 
 /** Types affichés dans la légende, dans cet ordre. */

@@ -1,3 +1,22 @@
+<template>
+  <div class="d-flex flex-wrap align-center ga-3 mb-3">
+    <v-switch
+      v-model="preferences.roleColors"
+      :label="$t('roles.colors')"
+      color="primary"
+      density="compact"
+      hide-details
+      inset
+      class="flex-grow-0"
+    />
+    <v-expand-transition>
+      <div v-if="preferences.roleColors" class="d-flex flex-wrap ga-1" :aria-label="$t('roles.legend')">
+        <RoleChip v-for="id in legend" :key="id" :role="id" size="x-small" />
+      </div>
+    </v-expand-transition>
+  </div>
+</template>
+
 <script setup lang="ts">
 /** Barre au-dessus du texte continu : couleurs des rôles on/off et légende. */
 import { computed } from 'vue'
@@ -16,22 +35,3 @@ const legend = computed(() =>
   ),
 )
 </script>
-
-<template>
-  <div class="d-flex flex-wrap align-center ga-3 mb-3">
-    <v-switch
-      v-model="preferences.roleColors"
-      label="Couleurs des rôles"
-      color="primary"
-      density="compact"
-      hide-details
-      inset
-      class="flex-grow-0"
-    />
-    <v-expand-transition>
-      <div v-if="preferences.roleColors" class="d-flex flex-wrap ga-1" aria-label="Légende des rôles">
-        <RoleChip v-for="id in legend" :key="id" :role="id" size="x-small" />
-      </div>
-    </v-expand-transition>
-  </div>
-</template>

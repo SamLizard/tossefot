@@ -6,16 +6,17 @@ export type PageView = ViewId | 'glossary' | 'notes'
 
 export interface ViewTab {
   id: ViewId
-  label: string
+  /** Clé i18n du libellé (fichiers de `src/i18n/locales`). */
+  labelKey: string
   icon: string
 }
 
 export const VIEW_TABS: readonly ViewTab[] = [
-  { id: 'context', label: 'Contexte', icon: 'mdi-compass-outline' },
-  { id: 'structure', label: 'Structure', icon: 'mdi-file-tree-outline' },
-  { id: 'text', label: 'Texte continu', icon: 'mdi-text-long' },
-  { id: 'map', label: 'Carte', icon: 'mdi-graph-outline' },
-  { id: 'synthesis', label: 'Synthèse', icon: 'mdi-check-decagram-outline' },
+  { id: 'context', labelKey: 'views.context', icon: 'mdi-compass-outline' },
+  { id: 'structure', labelKey: 'views.structure', icon: 'mdi-file-tree-outline' },
+  { id: 'text', labelKey: 'views.text', icon: 'mdi-text-long' },
+  { id: 'map', labelKey: 'views.map', icon: 'mdi-graph-outline' },
+  { id: 'synthesis', labelKey: 'views.synthesis', icon: 'mdi-check-decagram-outline' },
 ]
 
 const MAIN_VIEWS = new Set<string>(VIEW_TABS.map((t) => t.id))

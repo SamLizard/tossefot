@@ -1,7 +1,9 @@
 import '@mdi/font/css/materialdesignicons.css'
 import 'vuetify/styles'
 import { createVuetify, type ThemeDefinition } from 'vuetify'
-import { fr } from 'vuetify/locale'
+import { createVueI18nAdapter } from 'vuetify/locale/adapters/vue-i18n'
+import { useI18n } from 'vue-i18n'
+import i18n from '@/i18n'
 
 /*
  * Chaque couleur de fond a sa couleur de texte « on-… » explicite :
@@ -70,7 +72,8 @@ const night: ThemeDefinition = {
 }
 
 export default createVuetify({
-  locale: { locale: 'fr', messages: { fr } },
+  // Vuetify partage l'instance vue-i18n de l'application (voir src/i18n/index.ts).
+  locale: { adapter: createVueI18nAdapter({ i18n, useI18n }) },
   theme: {
     defaultTheme: 'parchment',
     themes: { parchment, night },

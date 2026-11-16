@@ -3,6 +3,7 @@
  * Port TypeScript de tools/check_tosafot.py : mêmes règles, mêmes messages.
  */
 import { diffArrays } from 'diff'
+import { t } from '@/i18n'
 import type { StructureNode, TosafotDoc } from '@/types/tosafot'
 
 export interface TextDiff {
@@ -101,11 +102,11 @@ function checkStructure(doc: TosafotDoc): string[] {
   const seen = new Set<string>()
   const dup = new Set<string>()
   for (const id of order) (seen.has(id) ? dup : seen).add(id)
-  if (dup.size) errors.push(`Segments rattachés à plusieurs nœuds : ${[...dup].sort().join(', ')}`)
+  if (dup.size) errors.push(t('integrity.errors.duplicateSegments', { ids: [...dup].sort().join(', ') }))
   const missing = segIds.filter((id) => !seen.has(id))
-  if (missing.length) errors.push(`Segments absents de la structure : ${missing.join(', ')}`)
+  if (missing.length) errors.push(t('integrity.errors.missingSegments', { ids: missing.join(', ') }))
   if (!dup.size && !missing.length && order.join() !== segIds.join()) {
-    errors.push('La structure ne suit pas l’ordre du texte.')
+    errors.push(t('integrity.errors.order'))
   }
   return errors
 }
@@ -117,14 +118,14 @@ function checkReferences(doc: TosafotDoc): string[] {
   const tables = new Set(doc.tables.map((t) => t.id))
   for (const s of doc.segments) {
     const node = nodes.get(s.nodeId)
-    if (!node) errors.push(`${s.id} : nodeId inconnu ${s.nodeId}`)
-    else if (!node.segmentIds.includes(s.id)) errors.push(`${s.id} : nodeId ${s.nodeId} ne le contient pas`)
-    for (const r of s.sourceIds) if (!sources.has(r)) errors.push(`${s.id} : source inconnue ${r}`)
-    for (const r of s.tableIds ?? []) if (!tables.has(r)) errors.push(`${s.id} : table inconnue ${r}`)
+    if (!node) errors.push(t('integrity.errors.unknownNode', { id: s.id, ref: s.nodeId }))
+    else if (!node.segmentIds.includes(s.id)) errors.push(t('integrity.errors.nodeMismatch', { id: s.id, ref: s.nodeId }))
+    for (const r of s.sourceIds) if (!sources.has(r)) errors.push(t('integrity.errors.unknownSource', { id: s.id, ref: r }))
+    for (const r of s.tableIds ?? []) if (!tables.has(r)) errors.push(t('integrity.errors.unknownTable', { id: s.id, ref: r }))
   }
-  for (const r of doc.context.tableIds) if (!tables.has(r)) errors.push(`context : table inconnue ${r}`)
+  for (const r of doc.context.tableIds) if (!tables.has(r)) errors.push(t('integrity.errors.unknownContextTable', { ref: r }))
   for (const e of doc.visualSummary.edges) {
-    for (const id of [e.from, e.to]) if (!nodes.has(id)) errors.push(`edge : nœud inconnu ${id}`)
+    for (const id of [e.from, e.to]) if (!nodes.has(id)) errors.push(t('integrity.errors.unknownEdgeNode', { ref: id }))
   }
   return errors
 }
@@ -132,10 +133,10 @@ function checkReferences(doc: TosafotDoc): string[] {
 /** Récupère le texte en direct sur Sefaria et le compare à fullText. */
 export async function compareWithSefaria(doc: TosafotDoc, url: string): Promise<TextDiff[]> {
   const response = await fetch(url)
-  if (!response.ok) throw new Error(`Sefaria a répondu ${response.status}`)
+  if (!response.ok) throw new Error(t('integrity.sefariaStatus', { status: response.status }))
   const json: unknown = await response.json()
   const raw = extractSefariaText(json)
-  if (!raw) throw new Error('Réponse Sefaria sans texte')
+  if (!raw) throw new Error(t('integrity.sefariaNoText'))
   return wordDiff(tokens(stripHtml(raw)), tokens(doc.source.fullText))
 }
 

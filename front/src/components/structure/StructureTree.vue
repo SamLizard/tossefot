@@ -1,27 +1,3 @@
-<script setup lang="ts">
-/** Vue « Structure » (docs/UI_SPEC.md §3.1) : arbre repliable, état dans l'URL. */
-import { ref } from 'vue'
-import { useTosafot } from '@/composables/useTosafot'
-import { useOpenNodes } from '@/composables/useOpenNodes'
-import StructureNode from './StructureNode.vue'
-
-const { doc } = useTosafot()
-const { allOpen, openAll, closeAll } = useOpenNodes()
-
-const snackbar = ref(false)
-const snackbarText = ref('')
-
-async function copyLink() {
-  try {
-    await navigator.clipboard.writeText(window.location.href)
-    snackbarText.value = 'Lien copié dans le presse-papiers'
-  } catch {
-    snackbarText.value = 'Impossible de copier le lien'
-  }
-  snackbar.value = true
-}
-</script>
-
 <template>
   <!-- Déjà dans le v-container de 960 px de TosafotReader. -->
   <div class="structure-tree">
@@ -32,11 +8,11 @@ async function copyLink() {
         :prepend-icon="allOpen ? 'mdi-unfold-less-horizontal' : 'mdi-unfold-more-horizontal'"
         @click="allOpen ? closeAll() : openAll()"
       >
-        {{ allOpen ? 'Tout replier' : 'Tout déplier' }}
+        {{ allOpen ? $t('structure.collapseAll') : $t('structure.expandAll') }}
       </v-btn>
       <v-spacer />
       <v-btn variant="text" prepend-icon="mdi-link-variant" @click="copyLink">
-        Copier le lien
+        {{ $t('structure.copyLink') }}
       </v-btn>
     </div>
 
@@ -49,3 +25,29 @@ async function copyLink() {
     </v-snackbar>
   </div>
 </template>
+
+<script setup lang="ts">
+/** Vue « Structure » (docs/UI_SPEC.md §3.1) : arbre repliable, état dans l'URL. */
+import { ref } from 'vue'
+import { useI18n } from 'vue-i18n'
+import { useTosafot } from '@/composables/useTosafot'
+import { useOpenNodes } from '@/composables/useOpenNodes'
+import StructureNode from './StructureNode.vue'
+
+const { t } = useI18n()
+const { doc } = useTosafot()
+const { allOpen, openAll, closeAll } = useOpenNodes()
+
+const snackbar = ref(false)
+const snackbarText = ref('')
+
+async function copyLink() {
+  try {
+    await navigator.clipboard.writeText(window.location.href)
+    snackbarText.value = t('structure.linkCopied')
+  } catch {
+    snackbarText.value = t('structure.linkCopyFailed')
+  }
+  snackbar.value = true
+}
+</script>

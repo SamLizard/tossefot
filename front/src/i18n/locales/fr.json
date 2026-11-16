@@ -1,0 +1,186 @@
+{
+  "app": {
+    "title": "תוספות – lecture guidée"
+  },
+  "common": {
+    "close": "Fermer"
+  },
+  "errors": {
+    "useTosafotOutside": "useTosafot() doit être appelé sous TosafotPage"
+  },
+  "levels": {
+    "label": "Niveau d'explication",
+    "essentiel": "Essentiel",
+    "standard": "Standard",
+    "approfondi": "Approfondi"
+  },
+  "roles": {
+    "colors": "Couleurs des rôles",
+    "legend": "Légende des rôles"
+  },
+  "shomrim": {
+    "label": "Les 4 שומרים"
+  },
+  "views": {
+    "context": "Contexte",
+    "structure": "Structure",
+    "text": "Texte continu",
+    "map": "Carte",
+    "synthesis": "Synthèse",
+    "recommended": "recommandé"
+  },
+  "catalog": {
+    "appBarTitle": "תוספות expliqués",
+    "heading": "תוספות disponibles",
+    "intro": "Chaque תוספות est présenté phrase par phrase, avec sa structure, une traduction et des explications à trois niveaux.",
+    "empty": "Aucun fichier JSON dans le dossier {folder}.",
+    "open": "Ouvrir",
+    "unreadable": "Impossible de lire ce fichier."
+  },
+  "tosafotPage": {
+    "notFoundTitle": "תוספות introuvable",
+    "notFoundMessage": "Aucun fichier ne correspond à « {slug} ».",
+    "errorTitle": "Erreur de chargement",
+    "backToCatalog": "Voir le catalogue"
+  },
+  "person": {
+    "unknown": "Personne inconnue : {id}"
+  },
+  "menu": {
+    "label": "Menu",
+    "glossary": "Glossaire",
+    "notes": "Notes de préparation",
+    "preferences": "Préférences",
+    "otherTosafot": "Autres תוספות"
+  },
+  "preferences": {
+    "title": "Préférences",
+    "defaultLevel": "Niveau par défaut",
+    "defaultView": "Vue par défaut",
+    "showTranslation": "Traduction visible",
+    "hebrewFont": "Police hébraïque",
+    "fontSerif": "Serif",
+    "fontRashi": "Rashi",
+    "fontPreview": "בההיא הנאה דלא קבעי",
+    "textSize": "Taille du texte : {percent} %",
+    "theme": "Thème",
+    "themeLight": "Clair",
+    "themeDark": "Sombre",
+    "themeSystem": "Système",
+    "reset": "Réinitialiser"
+  },
+  "integrity": {
+    "check": "Vérifier le texte",
+    "intro": "Le texte des segments, mis bout à bout, doit reproduire mot à mot le texte complet du תוספות.",
+    "rerun": "Relancer",
+    "missing": "MANQUANT",
+    "extra": "EN TROP",
+    "diffBefore": "après ",
+    "ok": "✓ {words} mots, {segments} segments, texte complet et structure dans l'ordre",
+    "failed": "Échec : {diffs} différence(s) de texte, {errors} erreur(s) de structure ou de références ({words} mots attendus, {segments} segments).",
+    "diffsTitle": "Les segments ne reproduisent pas le texte",
+    "errorsTitle": "Structure et références",
+    "compare": "Comparer avec Sefaria",
+    "unreachableTitle": "Sefaria inaccessible",
+    "unreachable": "{message}. Hors ligne ou appel bloqué par le navigateur (CORS) : la vérification locale ci-dessus reste valable.",
+    "same": "✓ Le texte du JSON est identique au texte de Sefaria.",
+    "differs": "Le texte du JSON diffère de Sefaria ({count} différence(s)).",
+    "sefariaStatus": "Sefaria a répondu {status}",
+    "sefariaNoText": "Réponse Sefaria sans texte",
+    "errors": {
+      "duplicateSegments": "Segments rattachés à plusieurs nœuds : {ids}",
+      "missingSegments": "Segments absents de la structure : {ids}",
+      "order": "La structure ne suit pas l’ordre du texte.",
+      "unknownNode": "{id} : nodeId inconnu {ref}",
+      "nodeMismatch": "{id} : nodeId {ref} ne le contient pas",
+      "unknownSource": "{id} : source inconnue {ref}",
+      "unknownTable": "{id} : table inconnue {ref}",
+      "unknownContextTable": "context : table inconnue {ref}",
+      "unknownEdgeNode": "edge : nœud inconnu {ref}"
+    }
+  },
+  "map": {
+    "ariaLabel": "Carte d'arguments",
+    "arrows": "Flèches",
+    "attribution": "Attribution",
+    "hint": "Bande de gauche : rôle · clic : détails · molette : zoom · glisser : déplacer",
+    "zoomIn": "Zoom avant",
+    "zoomOut": "Zoom arrière",
+    "fit": "Ajuster",
+    "fitAria": "Ajuster à la largeur",
+    "edges": {
+      "prouve": "Prouve",
+      "rejette": "Rejette",
+      "objecte": "Objecte",
+      "repond": "Répond",
+      "fonde": "Fonde",
+      "hierarchie": "Sous-partie"
+    }
+  },
+  "node": {
+    "segments": "Segments ({count})"
+  },
+  "details": {
+    "viewTable": "Voir la table\u00a0: {title}",
+    "explanation": "Explication",
+    "words": "Mots ({count})",
+    "notes": "Notes textuelles ({count})",
+    "sources": "Sources ({count})"
+  },
+  "segment": {
+    "openSefaria": "Ouvrir sur Sefaria"
+  },
+  "panel": {
+    "segment": "Segment",
+    "section": "Section",
+    "close": "Fermer le panneau"
+  },
+  "structure": {
+    "expandAll": "Tout déplier",
+    "collapseAll": "Tout replier",
+    "copyLink": "Copier le lien",
+    "linkCopied": "Lien copié dans le presse-papiers",
+    "linkCopyFailed": "Impossible de copier le lien",
+    "openNode": "Ouvrir le détail du nœud"
+  },
+  "table": {
+    "unknown": "Table inconnue : {id}",
+    "close": "Fermer la table"
+  },
+  "text": {
+    "hint": "Cliquer sur une phrase pour ouvrir son explication.",
+    "openNode": "Ouvrir le nœud {id}",
+    "segmentAria": "Segment {id}"
+  },
+  "context": {
+    "gemara": "La גמרא",
+    "tables": "Tableaux de référence",
+    "start": "Commencer la lecture"
+  },
+  "glossary": {
+    "title": "Glossaire",
+    "search": "Rechercher (français ou hébreu)",
+    "tabGlossary": "Glossaire",
+    "tabAbbreviations": "Abréviations",
+    "tabPeople": "Personnes",
+    "noResult": "Aucun résultat."
+  },
+  "notes": {
+    "title": "Notes de préparation",
+    "method": "Méthode",
+    "source": "Texte source",
+    "edition": "Édition",
+    "normalization": "Normalisation",
+    "tokenization": "Découpage en mots"
+  },
+  "review": {
+    "show": "Voir la réponse",
+    "hide": "Cacher la réponse"
+  },
+  "synthesis": {
+    "takeaways": "À retenir",
+    "halacha": "הלכה",
+    "review": "Questions de révision",
+    "next": "La suite"
+  }
+}

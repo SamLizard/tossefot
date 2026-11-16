@@ -1,32 +1,3 @@
-<script setup lang="ts">
-/**
- * Nœud de la structure (docs/UI_SPEC.md §3.1), récursif.
- * Déplié : les segments du nœud dans l'ordre, puis les enfants.
- */
-import { computed } from 'vue'
-import { useTosafot } from '@/composables/useTosafot'
-import { usePreferences } from '@/composables/usePreferences'
-import { useSegmentPanel } from '@/composables/useSegmentPanel'
-import { useOpenNodes } from '@/composables/useOpenNodes'
-import { pickLevel } from '@/utils/levels'
-import HebrewText from '@/components/common/HebrewText.vue'
-import SegmentCard from '@/components/segment/SegmentCard.vue'
-import StructureNodeHeader from './StructureNodeHeader.vue'
-
-const props = withDefaults(defineProps<{ nodeId: string; depth?: number }>(), { depth: 0 })
-
-const { node, roleColor } = useTosafot()
-const preferences = usePreferences()
-const { openNode } = useSegmentPanel()
-const { isOpen, toggle } = useOpenNodes()
-
-const current = computed(() => node(props.nodeId))
-const open = computed(() => isOpen(props.nodeId))
-const summary = computed(() => pickLevel(current.value?.summary, preferences.level))
-const color = computed(() => roleColor(current.value?.role ?? ''))
-const isRoot = computed(() => props.depth === 0)
-</script>
-
 <template>
   <v-card
     v-if="current"
@@ -77,6 +48,35 @@ const isRoot = computed(() => props.depth === 0)
     </div>
   </v-card>
 </template>
+
+<script setup lang="ts">
+/**
+ * Nœud de la structure (docs/UI_SPEC.md §3.1), récursif.
+ * Déplié : les segments du nœud dans l'ordre, puis les enfants.
+ */
+import { computed } from 'vue'
+import { useTosafot } from '@/composables/useTosafot'
+import { usePreferences } from '@/composables/usePreferences'
+import { useSegmentPanel } from '@/composables/useSegmentPanel'
+import { useOpenNodes } from '@/composables/useOpenNodes'
+import { pickLevel } from '@/utils/levels'
+import HebrewText from '@/components/common/HebrewText.vue'
+import SegmentCard from '@/components/segment/SegmentCard.vue'
+import StructureNodeHeader from './StructureNodeHeader.vue'
+
+const props = withDefaults(defineProps<{ nodeId: string; depth?: number }>(), { depth: 0 })
+
+const { node, roleColor } = useTosafot()
+const preferences = usePreferences()
+const { openNode } = useSegmentPanel()
+const { isOpen, toggle } = useOpenNodes()
+
+const current = computed(() => node(props.nodeId))
+const open = computed(() => isOpen(props.nodeId))
+const summary = computed(() => pickLevel(current.value?.summary, preferences.level))
+const color = computed(() => roleColor(current.value?.role ?? ''))
+const isRoot = computed(() => props.depth === 0)
+</script>
 
 <style scoped>
 .node-body {

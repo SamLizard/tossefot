@@ -1,21 +1,3 @@
-<script setup lang="ts">
-/** Infobulle Vuetify d'un nœud survolé : titre complet et résumé du niveau choisi. */
-import { computed } from 'vue'
-import HebrewText from '@/components/common/HebrewText.vue'
-import { usePreferences } from '@/composables/usePreferences'
-import { useTosafot } from '@/composables/useTosafot'
-import { pickLevel } from '@/utils/levels'
-
-const props = defineProps<{ nodeId: string | null; target: Element | null }>()
-
-const { node } = useTosafot()
-const preferences = usePreferences()
-
-const data = computed(() => (props.nodeId ? node(props.nodeId) : undefined))
-const summary = computed(() => pickLevel(data.value?.summary, preferences.level))
-const open = computed(() => Boolean(data.value && props.target))
-</script>
-
 <template>
   <v-tooltip
     :model-value="open"
@@ -36,3 +18,21 @@ const open = computed(() => Boolean(data.value && props.target))
     </template>
   </v-tooltip>
 </template>
+
+<script setup lang="ts">
+/** Infobulle Vuetify d'un nœud survolé : titre complet et résumé du niveau choisi. */
+import { computed } from 'vue'
+import HebrewText from '@/components/common/HebrewText.vue'
+import { usePreferences } from '@/composables/usePreferences'
+import { useTosafot } from '@/composables/useTosafot'
+import { pickLevel } from '@/utils/levels'
+
+const props = defineProps<{ nodeId: string | null; target: Element | null }>()
+
+const { node } = useTosafot()
+const preferences = usePreferences()
+
+const data = computed(() => (props.nodeId ? node(props.nodeId) : undefined))
+const summary = computed(() => pickLevel(data.value?.summary, preferences.level))
+const open = computed(() => Boolean(data.value && props.target))
+</script>

@@ -1,29 +1,6 @@
-<script setup lang="ts">
-/** Notes de préparation : différences avec la structure du cours, méthode, texte source. */
-import { computed } from 'vue'
-import { useTosafot } from '@/composables/useTosafot'
-import { usePreferences } from '@/composables/usePreferences'
-import { pickLevel } from '@/utils/levels'
-import HebrewText from '@/components/common/HebrewText.vue'
-
-const { doc } = useTosafot()
-const preferences = usePreferences()
-
-const corrections = computed(() => doc.value.structureCorrections)
-const methodology = computed(() => pickLevel(doc.value.meta.methodology, preferences.level))
-const source = computed(() => doc.value.source)
-const sourceRows = computed(() =>
-  [
-    { label: 'Édition', text: source.value.edition, icon: 'mdi-book-open-page-variant-outline' },
-    { label: 'Normalisation', text: source.value.normalization, icon: 'mdi-format-letter-matches' },
-    { label: 'Découpage en mots', text: source.value.tokenization, icon: 'mdi-content-cut' },
-  ].filter((row): row is { label: string; text: string; icon: string } => Boolean(row.text)),
-)
-</script>
-
 <template>
   <div class="d-flex flex-column ga-6">
-    <h1 class="text-headline-medium">Notes de préparation</h1>
+    <h1 class="text-headline-medium">{{ $t('notes.title') }}</h1>
 
     <section v-if="corrections?.items.length">
       <HebrewText :text="corrections.title" tag="h2" class="text-title-large mb-3" />
@@ -45,7 +22,7 @@ const sourceRows = computed(() =>
     </section>
 
     <section v-if="methodology">
-      <h2 class="text-title-large mb-3">Méthode</h2>
+      <h2 class="text-title-large mb-3">{{ $t('notes.method') }}</h2>
       <v-card variant="flat" color="surface">
         <v-card-text class="text-body-large note-text">
           <HebrewText :text="methodology" tag="p" />
@@ -54,7 +31,7 @@ const sourceRows = computed(() =>
     </section>
 
     <section>
-      <h2 class="text-title-large mb-3">Texte source</h2>
+      <h2 class="text-title-large mb-3">{{ $t('notes.source') }}</h2>
       <v-card variant="outlined">
         <v-card-item>
           <v-card-title class="text-title-medium">{{ source.ref }}</v-card-title>
@@ -81,6 +58,31 @@ const sourceRows = computed(() =>
     </section>
   </div>
 </template>
+
+<script setup lang="ts">
+/** Notes de préparation : différences avec la structure du cours, méthode, texte source. */
+import { computed } from 'vue'
+import { useI18n } from 'vue-i18n'
+import { useTosafot } from '@/composables/useTosafot'
+import { usePreferences } from '@/composables/usePreferences'
+import { pickLevel } from '@/utils/levels'
+import HebrewText from '@/components/common/HebrewText.vue'
+
+const { doc } = useTosafot()
+const { t } = useI18n()
+const preferences = usePreferences()
+
+const corrections = computed(() => doc.value.structureCorrections)
+const methodology = computed(() => pickLevel(doc.value.meta.methodology, preferences.level))
+const source = computed(() => doc.value.source)
+const sourceRows = computed(() =>
+  [
+    { label: t('notes.edition'), text: source.value.edition, icon: 'mdi-book-open-page-variant-outline' },
+    { label: t('notes.normalization'), text: source.value.normalization, icon: 'mdi-format-letter-matches' },
+    { label: t('notes.tokenization'), text: source.value.tokenization, icon: 'mdi-content-cut' },
+  ].filter((row): row is { label: string; text: string; icon: string } => Boolean(row.text)),
+)
+</script>
 
 <style scoped>
 .note-text {

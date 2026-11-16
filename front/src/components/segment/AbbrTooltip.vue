@@ -1,10 +1,3 @@
-<script setup lang="ts">
-/** Infobulle d'une abréviation : forme complète et avertissement éventuel (docs/UI_SPEC.md §6). */
-import HebrewText from '@/components/common/HebrewText.vue'
-
-defineProps<{ full: string; warning?: string }>()
-</script>
-
 <template>
   <v-tooltip>
     <template #activator="{ props: tip }">
@@ -17,3 +10,10 @@ defineProps<{ full: string; warning?: string }>()
     </div>
   </v-tooltip>
 </template>
+
+<script setup lang="ts">
+/** Infobulle d'une abréviation : forme complète et avertissement éventuel (docs/UI_SPEC.md §6). */
+import HebrewText from '@/components/common/HebrewText.vue'
+
+defineProps<{ full: string; warning?: string }>()
+</script>

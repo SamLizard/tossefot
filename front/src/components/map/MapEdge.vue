@@ -1,21 +1,5 @@
-<script setup lang="ts">
-/** Une flèche de la carte : chemin, pointe, croix (« rejette ») et étiquette. */
-import { computed } from 'vue'
-import HebrewText from '@/components/common/HebrewText.vue'
-import { LABEL_HEIGHT, LABEL_WIDTH, type LayoutEdge } from '@/utils/argumentLayout'
-import { EDGE_STYLES, markerId } from '@/utils/argumentStyles'
-
-const props = defineProps<{ edge: LayoutEdge }>()
-
-const style = computed(() => EDGE_STYLES[props.edge.type])
-const marker = computed(() => (style.value.noArrow ? undefined : `url(#${markerId(props.edge.type)})`))
-const crossTransform = computed(
-  () => `translate(${props.edge.mid.x} ${props.edge.mid.y}) rotate(${props.edge.angle})`,
-)
-</script>
-
 <template>
-  <g class="map-edge" :aria-label="style.label">
+  <g class="map-edge" :aria-label="$t(style.labelKey)">
     <path
       :d="edge.path"
       fill="none"
@@ -43,6 +27,22 @@ const crossTransform = computed(
     </foreignObject>
   </g>
 </template>
+
+<script setup lang="ts">
+/** Une flèche de la carte : chemin, pointe, croix (« rejette ») et étiquette. */
+import { computed } from 'vue'
+import HebrewText from '@/components/common/HebrewText.vue'
+import { LABEL_HEIGHT, LABEL_WIDTH, type LayoutEdge } from '@/utils/argumentLayout'
+import { EDGE_STYLES, markerId } from '@/utils/argumentStyles'
+
+const props = defineProps<{ edge: LayoutEdge }>()
+
+const style = computed(() => EDGE_STYLES[props.edge.type])
+const marker = computed(() => (style.value.noArrow ? undefined : `url(#${markerId(props.edge.type)})`))
+const crossTransform = computed(
+  () => `translate(${props.edge.mid.x} ${props.edge.mid.y}) rotate(${props.edge.angle})`,
+)
+</script>
 
 <style scoped>
 .map-edge__halo {

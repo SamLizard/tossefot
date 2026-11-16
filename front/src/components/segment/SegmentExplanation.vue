@@ -1,3 +1,13 @@
+<template>
+  <div v-if="available.length">
+    <div class="d-flex align-center justify-space-between flex-wrap ga-2 mb-2">
+      <span class="text-label-large text-medium-emphasis">{{ $t('details.explanation') }}</span>
+      <LevelSelector v-model="level" :available="available" />
+    </div>
+    <HebrewText :text="text" tag="p" class="text-body-large explanation" />
+  </div>
+</template>
+
 <script setup lang="ts">
 /** Explication d'un segment, avec son propre sélecteur de niveau (initialisé depuis les préférences). */
 import { computed, ref, watch } from 'vue'
@@ -26,16 +36,6 @@ watch(
 )
 const text = computed(() => pickLevel(props.explanation, level.value))
 </script>
-
-<template>
-  <div v-if="available.length">
-    <div class="d-flex align-center justify-space-between flex-wrap ga-2 mb-2">
-      <span class="text-label-large text-medium-emphasis">Explication</span>
-      <LevelSelector v-model="level" :available="available" />
-    </div>
-    <HebrewText :text="text" tag="p" class="text-body-large explanation" />
-  </div>
-</template>
 
 <style scoped>
 .explanation {

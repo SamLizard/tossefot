@@ -1,3 +1,9 @@
+<template>
+  <v-app>
+    <router-view />
+  </v-app>
+</template>
+
 <script setup lang="ts">
 import { computed, watchEffect } from 'vue'
 import { useTheme } from 'vuetify'
@@ -23,9 +29,3 @@ watchEffect(() => {
   )
 })
 </script>
-
-<template>
-  <v-app>
-    <router-view />
-  </v-app>
-</template>

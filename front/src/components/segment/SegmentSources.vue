@@ -1,18 +1,3 @@
-<script setup lang="ts">
-/** Sources citées par un segment : `ref` en hébreu, lien Sefaria du JSON, `role` en sous-titre. */
-import { computed } from 'vue'
-import type { Source } from '@/types/tosafot'
-import { useTosafot } from '@/composables/useTosafot'
-import HebrewText from '@/components/common/HebrewText.vue'
-
-const props = defineProps<{ sourceIds: string[] }>()
-
-const { source } = useTosafot()
-const sources = computed(() =>
-  props.sourceIds.map((id) => source(id)).filter((s): s is Source => Boolean(s)),
-)
-</script>
-
 <template>
   <v-list density="compact" bg-color="transparent" class="py-0">
     <v-list-item
@@ -33,3 +18,18 @@ const sources = computed(() =>
     </v-list-item>
   </v-list>
 </template>
+
+<script setup lang="ts">
+/** Sources citées par un segment : `ref` en hébreu, lien Sefaria du JSON, `role` en sous-titre. */
+import { computed } from 'vue'
+import type { Source } from '@/types/tosafot'
+import { useTosafot } from '@/composables/useTosafot'
+import HebrewText from '@/components/common/HebrewText.vue'
+
+const props = defineProps<{ sourceIds: string[] }>()
+
+const { source } = useTosafot()
+const sources = computed(() =>
+  props.sourceIds.map((id) => source(id)).filter((s): s is Source => Boolean(s)),
+)
+</script>

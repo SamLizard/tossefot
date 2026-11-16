@@ -1,21 +1,3 @@
-<script setup lang="ts">
-/** Carte d'un תוספות du catalogue ; le titre est chargé à la demande. */
-import { computed, onMounted } from 'vue'
-import type { CatalogEntry } from '@/data/catalog'
-import { useCatalogMeta } from '@/composables/useCatalogMeta'
-import HebrewText from '@/components/common/HebrewText.vue'
-
-const props = defineProps<{ entry: CatalogEntry }>()
-
-const { load, state } = useCatalogMeta()
-onMounted(() => load(props.entry))
-const current = computed(() => state(props.entry.slug))
-const subtitle = computed(() => {
-  const s = current.value
-  return s.status === 'ready' ? [s.meta.masechet, s.meta.daf, s.meta.perek].join(' · ') : ''
-})
-</script>
-
 <template>
   <v-card
     variant="outlined"
@@ -35,15 +17,35 @@ const subtitle = computed(() => {
         type="list-item-two-line"
         color="transparent"
       />
-      <div v-else class="text-body-medium text-error">Impossible de lire ce fichier.</div>
+      <div v-else class="text-body-medium text-error">{{ $t('catalog.unreadable') }}</div>
     </v-card-item>
     <v-card-actions class="pt-0">
       <span class="text-label-small text-medium-emphasis ms-2">{{ entry.slug }}</span>
       <v-spacer />
-      <v-btn variant="text" color="primary" append-icon="mdi-arrow-right">Ouvrir</v-btn>
+      <v-btn variant="text" color="primary" append-icon="mdi-arrow-right">
+        {{ $t('catalog.open') }}
+      </v-btn>
     </v-card-actions>
   </v-card>
 </template>
+
+<script setup lang="ts">
+/** Carte d'un תוספות du catalogue ; le titre est chargé à la demande. */
+import { computed, onMounted } from 'vue'
+import type { CatalogEntry } from '@/data/catalog'
+import { useCatalogMeta } from '@/composables/useCatalogMeta'
+import HebrewText from '@/components/common/HebrewText.vue'
+
+const props = defineProps<{ entry: CatalogEntry }>()
+
+const { load, state } = useCatalogMeta()
+onMounted(() => load(props.entry))
+const current = computed(() => state(props.entry.slug))
+const subtitle = computed(() => {
+  const s = current.value
+  return s.status === 'ready' ? [s.meta.masechet, s.meta.daf, s.meta.perek].join(' · ') : ''
+})
+</script>
 
 <style scoped>
 .entry-title {

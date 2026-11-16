@@ -1,15 +1,3 @@
-<script setup lang="ts">
-/** Fiche d'une personne citée (docs/UI_SPEC.md §6). */
-import { computed } from 'vue'
-import { useTosafot } from '@/composables/useTosafot'
-import HebrewText from '@/components/common/HebrewText.vue'
-
-const props = defineProps<{ personId: string }>()
-
-const { person } = useTosafot()
-const p = computed(() => person(props.personId))
-</script>
-
 <template>
   <v-card v-if="p" variant="outlined" class="person-card">
     <v-card-item>
@@ -28,9 +16,21 @@ const p = computed(() => person(props.personId))
     </v-card-text>
   </v-card>
   <v-alert v-else type="warning" variant="tonal" density="compact">
-    Personne inconnue : {{ personId }}
+    {{ $t('person.unknown', { id: personId }) }}
   </v-alert>
 </template>
+
+<script setup lang="ts">
+/** Fiche d'une personne citée (docs/UI_SPEC.md §6). */
+import { computed } from 'vue'
+import { useTosafot } from '@/composables/useTosafot'
+import HebrewText from '@/components/common/HebrewText.vue'
+
+const props = defineProps<{ personId: string }>()
+
+const { person } = useTosafot()
+const p = computed(() => person(props.personId))
+</script>
 
 <style scoped>
 .person-name {

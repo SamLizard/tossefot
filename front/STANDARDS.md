@@ -22,7 +22,16 @@ Lire d'abord `../docs/UI_SPEC.md` (la spécification) et `src/types/tosafot.ts` 
 3. **Logique réutilisable dans des `.ts`** : `src/utils/` (fonctions pures), `src/composables/` (état réactif, `useXxx`). Pas de logique métier lourde dans les templates.
 4. **Props typées** avec `defineProps<{…}>()` et `withDefaults` ; événements avec `defineEmits<{…}>()` (syntaxe typée). `v-model` via `defineModel<T>()`.
 5. Noms : composants en `PascalCase.vue`, composables `useXxx.ts`, utils en `camelCase.ts`. Un composant par fichier.
+5b. **Ordre des blocs dans un `.vue`** : `<template>` en premier, au début du fichier, puis `<script setup lang="ts">`, puis `<style scoped>`. Jamais le `<template>` à la fin.
 6. **Texte en français, termes en hébreu.** Ne jamais transcrire l'hébreu en phonétique. Libellés de l'UI en français.
+6b. **Aucun texte d'interface en dur : tout passe par vue-i18n.** Les messages sont dans `src/i18n/locales/fr.json` (clés groupées par zone : `menu.*`, `map.*`, `integrity.*`…). Pour ajouter une langue : créer `locales/<code>.json` et l'enregistrer dans `src/i18n/index.ts`.
+   - Dans un template : `{{ $t('clé') }}`, `:label="$t('clé')"`, `:aria-label="$t('clé')"`. Avec paramètres : `$t('clé', { id })`, et `{id}` dans le message. Pluriels : `{count}` dans le message.
+   - Dans `<script setup>` : `const { t } = useI18n()` (`vue-i18n`).
+   - Hors composant (`utils/`, `composables/`) : `import { t } from '@/i18n'`.
+   - Les tables de données (onglets, styles de flèches…) portent une **clé** (`labelKey`), pas un libellé ; le composant appelle `$t(labelKey)`.
+   - Un message qui contient de l'hébreu s'affiche avec `<HebrewText :text="$t('clé')" />` (règle 7).
+   - Ne pas traduire : textes venant du JSON des תוספות, ids techniques, noms propres (Sefaria), icônes.
+   - Une clé = un sens. Ne pas construire une phrase en collant plusieurs messages : mettre la phrase entière avec ses paramètres.
 7. **Tout texte qui peut contenir de l'hébreu passe par `<HebrewText :text="…" />`** (`src/components/common/HebrewText.vue`). Ne jamais mettre `dir="auto"` sur un paragraphe mixte.
 7b. Tout `<bdi>` hébreu porte **`lang="he" dir="rtl"`** : sans `dir`, un `<bdi>` prend la direction de son premier caractère fort, et la ponctuation (« : » de נו:, parenthèses) se retrouve du mauvais côté.
 7c. Couleurs : chaque fond du thème a sa couleur « on-… » ; ne jamais poser un fond (`color="surface-variant"`…) sans vérifier le texte dessus. Les couleurs de rôle passent par `roleColor()`, qui les adapte au thème. Contrôle : `node scripts/contrast.mjs` (avec `npm run preview`), qui doit afficher OK partout.

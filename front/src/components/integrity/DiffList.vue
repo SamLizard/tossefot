@@ -1,11 +1,3 @@
-<script setup lang="ts">
-/** Liste des différences mot à mot ; une ligne avec segment est cliquable. */
-import type { TextDiff } from '@/utils/integrity'
-
-defineProps<{ diffs: TextDiff[] }>()
-const emit = defineEmits<{ select: [segmentId: string] }>()
-</script>
-
 <template>
   <v-list density="compact" class="py-0" bg-color="transparent">
     <v-list-item
@@ -24,14 +16,22 @@ const emit = defineEmits<{ select: [segmentId: string] }>()
           variant="tonal"
           class="me-3"
         >
-          {{ diff.kind === 'missing' ? 'MANQUANT' : 'EN TROP' }}
+          {{ diff.kind === 'missing' ? $t('integrity.missing') : $t('integrity.extra') }}
         </v-chip>
       </template>
       <div class="text-body-medium">
-        après «<bdi lang="he" dir="rtl" class="he-inline">{{ diff.context }}</bdi>» :
+        {{ $t('integrity.diffBefore') }}«<bdi lang="he" dir="rtl" class="he-inline">{{ diff.context }}</bdi>» :
         <bdi lang="he" dir="rtl" class="he-inline font-weight-bold">{{ diff.words }}</bdi>
         <span v-if="diff.segmentId" class="text-medium-emphasis ms-1">({{ diff.segmentId }})</span>
       </div>
     </v-list-item>
   </v-list>
 </template>
+
+<script setup lang="ts">
+/** Liste des différences mot à mot ; une ligne avec segment est cliquable. */
+import type { TextDiff } from '@/utils/integrity'
+
+defineProps<{ diffs: TextDiff[] }>()
+const emit = defineEmits<{ select: [segmentId: string] }>()
+</script>

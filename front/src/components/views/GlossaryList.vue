@@ -1,16 +1,3 @@
-<script setup lang="ts">
-/** Liste « terme hébreu → explication », avec avertissement éventuel. */
-import HebrewText from '@/components/common/HebrewText.vue'
-
-export interface GlossaryItem {
-  he: string
-  text: string
-  warning?: string
-}
-
-defineProps<{ items: GlossaryItem[] }>()
-</script>
-
 <template>
   <v-card v-if="items.length" variant="outlined" class="mt-2">
     <v-list class="py-0" bg-color="transparent">
@@ -36,8 +23,21 @@ defineProps<{ items: GlossaryItem[] }>()
       </template>
     </v-list>
   </v-card>
-  <p v-else class="text-medium-emphasis pa-4">Aucun résultat.</p>
+  <p v-else class="text-medium-emphasis pa-4">{{ $t('glossary.noResult') }}</p>
 </template>
+
+<script setup lang="ts">
+/** Liste « terme hébreu → explication », avec avertissement éventuel. */
+import HebrewText from '@/components/common/HebrewText.vue'
+
+export interface GlossaryItem {
+  he: string
+  text: string
+  warning?: string
+}
+
+defineProps<{ items: GlossaryItem[] }>()
+</script>
 
 <style scoped>
 .term {

@@ -1,24 +1,3 @@
-<script setup lang="ts">
-/** Table générique (docs/UI_SPEC.md §5) : LTR, cellules découpées en hébreu, חייב / פטור colorés. */
-import { computed } from 'vue'
-import { useTosafot } from '@/composables/useTosafot'
-import HebrewText from '@/components/common/HebrewText.vue'
-
-const props = withDefaults(defineProps<{ tableId: string; hideTitle?: boolean }>(), {
-  hideTitle: false,
-})
-
-const { table } = useTosafot()
-const t = computed(() => table(props.tableId))
-
-function verdictClass(cell: string): string | undefined {
-  const value = cell.trim()
-  if (value === 'חייב') return 'cell-chayav'
-  if (value === 'פטור') return 'cell-patur'
-  return undefined
-}
-</script>
-
 <template>
   <div v-if="t" dir="ltr" class="data-table">
     <div v-if="!hideTitle" class="text-title-medium mb-3">
@@ -51,9 +30,30 @@ function verdictClass(cell: string): string | undefined {
     </div>
   </div>
   <v-alert v-else type="warning" variant="tonal" density="compact">
-    Table inconnue : {{ tableId }}
+    {{ $t('table.unknown', { id: tableId }) }}
   </v-alert>
 </template>
+
+<script setup lang="ts">
+/** Table générique (docs/UI_SPEC.md §5) : LTR, cellules découpées en hébreu, חייב / פטור colorés. */
+import { computed } from 'vue'
+import { useTosafot } from '@/composables/useTosafot'
+import HebrewText from '@/components/common/HebrewText.vue'
+
+const props = withDefaults(defineProps<{ tableId: string; hideTitle?: boolean }>(), {
+  hideTitle: false,
+})
+
+const { table } = useTosafot()
+const t = computed(() => table(props.tableId))
+
+function verdictClass(cell: string): string | undefined {
+  const value = cell.trim()
+  if (value === 'חייב') return 'cell-chayav'
+  if (value === 'פטור') return 'cell-patur'
+  return undefined
+}
+</script>
 
 <style scoped>
 .data-table th {

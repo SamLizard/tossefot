@@ -1,13 +1,3 @@
-<script setup lang="ts">
-/** Question de révision ; la réponse est cachée jusqu'au clic. */
-import { ref } from 'vue'
-import type { ReviewQuestion } from '@/types/tosafot'
-import HebrewText from '@/components/common/HebrewText.vue'
-
-defineProps<{ question: ReviewQuestion; index: number }>()
-const shown = ref(false)
-</script>
-
 <template>
   <v-card variant="outlined">
     <v-card-text class="d-flex ga-3">
@@ -29,8 +19,18 @@ const shown = ref(false)
         :aria-expanded="shown"
         @click="shown = !shown"
       >
-        {{ shown ? 'Cacher la réponse' : 'Voir la réponse' }}
+        {{ shown ? $t('review.hide') : $t('review.show') }}
       </v-btn>
     </v-card-actions>
   </v-card>
 </template>
+
+<script setup lang="ts">
+/** Question de révision ; la réponse est cachée jusqu'au clic. */
+import { ref } from 'vue'
+import type { ReviewQuestion } from '@/types/tosafot'
+import HebrewText from '@/components/common/HebrewText.vue'
+
+defineProps<{ question: ReviewQuestion; index: number }>()
+const shown = ref(false)
+</script>

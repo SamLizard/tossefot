@@ -1,18 +1,3 @@
-<script setup lang="ts">
-/** En-tête cliquable d'un nœud : chevron, numéro, titre, rôle, bouton « ⓘ ». */
-import { computed } from 'vue'
-import { useTosafot } from '@/composables/useTosafot'
-import HebrewText from '@/components/common/HebrewText.vue'
-import RoleChip from '@/components/common/RoleChip.vue'
-
-const props = defineProps<{ nodeId: string; open: boolean; depth: number }>()
-const emit = defineEmits<{ toggle: []; info: [] }>()
-
-const { node, roleColor } = useTosafot()
-const current = computed(() => node(props.nodeId))
-const color = computed(() => roleColor(current.value?.role ?? ''))
-</script>
-
 <template>
   <div
     v-if="current"
@@ -46,13 +31,28 @@ const color = computed(() => roleColor(current.value?.role ?? ''))
       size="x-small"
       density="comfortable"
       class="text-medium-emphasis"
-      aria-label="Ouvrir le détail du nœud"
+      :aria-label="$t('structure.openNode')"
       @click.stop="emit('info')"
       @keydown.enter.stop
       @keydown.space.stop
     />
   </div>
 </template>
+
+<script setup lang="ts">
+/** En-tête cliquable d'un nœud : chevron, numéro, titre, rôle, bouton « ⓘ ». */
+import { computed } from 'vue'
+import { useTosafot } from '@/composables/useTosafot'
+import HebrewText from '@/components/common/HebrewText.vue'
+import RoleChip from '@/components/common/RoleChip.vue'
+
+const props = defineProps<{ nodeId: string; open: boolean; depth: number }>()
+const emit = defineEmits<{ toggle: []; info: [] }>()
+
+const { node, roleColor } = useTosafot()
+const current = computed(() => node(props.nodeId))
+const color = computed(() => roleColor(current.value?.role ?? ''))
+</script>
 
 <style scoped>
 .node-header {

@@ -1,3 +1,31 @@
+<template>
+  <TosafotReader v-if="status === 'ready' && doc" :key="slug" :doc="doc" />
+
+  <v-main v-else>
+    <v-container class="page-container py-10">
+      <div v-if="status === 'loading'" class="d-flex flex-column align-center ga-6">
+        <v-progress-circular indeterminate color="primary" size="48" />
+        <v-skeleton-loader class="w-100" type="heading, paragraph, paragraph" color="transparent" />
+      </div>
+
+      <v-alert
+        v-else
+        :type="status === 'unknown' ? 'warning' : 'error'"
+        variant="tonal"
+        :title="status === 'unknown' ? $t('tosafotPage.notFoundTitle') : $t('tosafotPage.errorTitle')"
+      >
+        <p v-if="status === 'unknown'">{{ $t('tosafotPage.notFoundMessage', { slug }) }}</p>
+        <p v-else>{{ errorMessage }}</p>
+        <template #append>
+          <v-btn :to="{ name: 'catalog' }" variant="text" prepend-icon="mdi-bookshelf">
+            {{ $t('tosafotPage.backToCatalog') }}
+          </v-btn>
+        </template>
+      </v-alert>
+    </v-container>
+  </v-main>
+</template>
+
 <script setup lang="ts">
 /** Charge le JSON du תוספות puis délègue l'affichage à TosafotReader. */
 import { ref, watch } from 'vue'
@@ -34,36 +62,6 @@ watch(
   { immediate: true },
 )
 </script>
-
-<template>
-  <TosafotReader v-if="status === 'ready' && doc" :key="slug" :doc="doc" />
-
-  <v-main v-else>
-    <v-container class="page-container py-10">
-      <div v-if="status === 'loading'" class="d-flex flex-column align-center ga-6">
-        <v-progress-circular indeterminate color="primary" size="48" />
-        <v-skeleton-loader class="w-100" type="heading, paragraph, paragraph" color="transparent" />
-      </div>
-
-      <v-alert
-        v-else
-        :type="status === 'unknown' ? 'warning' : 'error'"
-        variant="tonal"
-        :title="status === 'unknown' ? 'תוספות introuvable' : 'Erreur de chargement'"
-      >
-        <p v-if="status === 'unknown'">
-          Aucun fichier ne correspond à « {{ slug }} ».
-        </p>
-        <p v-else>{{ errorMessage }}</p>
-        <template #append>
-          <v-btn :to="{ name: 'catalog' }" variant="text" prepend-icon="mdi-bookshelf">
-            Voir le catalogue
-          </v-btn>
-        </template>
-      </v-alert>
-    </v-container>
-  </v-main>
-</template>
 
 <style scoped>
 .page-container {

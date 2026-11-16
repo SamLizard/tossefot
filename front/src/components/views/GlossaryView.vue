@@ -1,3 +1,50 @@
+<template>
+  <div class="d-flex flex-column ga-4">
+    <h1 class="text-headline-medium">{{ $t('glossary.title') }}</h1>
+    <v-text-field
+      v-model="query"
+      prepend-inner-icon="mdi-magnify"
+      :label="$t('glossary.search')"
+      variant="outlined"
+      density="comfortable"
+      clearable
+      hide-details
+    />
+
+    <v-tabs v-model="tab" color="primary">
+      <v-tab value="glossary" prepend-icon="mdi-book-alphabet">
+        {{ $t('glossary.tabGlossary') }}
+        <v-chip size="x-small" class="ms-2" label>{{ glossary.length }}</v-chip>
+      </v-tab>
+      <v-tab value="abbreviations" prepend-icon="mdi-format-letter-case">
+        {{ $t('glossary.tabAbbreviations') }}
+        <v-chip size="x-small" class="ms-2" label>{{ abbreviations.length }}</v-chip>
+      </v-tab>
+      <v-tab value="people" prepend-icon="mdi-account-group-outline">
+        {{ $t('glossary.tabPeople') }}
+        <v-chip size="x-small" class="ms-2" label>{{ people.length }}</v-chip>
+      </v-tab>
+    </v-tabs>
+
+    <v-window v-model="tab">
+      <v-window-item value="glossary">
+        <GlossaryList :items="glossary" />
+      </v-window-item>
+      <v-window-item value="abbreviations">
+        <GlossaryList :items="abbreviations" />
+      </v-window-item>
+      <v-window-item value="people">
+        <v-row v-if="people.length" class="pt-2">
+          <v-col v-for="p in people" :key="p.id" cols="12" sm="6">
+            <PersonCard :person-id="p.id" />
+          </v-col>
+        </v-row>
+        <p v-else class="text-medium-emphasis pa-4">{{ $t('glossary.noResult') }}</p>
+      </v-window-item>
+    </v-window>
+  </div>
+</template>
+
 <script setup lang="ts">
 /** Glossaire, abréviations et personnes (docs/UI_SPEC.md §6), avec recherche. */
 import { computed, ref } from 'vue'
@@ -24,47 +71,3 @@ const people = computed(() =>
   doc.value.people.filter((p) => matchesQuery(query.value, p.name, p.full, p.type, p.description)),
 )
 </script>
-
-<template>
-  <div class="d-flex flex-column ga-4">
-    <h1 class="text-headline-medium">Glossaire</h1>
-    <v-text-field
-      v-model="query"
-      prepend-inner-icon="mdi-magnify"
-      label="Rechercher (français ou hébreu)"
-      variant="outlined"
-      density="comfortable"
-      clearable
-      hide-details
-    />
-
-    <v-tabs v-model="tab" color="primary">
-      <v-tab value="glossary" prepend-icon="mdi-book-alphabet">
-        Glossaire <v-chip size="x-small" class="ms-2" label>{{ glossary.length }}</v-chip>
-      </v-tab>
-      <v-tab value="abbreviations" prepend-icon="mdi-format-letter-case">
-        Abréviations <v-chip size="x-small" class="ms-2" label>{{ abbreviations.length }}</v-chip>
-      </v-tab>
-      <v-tab value="people" prepend-icon="mdi-account-group-outline">
-        Personnes <v-chip size="x-small" class="ms-2" label>{{ people.length }}</v-chip>
-      </v-tab>
-    </v-tabs>
-
-    <v-window v-model="tab">
-      <v-window-item value="glossary">
-        <GlossaryList :items="glossary" />
-      </v-window-item>
-      <v-window-item value="abbreviations">
-        <GlossaryList :items="abbreviations" />
-      </v-window-item>
-      <v-window-item value="people">
-        <v-row v-if="people.length" class="pt-2">
-          <v-col v-for="p in people" :key="p.id" cols="12" sm="6">
-            <PersonCard :person-id="p.id" />
-          </v-col>
-        </v-row>
-        <p v-else class="text-medium-emphasis pa-4">Aucun résultat.</p>
-      </v-window-item>
-    </v-window>
-  </div>
-</template>

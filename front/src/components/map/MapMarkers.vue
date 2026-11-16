@@ -1,10 +1,3 @@
-<script setup lang="ts">
-/** Pointes de flèche SVG, une par type (couleur du type). */
-import { EDGE_LEGEND, EDGE_STYLES, markerId } from '@/utils/argumentStyles'
-
-const types = EDGE_LEGEND.filter((t) => !EDGE_STYLES[t].noArrow)
-</script>
-
 <template>
   <defs>
     <marker
@@ -23,3 +16,10 @@ const types = EDGE_LEGEND.filter((t) => !EDGE_STYLES[t].noArrow)
     </marker>
   </defs>
 </template>
+
+<script setup lang="ts">
+/** Pointes de flèche SVG, une par type (couleur du type). */
+import { EDGE_LEGEND, EDGE_STYLES, markerId } from '@/utils/argumentStyles'
+
+const types = EDGE_LEGEND.filter((t) => !EDGE_STYLES[t].noArrow)
+</script>

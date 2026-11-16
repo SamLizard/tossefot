@@ -1,10 +1,3 @@
-<script setup lang="ts">
-/** Notes textuelles sur l'édition (renvois faux, doublons…), fond jaune pâle. */
-import HebrewText from '@/components/common/HebrewText.vue'
-
-defineProps<{ notes: string[] }>()
-</script>
-
 <template>
   <div class="d-flex flex-column ga-2">
     <v-sheet
@@ -19,3 +12,10 @@ defineProps<{ notes: string[] }>()
     </v-sheet>
   </div>
 </template>
+
+<script setup lang="ts">
+/** Notes textuelles sur l'édition (renvois faux, doublons…), fond jaune pâle. */
+import HebrewText from '@/components/common/HebrewText.vue'
+
+defineProps<{ notes: string[] }>()
+</script>

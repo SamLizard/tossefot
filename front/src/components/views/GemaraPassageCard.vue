@@ -1,18 +1,3 @@
-<script setup lang="ts">
-/** Passage de Guemara : hébreu en RTL, traduction, référence et lien vers la source. */
-import { computed } from 'vue'
-import { useTosafot } from '@/composables/useTosafot'
-import { usePreferences } from '@/composables/usePreferences'
-import type { GemaraPassage } from '@/types/tosafot'
-import HebrewText from '@/components/common/HebrewText.vue'
-
-const props = defineProps<{ passage: GemaraPassage }>()
-
-const { source } = useTosafot()
-const preferences = usePreferences()
-const linked = computed(() => (props.passage.sourceId ? source(props.passage.sourceId) : undefined))
-</script>
-
 <template>
   <v-card variant="outlined" class="passage">
     <v-card-item class="pb-0">
@@ -45,6 +30,21 @@ const linked = computed(() => (props.passage.sourceId ? source(props.passage.sou
     </v-card-text>
   </v-card>
 </template>
+
+<script setup lang="ts">
+/** Passage de Guemara : hébreu en RTL, traduction, référence et lien vers la source. */
+import { computed } from 'vue'
+import { useTosafot } from '@/composables/useTosafot'
+import { usePreferences } from '@/composables/usePreferences'
+import type { GemaraPassage } from '@/types/tosafot'
+import HebrewText from '@/components/common/HebrewText.vue'
+
+const props = defineProps<{ passage: GemaraPassage }>()
+
+const { source } = useTosafot()
+const preferences = usePreferences()
+const linked = computed(() => (props.passage.sourceId ? source(props.passage.sourceId) : undefined))
+</script>
 
 <style scoped>
 .passage {

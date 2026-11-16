@@ -1,11 +1,3 @@
-<script setup lang="ts">
-/** Table des mots d'un segment : hébreu (RTL) | français, note en petit. */
-import type { Term } from '@/types/tosafot'
-import HebrewText from '@/components/common/HebrewText.vue'
-
-defineProps<{ terms: Term[] }>()
-</script>
-
 <template>
   <v-table density="compact" class="segment-terms">
     <tbody>
@@ -26,6 +18,14 @@ defineProps<{ terms: Term[] }>()
     </tbody>
   </v-table>
 </template>
+
+<script setup lang="ts">
+/** Table des mots d'un segment : hébreu (RTL) | français, note en petit. */
+import type { Term } from '@/types/tosafot'
+import HebrewText from '@/components/common/HebrewText.vue'
+
+defineProps<{ terms: Term[] }>()
+</script>
 
 <style scoped>
 .segment-terms {

@@ -1,3 +1,26 @@
+<template>
+  <span
+    v-if="current"
+    class="text-segment"
+    :class="{
+      'with-color': preferences.roleColors,
+      selected,
+      'segment-flash': highlightedSegmentId === segmentId,
+    }"
+    :style="style"
+    :data-segment-id="segmentId"
+    role="button"
+    tabindex="0"
+    :aria-label="$t('text.segmentAria', { id: segmentId })"
+    @click="openSegment(segmentId)"
+    @keydown.enter.prevent="openSegment(segmentId)"
+    @keydown.space.prevent="openSegment(segmentId)"
+  >{{ current.he }}<v-tooltip v-if="tooltip" activator="parent" :open-delay="350">
+      <!-- L'infobulle est téléportée hors du bloc RTL : elle reste en français (LTR). -->
+      <HebrewText :text="tooltip" class="text-body-medium" />
+    </v-tooltip></span>
+</template>
+
 <script setup lang="ts">
 /**
  * Un segment du texte continu (docs/UI_SPEC.md §3.2) : <span> cliquable,
@@ -25,29 +48,6 @@ const selected = computed(
 )
 const style = computed(() => ({ '--role-color': roleColor(current.value?.role ?? '') }))
 </script>
-
-<template>
-  <span
-    v-if="current"
-    class="text-segment"
-    :class="{
-      'with-color': preferences.roleColors,
-      selected,
-      'segment-flash': highlightedSegmentId === segmentId,
-    }"
-    :style="style"
-    :data-segment-id="segmentId"
-    role="button"
-    tabindex="0"
-    :aria-label="`Segment ${segmentId}`"
-    @click="openSegment(segmentId)"
-    @keydown.enter.prevent="openSegment(segmentId)"
-    @keydown.space.prevent="openSegment(segmentId)"
-  >{{ current.he }}<v-tooltip v-if="tooltip" activator="parent" :open-delay="350">
-      <!-- L'infobulle est téléportée hors du bloc RTL : elle reste en français (LTR). -->
-      <HebrewText :text="tooltip" class="text-body-medium" />
-    </v-tooltip></span>
-</template>
 
 <style scoped>
 .text-segment {

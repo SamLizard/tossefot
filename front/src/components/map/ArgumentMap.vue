@@ -1,3 +1,45 @@
+<template>
+  <div class="argument-map d-flex flex-column bg-surface">
+    <div
+      ref="viewport"
+      class="argument-map__viewport"
+      :class="{ 'argument-map__viewport--dragging': dragging }"
+      v-on="handlers"
+      @click.capture="onClickCapture"
+    >
+      <MapToolbar :scale="scale" @zoom-in="zoomIn" @zoom-out="zoomOut" @fit="fit" />
+      <svg class="argument-map__svg" role="group" :aria-label="$t('map.ariaLabel')">
+        <MapMarkers />
+        <g :transform="transform">
+          <rect
+            v-for="s in graph.sections"
+            :key="s.id"
+            class="argument-map__section"
+            :x="s.x - s.width / 2"
+            :y="s.y - s.height / 2"
+            :width="s.width"
+            :height="s.height"
+            rx="20"
+          />
+          <text
+            v-for="s in graph.sections"
+            :key="`t-${s.id}`"
+            class="argument-map__section-label"
+            :x="s.x - s.width / 2 + 16"
+            :y="s.y - s.height / 2 - 10"
+          >
+            {{ s.id }}
+          </text>
+          <MapEdge v-for="e in graph.edges" :key="e.id" :edge="e" />
+          <MapNode v-for="b in graph.nodes" :key="b.id" :box="b" @hover="onHover" />
+        </g>
+      </svg>
+      <MapTooltip :node-id="hoveredId" :target="hoveredEl" />
+    </div>
+    <MapLegend />
+  </div>
+</template>
+
 <script setup lang="ts">
 /**
  * Vue « Carte d'arguments » (docs/UI_SPEC.md §3.3) : graphe dagre dessiné en SVG,
@@ -40,48 +82,6 @@ onMounted(() => viewport.value && resize.observe(viewport.value))
 onBeforeUnmount(() => resize.disconnect())
 watch(graph, () => nextTick(fit))
 </script>
-
-<template>
-  <div class="argument-map d-flex flex-column bg-surface">
-    <div
-      ref="viewport"
-      class="argument-map__viewport"
-      :class="{ 'argument-map__viewport--dragging': dragging }"
-      v-on="handlers"
-      @click.capture="onClickCapture"
-    >
-      <MapToolbar :scale="scale" @zoom-in="zoomIn" @zoom-out="zoomOut" @fit="fit" />
-      <svg class="argument-map__svg" role="group" aria-label="Carte d'arguments">
-        <MapMarkers />
-        <g :transform="transform">
-          <rect
-            v-for="s in graph.sections"
-            :key="s.id"
-            class="argument-map__section"
-            :x="s.x - s.width / 2"
-            :y="s.y - s.height / 2"
-            :width="s.width"
-            :height="s.height"
-            rx="20"
-          />
-          <text
-            v-for="s in graph.sections"
-            :key="`t-${s.id}`"
-            class="argument-map__section-label"
-            :x="s.x - s.width / 2 + 16"
-            :y="s.y - s.height / 2 - 10"
-          >
-            {{ s.id }}
-          </text>
-          <MapEdge v-for="e in graph.edges" :key="e.id" :edge="e" />
-          <MapNode v-for="b in graph.nodes" :key="b.id" :box="b" @hover="onHover" />
-        </g>
-      </svg>
-      <MapTooltip :node-id="hoveredId" :target="hoveredEl" />
-    </div>
-    <MapLegend />
-  </div>
-</template>
 
 <style scoped>
 .argument-map {

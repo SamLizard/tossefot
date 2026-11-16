@@ -1,3 +1,12 @@
+<template>
+  <component :is="tag">
+    <template v-for="(part, i) in parts" :key="i">
+      <bdi v-if="part.he" lang="he" dir="rtl" class="he-inline">{{ part.text }}</bdi>
+      <template v-else>{{ part.text }}</template>
+    </template>
+  </component>
+</template>
+
 <script setup lang="ts">
 /**
  * Texte mixte français / hébreu (docs/UI_SPEC.md §2).
@@ -11,12 +20,3 @@ const props = withDefaults(defineProps<{ text: string; tag?: string }>(), { tag:
 
 const parts = computed(() => splitHebrew(props.text))
 </script>
-
-<template>
-  <component :is="tag">
-    <template v-for="(part, i) in parts" :key="i">
-      <bdi v-if="part.he" lang="he" dir="rtl" class="he-inline">{{ part.text }}</bdi>
-      <template v-else>{{ part.text }}</template>
-    </template>
-  </component>
-</template>

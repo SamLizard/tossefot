@@ -1,12 +1,3 @@
-<script setup lang="ts">
-/** Infobulle d'un terme expliqué (`segment.terms`) : hébreu → français, note, abréviations contenues. */
-import type { Term } from '@/types/tosafot'
-import type { AbbrInTerm } from '@/utils/segmentTokens'
-import HebrewText from '@/components/common/HebrewText.vue'
-
-defineProps<{ term: Term; abbrs?: AbbrInTerm[] }>()
-</script>
-
 <template>
   <v-tooltip>
     <template #activator="{ props: tip }">
@@ -26,3 +17,12 @@ defineProps<{ term: Term; abbrs?: AbbrInTerm[] }>()
     </div>
   </v-tooltip>
 </template>
+
+<script setup lang="ts">
+/** Infobulle d'un terme expliqué (`segment.terms`) : hébreu → français, note, abréviations contenues. */
+import type { Term } from '@/types/tosafot'
+import type { AbbrInTerm } from '@/utils/segmentTokens'
+import HebrewText from '@/components/common/HebrewText.vue'
+
+defineProps<{ term: Term; abbrs?: AbbrInTerm[] }>()
+</script>
