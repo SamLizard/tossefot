@@ -1,0 +1,28 @@
+{
+  "mcpServers": {
+    "vuetify-mcp": {
+      "url": "https://mcp.vuetifyjs.com/mcp",
+      "disabled": false,
+      "autoApprove": [
+        "get_component_api_by_version",
+        "get_directive_api_by_version",
+        "get_v4_breaking_changes",
+        "get_feature_guide",
+        "get_feature_guides",
+        "get_release_notes_by_version"
+      ]
+    },
+    "playwright": {
+      "command": "npx",
+      "args": ["-y", "@playwright/mcp@latest"],
+      "disabled": true,
+      "autoApprove": []
+    },
+    "vue-devtools": {
+      "command": "npx",
+      "args": ["-y", "@vue/devtools-agent", "connect"],
+      "disabled": true,
+      "autoApprove": []
+    }
+  }
+}
