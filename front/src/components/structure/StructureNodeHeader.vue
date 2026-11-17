@@ -25,6 +25,7 @@
       :class="depth === 0 ? 'text-title-medium font-weight-medium' : 'text-body-large'"
     />
     <RoleChip :role="current.role" size="small" />
+    <CommentButton :target="{ nodeId: current.id }" size="x-small" />
     <v-btn
       icon="mdi-information-outline"
       variant="text"
@@ -45,6 +46,7 @@ import { computed } from 'vue'
 import { useTosafot } from '@/composables/useTosafot'
 import HebrewText from '@/components/common/HebrewText.vue'
 import RoleChip from '@/components/common/RoleChip.vue'
+import CommentButton from '@/components/review/CommentButton.vue'
 
 const props = defineProps<{ nodeId: string; open: boolean; depth: number }>()
 const emit = defineEmits<{ toggle: []; info: [] }>()

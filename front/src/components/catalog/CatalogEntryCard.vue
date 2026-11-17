@@ -21,6 +21,7 @@
     </v-card-item>
     <v-card-actions class="pt-0">
       <span class="text-label-small text-medium-emphasis ms-2">{{ entry.slug }}</span>
+      <LocalDocActions v-if="entry.local" :info="entry.local" />
       <v-spacer />
       <v-btn variant="text" color="primary" append-icon="mdi-arrow-right">
         {{ $t('catalog.open') }}
@@ -35,6 +36,7 @@ import { computed, onMounted } from 'vue'
 import type { CatalogEntry } from '@/data/catalog'
 import { useCatalogMeta } from '@/composables/useCatalogMeta'
 import HebrewText from '@/components/common/HebrewText.vue'
+import LocalDocActions from './LocalDocActions.vue'
 
 const props = defineProps<{ entry: CatalogEntry }>()
 

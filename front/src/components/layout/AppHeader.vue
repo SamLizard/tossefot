@@ -22,6 +22,7 @@
             <HebrewText :text="$t('shomrim.label')" />
           </v-btn>
         </template>
+        <ReviewModeChip :compact="smAndDown" />
         <TextIntegrityCheck :compact="smAndDown" />
         <AppMenu
           :compact="smAndDown"
@@ -43,6 +44,7 @@ import { useSegmentPanel } from '@/composables/useSegmentPanel'
 import HebrewText from '@/components/common/HebrewText.vue'
 import LevelSelector from '@/components/common/LevelSelector.vue'
 import TextIntegrityCheck from '@/components/integrity/TextIntegrityCheck.vue'
+import ReviewModeChip from '@/components/review/ReviewModeChip.vue'
 import AppMenu from './AppMenu.vue'
 
 const emit = defineEmits<{ 'open-preferences': [] }>()

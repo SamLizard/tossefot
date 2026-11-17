@@ -1,5 +1,5 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
-import { catalog } from '@/data/catalog'
+import { fileCatalog } from '@/data/catalog'
 
 /**
  * Historique en hash (#/slug/vue) : fonctionne sans serveur et hors ligne (PWA).
@@ -13,7 +13,7 @@ export default createRouter({
       name: 'home',
       // Un seul תוספות pour l'instant : on l'ouvre directement.
       redirect: () =>
-        catalog.length === 1 ? { name: 'tosafot', params: { slug: catalog[0]!.slug } } : { name: 'catalog' },
+        fileCatalog.length === 1 ? { name: 'tosafot', params: { slug: fileCatalog[0]!.slug } } : { name: 'catalog' },
     },
     { path: '/catalog', name: 'catalog', component: () => import('@/pages/CatalogPage.vue') },
     {

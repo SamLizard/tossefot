@@ -2,14 +2,23 @@
 // Usage : node scripts/contrast.mjs (avec `npm run preview` lancé).
 import { spawn } from 'node:child_process'
 import { setTimeout as sleep } from 'node:timers/promises'
+import { mkdtempSync } from 'node:fs'
+import { tmpdir } from 'node:os'
+import { join } from 'node:path'
+
+// Profil Chrome jetable : évite de réutiliser une instance déjà ouverte.
+const PROFILE = mkdtempSync(join(tmpdir(), 'tossefot-chrome-'))
 
 const CHROME = process.env.CHROME ?? 'C:/Program Files/Google/Chrome/Application/chrome.exe'
-const BASE = 'http://localhost:4173/#/bk56b_tosafot_behahi_hanaa/'
-const PORT = 9334
+const BASE = 'http://127.0.0.1:4173/#/bk56b_tosafot_behahi_hanaa/'
+// Port libre aléatoire : une ancienne instance de Chrome peut garder un port fixe.
+const PORT = 9400 + Math.floor(Math.random() * 500)
 
-const chrome = spawn(CHROME, ['--headless=new', '--disable-gpu', `--remote-debugging-port=${PORT}`, '--window-size=1400,1000', 'about:blank'])
-await sleep(1500)
-const [page] = await (await fetch(`http://localhost:${PORT}/json`)).json()
+const chrome = spawn(CHROME, ['--headless=new', '--disable-gpu', '--no-proxy-server', `--user-data-dir=${PROFILE}`, `--remote-debugging-port=${PORT}`, '--window-size=1400,1000', 'about:blank'])
+await sleep(2000)
+// Le premier « target » peut être une extension : on prend l'onglet.
+const targets = await (await fetch(`http://127.0.0.1:${PORT}/json`)).json()
+const page = targets.find((t) => t.type === 'page')
 const ws = new WebSocket(page.webSocketDebuggerUrl)
 await new Promise((r) => ws.addEventListener('open', r))
 let id = 0

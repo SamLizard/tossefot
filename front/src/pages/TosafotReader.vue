@@ -13,6 +13,14 @@
       <SynthesisView v-else-if="currentView === 'synthesis'" />
       <GlossaryView v-else-if="currentView === 'glossary'" />
       <PreparationNotes v-else-if="currentView === 'notes'" />
+      <template v-else-if="currentView === 'review'">
+        <ReviewPage v-if="preferences.reviewMode" />
+        <v-alert v-else type="info" variant="tonal" :text="$t('reviewing.modeOff')">
+          <template #append>
+            <v-btn variant="text" @click="preferences.reviewMode = true">{{ $t('reviewing.enable') }}</v-btn>
+          </template>
+        </v-alert>
+      </template>
     </v-container>
     <!-- La carte a besoin de plus de largeur que le texte. -->
     <v-container v-if="currentView === 'map'" fluid class="py-6">
@@ -23,6 +31,7 @@
   <SegmentPanel />
   <TableDialog />
   <PreferencesDrawer v-model="preferencesOpen" />
+  <CommentDialog v-if="preferences.reviewMode" />
 </template>
 
 <script setup lang="ts">
@@ -34,7 +43,7 @@ import { computed, onBeforeUnmount, ref, toRef } from 'vue'
 import { provideTosafot } from '@/composables/useTosafot'
 import { useSegmentPanel } from '@/composables/useSegmentPanel'
 import { useViewNavigation } from '@/composables/useViewNavigation'
-import type { ViewId } from '@/composables/usePreferences'
+import { usePreferences, type ViewId } from '@/composables/usePreferences'
 import type { TosafotDoc } from '@/types/tosafot'
 import { isMainView } from '@/utils/views'
 import AppHeader from '@/components/layout/AppHeader.vue'
@@ -49,6 +58,8 @@ import ArgumentMap from '@/components/map/ArgumentMap.vue'
 import SynthesisView from '@/components/views/SynthesisView.vue'
 import GlossaryView from '@/components/views/GlossaryView.vue'
 import PreparationNotes from '@/components/views/PreparationNotes.vue'
+import ReviewPage from '@/components/review/ReviewPage.vue'
+import CommentDialog from '@/components/review/CommentDialog.vue'
 
 // La vue courante est lue dans la route (useViewNavigation), pas en prop.
 const props = defineProps<{ doc: TosafotDoc }>()
@@ -57,6 +68,7 @@ provideTosafot(toRef(props, 'doc'))
 
 const { currentView, goTo } = useViewNavigation()
 const panel = useSegmentPanel()
+const preferences = usePreferences()
 const preferencesOpen = ref(false)
 
 const tab = computed<ViewId | undefined>({

@@ -35,6 +35,8 @@
         @click="emit('open-preferences')"
       />
       <v-divider class="my-1" />
+      <ReviewMenuItems />
+      <v-divider class="my-1" />
       <v-list-item prepend-icon="mdi-bookshelf" :to="{ name: 'catalog' }">
         <v-list-item-title><HebrewText :text="$t('menu.otherTosafot')" /></v-list-item-title>
       </v-list-item>
@@ -50,6 +52,7 @@ import { usePreferences } from '@/composables/usePreferences'
 import { useSegmentPanel } from '@/composables/useSegmentPanel'
 import { useViewNavigation } from '@/composables/useViewNavigation'
 import HebrewText from '@/components/common/HebrewText.vue'
+import ReviewMenuItems from '@/components/review/ReviewMenuItems.vue'
 
 withDefaults(defineProps<{ compact?: boolean; hasShomrim?: boolean }>(), {
   compact: false,

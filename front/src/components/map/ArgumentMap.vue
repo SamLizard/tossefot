@@ -8,9 +8,21 @@
       @click.capture="onClickCapture"
     >
       <MapToolbar :scale="scale" @zoom-in="zoomIn" @zoom-out="zoomOut" @fit="fit" />
-      <svg class="argument-map__svg" role="group" :aria-label="$t('map.ariaLabel')">
+      <!-- Transformation CSS sur un calque HTML : voir usePanZoom (traces sous Safari). -->
+      <div
+        class="argument-map__layer"
+        :class="{ 'argument-map__layer--moving': moving }"
+        :style="{ transform }"
+      >
+      <svg
+        class="argument-map__svg"
+        role="group"
+        :aria-label="$t('map.ariaLabel')"
+        :width="graph.width"
+        :height="graph.height"
+      >
         <MapMarkers />
-        <g :transform="transform">
+        <g>
           <rect
             v-for="s in graph.sections"
             :key="s.id"
@@ -34,6 +46,7 @@
           <MapNode v-for="b in graph.nodes" :key="b.id" :box="b" @hover="onHover" />
         </g>
       </svg>
+      </div>
       <MapTooltip :node-id="hoveredId" :target="hoveredEl" />
     </div>
     <MapLegend />
@@ -61,7 +74,7 @@ const { doc, nodes } = useTosafot()
 const graph = computed(() => layoutArguments(doc.value, nodes.value))
 
 const viewport = ref<HTMLElement | null>(null)
-const { scale, transform, dragging, zoomIn, zoomOut, fit, handlers, onClickCapture } = usePanZoom(
+const { scale, transform, moving, dragging, zoomIn, zoomOut, fit, handlers, onClickCapture } = usePanZoom(
   viewport,
   () => graph.value,
 )
@@ -102,10 +115,18 @@ watch(graph, () => nextTick(fit))
 .argument-map__viewport--dragging {
   cursor: grabbing;
 }
+.argument-map__layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform-origin: 0 0;
+}
+.argument-map__layer--moving {
+  will-change: transform;
+}
 .argument-map__svg {
   display: block;
-  width: 100%;
-  height: 100%;
+  overflow: visible;
 }
 .argument-map__section {
   fill: rgba(var(--v-theme-surface-variant), 0.45);

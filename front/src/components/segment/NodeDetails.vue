@@ -1,5 +1,8 @@
 <template>
   <div v-if="n" class="d-flex flex-column ga-4">
+    <div v-if="preferences.reviewMode" class="d-flex justify-end">
+      <CommentButton :target="{ nodeId: n.id }" />
+    </div>
     <HebrewText v-if="summary" :text="summary" tag="p" class="text-body-large summary" />
 
     <v-sheet v-if="n.conclusion" color="surface-variant" rounded="lg" class="d-flex ga-2 pa-3">
@@ -36,6 +39,7 @@ import { useTosafot } from '@/composables/useTosafot'
 import { usePreferences } from '@/composables/usePreferences'
 import { useSegmentPanel } from '@/composables/useSegmentPanel'
 import HebrewText from '@/components/common/HebrewText.vue'
+import CommentButton from '@/components/review/CommentButton.vue'
 
 const props = defineProps<{ nodeId: string }>()
 

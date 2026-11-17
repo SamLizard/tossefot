@@ -25,11 +25,30 @@ export function usePanZoom(
   const y = ref(0)
   const dragging = ref(false)
 
-  const transform = computed(() => `translate(${x.value} ${y.value}) scale(${scale.value})`)
+  /**
+   * Transformation CSS (et non attribut SVG) : posée sur un conteneur HTML, elle crée une
+   * couche composée. Safari (macOS) laisse sinon des traces des <foreignObject> pendant
+   * le zoom et le déplacement.
+   */
+  // Pendant le mouvement : couche GPU (fluide, sans traces sous Safari, mais pixelisée si on
+  // zoome). À l'arrêt : transformation 2D simple, le navigateur redessine le texte net.
+  const moving = ref(false)
+  let idleTimer: ReturnType<typeof setTimeout> | undefined
+  function markMoving() {
+    moving.value = true
+    clearTimeout(idleTimer)
+    idleTimer = setTimeout(() => (moving.value = false), 180)
+  }
+  const transform = computed(() =>
+    moving.value
+      ? `translate3d(${x.value}px, ${y.value}px, 0) scale(${scale.value})`
+      : `translate(${x.value}px, ${y.value}px) scale(${scale.value})`,
+  )
   const clamp = (s: number) => Math.min(max, Math.max(min, s))
 
   /** Zoom autour d'un point de l'écran (coordonnées relatives au viewport). */
   function zoomAt(factor: number, cx: number, cy: number) {
+    markMoving()
     const next = clamp(scale.value * factor)
     const k = next / scale.value
     x.value = cx - (cx - x.value) * k
@@ -78,6 +97,7 @@ export function usePanZoom(
     if (!dragging.value && Math.hypot(dx, dy) < DRAG_THRESHOLD) return
     if (!dragging.value) viewport.value?.setPointerCapture(event.pointerId)
     dragging.value = true
+    markMoving()
     x.value = start.x + dx
     y.value = start.y + dy
   }
@@ -96,11 +116,15 @@ export function usePanZoom(
 
   // `wheel` doit être non passif pour empêcher le défilement de la page.
   onMounted(() => viewport.value?.addEventListener('wheel', onWheel, { passive: false }))
-  onBeforeUnmount(() => viewport.value?.removeEventListener('wheel', onWheel))
+  onBeforeUnmount(() => {
+    viewport.value?.removeEventListener('wheel', onWheel)
+    clearTimeout(idleTimer)
+  })
 
   return {
     scale,
     transform,
+    moving,
     dragging,
     zoomIn: () => zoomBy(1.2),
     zoomOut: () => zoomBy(1 / 1.2),

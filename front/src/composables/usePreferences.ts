@@ -15,6 +15,8 @@ export interface Preferences {
   /** Taille du texte en pourcentage (80-160). */
   textScale: number
   theme: ThemeMode
+  /** Mode relecture (docs/JSON_IDEAS.md §4) : boutons « Commenter » et page « Relecture ». */
+  reviewMode: boolean
 }
 
 const STORAGE_KEY = 'tossefot.preferences.v1'
@@ -27,6 +29,7 @@ const DEFAULTS: Preferences = {
   hebrewFont: 'serif',
   textScale: 100,
   theme: 'light',
+  reviewMode: false,
 }
 
 function load(): Preferences {

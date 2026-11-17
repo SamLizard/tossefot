@@ -21,6 +21,20 @@ Le front est déjà prêt pour la plus grande partie : routeur en mode hash (pas
 - [ ] « Comparer avec Sefaria » et les liens Sefaria : afficher « hors ligne » au lieu d'échouer (`navigator.onLine`).
 - [ ] Option : charger des JSON locaux choisis par l'utilisateur (`<v-file-input>` → IndexedDB), pour lire un nouveau תוספות sans rebuild.
 
+## À réfléchir après le MVP (schéma JSON)
+
+Idées retirées de `JSON_IDEAS.md` (qui ne garde que le MVP). À rediscuter plus tard :
+
+- [ ] `structure[].difficulty` (1-3) : signaler les passages difficiles.
+- [ ] `meta.prerequisites[]` : autres תוספות / סוגיות à connaître avant (liens vers d'autres fichiers du catalogue).
+- [ ] `meta.related[]` : תוספות parallèles (ex. ב״מ כט. ד״ה והוי), avec le `slug` du catalogue si le fichier existe.
+- [ ] `shiurim[]` dans un fichier séparé, ou `segments[].shiur: { file, start, end }` pour un badge « 🎧 14:44 » (voir la section « Résumé du שיעור » ci-dessus).
+- [ ] `segments[].questions[]` : question de compréhension par segment, pour un mode « quiz ».
+- [ ] Technique :
+  - [ ] utiliser `meta.schemaVersion` : refuser ou avertir si la version n'est pas supportée ;
+  - [ ] publier un JSON Schema (`data/tosafot.schema.json`) pour valider les fichiers dans l'éditeur et dans `check_tosafot.py` ;
+  - [ ] `meta.updatedAt`, `meta.authors` (utile pour la PWA et la relecture).
+
 ## Autres
 
 - [x] Porter `tools/check_tosafot.py` en TypeScript pour le bouton « Vérifier le texte » (`front/src/utils/integrity.ts`).

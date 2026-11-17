@@ -1,5 +1,5 @@
 <template>
-  <TosafotReader v-if="status === 'ready' && doc" :key="slug" :doc="doc" />
+  <TosafotReader v-if="status === 'ready' && doc" :key="`${slug}@${localStamp}`" :doc="doc" />
 
   <v-main v-else>
     <v-container class="page-container py-10">
@@ -28,7 +28,7 @@
 
 <script setup lang="ts">
 /** Charge le JSON du תוספות puis délègue l'affichage à TosafotReader. */
-import { ref, watch } from 'vue'
+import { computed, ref, watch } from 'vue'
 import { findEntry } from '@/data/catalog'
 import type { TosafotDoc } from '@/types/tosafot'
 import TosafotReader from './TosafotReader.vue'
@@ -38,10 +38,12 @@ const props = defineProps<{ slug: string; view?: string }>()
 const doc = ref<TosafotDoc | null>(null)
 const status = ref<'loading' | 'ready' | 'unknown' | 'error'>('loading')
 const errorMessage = ref('')
+// Une version locale rechargée sous le même slug doit être relue.
+const localStamp = computed(() => findEntry(props.slug)?.local?.importedAt ?? '')
 
 watch(
-  () => props.slug,
-  async (slug) => {
+  () => [props.slug, localStamp.value] as const,
+  async ([slug]) => {
     doc.value = null
     const entry = findEntry(slug)
     if (!entry) {

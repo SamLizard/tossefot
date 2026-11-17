@@ -17,6 +17,7 @@
         color="secondary"
         size="small"
         prepend-icon="mdi-table"
+        class="table-btn"
         @click="openTable(t.id)"
       >
         <HebrewText :text="$t('details.viewTable', { title: t.title })" />
@@ -87,6 +88,19 @@ const tables = computed(() =>
 .translation {
   line-height: 1.7;
   font-style: italic;
+}
+/* Les titres de table sont longs : le bouton passe à la ligne au lieu de couper le texte. */
+.table-btn {
+  height: auto !important;
+  min-height: 32px;
+  max-width: 100%;
+  padding-block: 6px;
+  text-align: start;
+}
+.table-btn :deep(.v-btn__content) {
+  white-space: normal;
+  flex: 1 1 auto;
+  min-width: 0;
 }
 .details-panels {
   border: thin solid rgba(var(--v-border-color), var(--v-border-opacity));

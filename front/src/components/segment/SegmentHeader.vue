@@ -9,6 +9,7 @@
     <HebrewText :text="attributionLabel(s.attribution)" />
     <v-spacer />
     <slot name="actions" />
+    <CommentButton :target="{ segmentId: s.id }" />
     <v-btn
       v-if="showSefaria && doc.source.sefariaUrl"
       :href="doc.source.sefariaUrl"
@@ -30,6 +31,7 @@ import { computed } from 'vue'
 import { useTosafot } from '@/composables/useTosafot'
 import HebrewText from '@/components/common/HebrewText.vue'
 import RoleChip from '@/components/common/RoleChip.vue'
+import CommentButton from '@/components/review/CommentButton.vue'
 
 const props = withDefaults(defineProps<{ segmentId: string; showSefaria?: boolean }>(), {
   showSefaria: true,

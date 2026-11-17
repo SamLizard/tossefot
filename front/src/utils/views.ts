@@ -2,7 +2,7 @@
 import type { ViewId } from '@/composables/usePreferences'
 
 /** Vues accessibles par la route `/:slug/:view?`. */
-export type PageView = ViewId | 'glossary' | 'notes'
+export type PageView = ViewId | 'glossary' | 'notes' | 'review'
 
 export interface ViewTab {
   id: ViewId
@@ -20,7 +20,7 @@ export const VIEW_TABS: readonly ViewTab[] = [
 ]
 
 const MAIN_VIEWS = new Set<string>(VIEW_TABS.map((t) => t.id))
-const PAGE_VIEWS = new Set<string>([...MAIN_VIEWS, 'glossary', 'notes'])
+const PAGE_VIEWS = new Set<string>([...MAIN_VIEWS, 'glossary', 'notes', 'review'])
 
 export function isMainView(view: string): view is ViewId {
   return MAIN_VIEWS.has(view)

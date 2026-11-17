@@ -36,6 +36,18 @@ export interface Meta {
   roles: RoleDef[]
   attributions: AttributionDef[]
   methodology: Leveled
+  /** Version du fichier (date ou numéro), pour savoir quelle version a été relue. */
+  version?: string
+  previousVersion?: string
+}
+
+/** Réponse de l'IA à une remarque de relecture (docs/JSON_IDEAS.md §4). */
+export interface ReviewLogEntry {
+  commentId: string
+  status: 'corrigé' | 'discuté' | 'refusé'
+  change?: string
+  answer?: string
+  targets?: string[]
 }
 
 export interface GemaraPassage {
@@ -174,4 +186,5 @@ export interface TosafotDoc {
   glossary: GlossaryEntry[]
   synthesis: Synthesis
   visualSummary: VisualSummary
+  reviewLog?: ReviewLogEntry[]
 }
