@@ -9,33 +9,94 @@
     "perek": "פרק ו׳ – הכונס",
     "dibburHamatchil": "בההיא הנאה דלא קבעי למיתב ריפתא לעניא",
     "levels": [
-      { "id": "essentiel", "label": "Essentiel", "description": "Une ligne : l'idée de la phrase." },
-      { "id": "standard", "label": "Standard", "description": "Explication complète du raisonnement, avec le contexte des sources citées." },
-      { "id": "approfondi", "label": "Approfondi", "description": "Nuances, parallèles, autres ראשונים, notes textuelles." }
+      {
+        "id": "essentiel",
+        "label": "Essentiel",
+        "description": "Une ligne : l'idée de la phrase."
+      },
+      {
+        "id": "standard",
+        "label": "Standard",
+        "description": "Explication complète du raisonnement, avec le contexte des sources citées."
+      },
+      {
+        "id": "approfondi",
+        "label": "Approfondi",
+        "description": "Nuances, parallèles, autres ראשונים, notes textuelles."
+      }
     ],
     "roles": [
-      { "id": "dh", "label": "דיבור המתחיל", "color": "#6b7280" },
-      { "id": "these", "label": "Thèse", "color": "#2563eb" },
-      { "id": "precision", "label": "Précision", "color": "#0891b2" },
-      { "id": "preuve", "label": "Preuve", "color": "#16a34a" },
-      { "id": "psak", "label": "פסק", "color": "#7c3aed" },
-      { "id": "kushya", "label": "קושיא / objection", "color": "#dc2626" },
-      { "id": "dechiya", "label": "Rejet (דחייה)", "color": "#ea580c" },
-      { "id": "terutz", "label": "Réponse (תירוץ)", "color": "#0d9488" },
-      { "id": "explication", "label": "Explication", "color": "#64748b" },
-      { "id": "conclusion", "label": "Conclusion", "color": "#1e40af" }
+      {
+        "id": "dh",
+        "label": "דיבור המתחיל",
+        "color": "#6b7280"
+      },
+      {
+        "id": "these",
+        "label": "Thèse",
+        "color": "#2563eb"
+      },
+      {
+        "id": "precision",
+        "label": "Précision",
+        "color": "#0891b2"
+      },
+      {
+        "id": "preuve",
+        "label": "Preuve",
+        "color": "#16a34a"
+      },
+      {
+        "id": "psak",
+        "label": "פסק",
+        "color": "#7c3aed"
+      },
+      {
+        "id": "kushya",
+        "label": "קושיא / objection",
+        "color": "#dc2626"
+      },
+      {
+        "id": "dechiya",
+        "label": "Rejet (דחייה)",
+        "color": "#ea580c"
+      },
+      {
+        "id": "terutz",
+        "label": "Réponse (תירוץ)",
+        "color": "#0d9488"
+      },
+      {
+        "id": "explication",
+        "label": "Explication",
+        "color": "#64748b"
+      },
+      {
+        "id": "conclusion",
+        "label": "Conclusion",
+        "color": "#1e40af"
+      }
     ],
     "attributions": [
-      { "id": "tosafot", "label": "תוספות" },
-      { "id": "rach-bahag", "label": "ר״ח ובה״ג" },
-      { "id": "ri", "label": "ר״י" }
+      {
+        "id": "tosafot",
+        "label": "תוספות"
+      },
+      {
+        "id": "rach-bahag",
+        "label": "ר״ח ובה״ג"
+      },
+      {
+        "id": "ri",
+        "label": "ר״י"
+      }
     ],
     "methodology": {
       "standard": "Texte du תוספות : export Sefaria (mars 2026), identique à l'édition de Vilna. Toutes les sources citées par le תוספות ont été lues dans le texte de Sefaria pendant la préparation, ainsi que le תוספות parallèle de ב״מ כט. ד״ה והוי, qui reprend presque tout ce passage. Le découpage en phrases est éditorial : le texte imprimé n'a pas de ponctuation.",
       "approfondi": "Points non vérifiés directement : les textes de ר״ח et de בה״ג (on s'appuie sur ce que le תוספות en rapporte), le טור et le ראש (cités via le רמ״א). Les incertitudes sont signalées dans « notes textuelles »."
-    }
+    },
+    "version": "2026-11-17T14:09:10Z"
   },
-
   "context": {
     "title": "Où en sommes-nous ?",
     "levels": {
@@ -63,41 +124,575 @@
         "translation": "Certains l'expliquent ainsi : רב יוסף dit qu'il est comme un שומר שכר, puisque la Torah l'a asservi malgré lui ; c'est pourquoi il est comme un שומר שכר."
       }
     ],
-    "tableIds": ["t-shomrim", "t-base"]
+    "tableIds": [
+      "t-shomrim",
+      "t-base"
+    ]
   },
-
   "source": {
     "ref": "Tosafot on Bava Kamma 56b:10:1",
     "sefariaUrl": "https://www.sefaria.org/Tosafot_on_Bava_Kamma_56b",
     "edition": "Export Sefaria (archive GitHub, mars 2026) = édition de Vilna",
-    "normalization": "Le texte de Sefaria utilise les caractères ASCII \u0022 et \u0027 pour les ראשי תיבות. Ils sont remplacés ici par ״ (U+05F4) et ׳ (U+05F3). Aucun autre changement.",
+    "normalization": "Le texte de Sefaria utilise les caractères ASCII \" et ' pour les ראשי תיבות. Ils sont remplacés ici par ״ (U+05F4) et ׳ (U+05F3). Aucun autre changement.",
     "tokenization": "Découpage sur les espaces, après normalisation Unicode NFC et réduction des espaces multiples. Les signes collés aux mots (« : », « . », parenthèses) font partie du mot. Le tiret « - » après le דיבור המתחיל est un mot à part entière.",
     "fullText": "בההיא הנאה דלא קבעי למיתב ריפתא לעניא - משום דעוסק במצוה ודוקא בשעה דמתעסק בה כגון שוטח לצורכה או משום עסק שצריך לה לאבידה אבל בשביל שאבידה בביתו לא יפטר מלמיתב ריפתא לעניא כיון שיכול לקיים שתיהם כדמוכח בסוכה (דף כה. ושם.) דלא נפקא לן מקרא דעוסק במצוה פטור מן המצוה אלא דוקא היכא שאינו יכול לקיים שתיהם וסברא הוא דאטו אדם שיש לו תפילין בראשו וציצית בבגדו ומזוזה בפתחו יפטר מן המצות ועוד דבפרק אין בין המודר (נדרים לג:) אמר דפרוטה דרב יוסף לא שכיח ואי פטרת ליה כל זמן שהאבידה בביתו שכיח ושכיח הוא פסק ר״ח וה״ג דהלכה כרב יוסף משום דאמרינן באין בין המודר (שם) דכ״ע אית להו פרוטה דרב יוסף ואפילו מאן דשרי למודר להחזיר אבידה לא שרי אלא משום דפרוטה דרב יוסף לא שכיח ואור״י דאינה ראיה כלל דגם רבה מודה לרב יוסף דעוסק במצוה פטור מן המצוה אלא דס״ל דלא נעשה שומר שכר בכך ומ״מ הוא נהנה לכך אסור למודר אבל לא הוה שומר שכר ואין לדקדק נמי בשמעתין דהלכה כרב יוסף דמשני רב יוסף לעולם בגינתו המשתמרת וקמ״ל דלא בעינן דעת בעלים כדרבי אלעזר והכי מוקי לה סוגיא דאלו מציאות (ב״מ ד׳ כט. ושם) כי נראה דרבה קבלה מרב יוסף דקרא כדר״א אתי ורבה נמי שהיה מדקדק מתחילה דכשומר חנם דמי לא משמע ליה קרא אלא אסמכתא בעלמא דהא טעמא משום דמאי הנאה קא מטי ליה כדלעיל ולא פליגי רבה ורב יוסף אלא בסברא בעלמא וה״פ דההיא דאלו מציאות (שם ד׳ לא.) אי דמנטרא לרבה כדאית ליה מפשיעה לרב יוסף כדאית ליה מגניבה ואבידה פשיטא דלהא לא צריך קרא ונראה לר״י דהלכה כרבה בכל מקום לגבי רב יוסף בר משדה ענין ומחצה כדאיתא במי שמת (ב״ב ד׳ קמג:) ואין לפרש דהיינו דוקא בבבא בתרא כמו שיש מפרשים מדאמר במי שאחזו (גיטין ד׳ עד: ושם) ותסברא והא קי״ל כרבה ובהא אין הלכה כרשב״ג ואין לומר דשמא בההיא מילתא קיימא לן דהלכה כרבה דהוה ליה למימר והא קי״ל בהא הלכתא כרבה כדאמר ובהא אין הלכה כרשב״ג ועוד דבפרק המפקיד (ב״מ מג.) גבי מפקיד מעות אצל שולחני מותרים ישתמש בהן (צרורים לא ישתמש בהן) לפיכך אם אבדו חייב באחריותם קאמר רב נחמן דקי״ל כוותיה בדיני נאנסו לא דמשום שהתירו לו חכמים להשתמש בהן אינו נעשה רק שומר שכר א״כ באלו מציאות (שם דף כט.) גבי מה יהא בדמים רבי טרפון אומר ישתמש בהן לפיכך אם אבדו חייב באחריותן לא הוי אלא ש״ש כמו שאמר שם לרבה ואין לומר דהתם מודה רב נחמן דחייב באונסין משום היתר תשמיש משום דבלאו הכי היה שומר שכר שהיה שומר אבידה דאין זה סברא דמשום שני סברות דפטור מלמיתב ריפתא לעניא ועוד דמותר להשתמש לא יעשה בשביל כך שואל אלא ש״ש בעלמא ועוד יש להביא ראיה דהלכתא כרבה מדמוקי סתמא דגמרא מתניתין דהאומנין (ב״מ דף פ:) הלוהו על המשכון שומר שכר מחוורתא דלא כרבי אליעזר דאמר במלוה חבירו על המשכון ואבד ישבע ויטול מעותיו ולרב יוסף הו״מ לאוקמה אפילו כרבי אליעזר דלמסקנא מוקי כולהו אליביה ופלוגתייהו במלוה צריך למשכון אי מצוה קעביד אי לא פי׳ שצריך למשכון להשתמש בו ופוחת לו והולך מהלואתו כך פירש התם בקונטרס וא״כ הו״מ לאוקמה מתניתין באין צריך למשכון דכ״ע מצוה קעביד ולכל הוי כשומר שכר והא דבעי לאוקמא פלוגתייהו בדרבה ורב יוסף והוי רבה כר״א שהוא שמותי ועוד קאמר לימא דרב יוסף תנאי היא ומסיק דרב יוסף ככולי עלמא ומשמע דרבה ודאי תנאי היא ואינו יכול להעמיד אלא כר״א ולא כרבי עקיבא דאי לרבי עקיבא ודאי הוי שומר שכר אי אפשר לומר כן דעל כרחך לרבה אפי׳ לרבי עקיבא שומר חנם הוי דבאלו מציאות (ב״מ דף כט. ושם) לרבה לא הוי לרבי טרפון דמתיר להשתמש אלא שומר שכר א״כ לר״ע לא הוי אלא שומר חנם לכך נראה דרבה לא יעמיד כלל פלוגתייהו בשומר אבידה אלא יאמר דלכולי עלמא שומר חנם הוי ופלוגתייהו בדשמואל דר״ע אית ליה דשמואל אבד קתא דמגלא אבד אלפא זוזי ור״א לית ליה דשמואל ורב יוסף כי מוקי פלוגתייהו בדשמואל לא קאי רבי אליעזר כוותיה שהוא פוטר את המלוה באבידה אף מדמי המשכון ולכך מוקי פלוגתייהו בשומר אבידה והוי כר״ע וקאמר לימא דרב יוסף תנאי היא דרבה ודאי לאו תנאי דמוקי פלוגתייהו בדשמואל ומסיק דכולי עלמא אית להו דרב יוסף כו׳ והא דתנן בשבועות (ד׳ מג ושם) סלע הלויתני עליו ושתים היה שוה דמשמע שחייב לשלם המשכון כשאבד מיירי שאבד בפשיעה לרבה דאמר שומר חנם הוי:"
   },
-
   "people": [
-    { "id": "rabba", "name": "רבה", "full": "רבה בר נחמני", "type": "אמורא", "description": "אמורא de Babylonie (3e génération), ראש ישיבה à פומבדיתא, collègue de רב יוסף. Dans la transcription automatique du cours, il est souvent écrit « רבא » par erreur : il s'agit de רבה." },
-    { "id": "rav-yosef", "name": "רב יוסף", "full": "רב יוסף בר חייא", "type": "אמורא", "description": "אמורא de Babylonie, successeur de רבה à la tête de פומבדיתא. Célèbre pour sa connaissance des traditions (« סיני »)." },
-    { "id": "ri", "name": "ר״י", "full": "רבי יצחק בן שמואל (הזקן) מדנפייר", "type": "ראשון – בעל התוספות", "description": "Tossafiste majeur (France, XIIe s.), arrière-petit-fils de רש״י. « ואור״י » = ואומר ר״י." },
-    { "id": "rach", "name": "ר״ח", "full": "רבינו חננאל בן חושיאל", "type": "ראשון", "description": "Kairouan (Afrique du Nord), XIe s. Commentaire sur le תלמוד souvent cité par les תוספות." },
-    { "id": "bahag", "name": "בה״ג", "full": "הלכות גדולות", "type": "גאונים", "description": "Code halakhique de l'époque des גאונים (attribué en général à ר׳ שמעון קיירא). Le תוספות écrit « ה״ג »." },
-    { "id": "rashi", "name": "רש״י", "full": "רבי שלמה יצחקי", "type": "ראשון", "description": "Les תוספות l'appellent souvent « הקונטרס » (= son commentaire)." },
-    { "id": "rav-nachman", "name": "רב נחמן", "full": "רב נחמן בר יעקב", "type": "אמורא", "description": "Règle : « הלכה כרב נחמן בדיני » — on suit son avis en droit monétaire." },
-    { "id": "rav-huna", "name": "רב הונא", "type": "אמורא", "description": "En ב״מ מג. : le changeur qui peut utiliser l'argent est responsable même des אונסין." },
-    { "id": "r-tarfon", "name": "ר׳ טרפון", "type": "תנא", "description": "En ב״מ כח: : le trouveur peut utiliser l'argent de la vente de l'objet, donc il est responsable s'il est perdu." },
-    { "id": "r-akiva", "name": "ר׳ עקיבא", "type": "תנא", "description": "En ב״מ כח: : il ne doit pas utiliser l'argent, donc il n'est pas responsable. En ב״מ פא: : « אבד המשכון – אבדו מעותיך »." },
-    { "id": "r-eliezer", "name": "ר׳ אליעזר", "full": "ר׳ אליעזר בן הורקנוס", "type": "תנא", "description": "En ב״מ פא: : le prêteur dont le gage est perdu « ישבע ויטול מעותיו ». Appelé « שמותי » ; on ne suit pas sa הלכה. Abrégé « ר״א » dans les segments s34, s35 et s37." },
-    { "id": "r-elazar", "name": "ר׳ אלעזר", "full": "ר׳ אלעזר בן פדת", "type": "אמורא", "description": "« הכל צריכין דעת בעלים חוץ מהשבת אבידה ». Abrégé « ר״א » dans le segment s15 (« דקרא כדר״א אתי ») : à ne pas confondre avec ר׳ אליעזר." },
-    { "id": "shmuel", "name": "שמואל", "type": "אמורא", "description": "« אבד קתא דמגלא – אבדו אלפא זוזי » : un gage, même de faible valeur, est accepté comme garantie de toute la dette." },
-    { "id": "rashbag", "name": "רשב״ג", "full": "רבן שמעון בן גמליאל", "type": "תנא", "description": "Règle : là où il enseigne dans la משנה, la הלכה est comme lui, sauf trois cas (ערב, צידן, ראיה אחרונה)." },
-    { "id": "rashbam", "name": "רשב״ם", "full": "רבי שמואל בן מאיר", "type": "ראשון", "description": "Petit-fils de רש״י ; commente בבא בתרא à partir de la page כט." },
-    { "id": "rav-tzemach", "name": "רב צמח גאון", "type": "גאון", "description": "Selon le תוספות de ב״מ כט., ce sont ses תשובות qui limitent « הלכה כרבה » aux sujets de בבא בתרא (les « יש מפרשים »)." },
-    { "id": "ran", "name": "ר״ן", "full": "רבינו נסים", "type": "ראשון", "description": "Commentaire de référence sur נדרים." },
-    { "id": "rambam", "name": "רמב״ם", "type": "ראשון", "description": "משנה תורה." },
-    { "id": "rosh", "name": "רא״ש", "type": "ראשון", "description": "Cité par le רמ״א : suit רבה." },
-    { "id": "rema", "name": "רמ״א", "type": "אחרון", "description": "Gloses sur le שולחן ערוך." }
+    {
+      "id": "rabba",
+      "name": "רבה",
+      "full": "רבה בר נחמני",
+      "type": "אמורא",
+      "description": "אמורא de Babylonie (3e génération), ראש ישיבה à פומבדיתא, collègue de רב יוסף. Dans la transcription automatique du cours, il est souvent écrit « רבא » par erreur : il s'agit de רבה.",
+      "era": "אמוראי בבל, דור שלישי",
+      "places": [
+        "פומבדיתא"
+      ],
+      "aliases": [
+        "רבה",
+        "רבה בר נחמני"
+      ],
+      "confusions": [
+        {
+          "he": "רבא",
+          "note": "Autre אמורא (רבא, דור רביעי). La transcription automatique du cours écrit souvent רבא pour רבה."
+        }
+      ],
+      "colleagues": [
+        "rav-yosef"
+      ],
+      "links": {
+        "wikipedia_he": "https://he.wikipedia.org/wiki/רבה_בר_נחמני",
+        "sefaria": "https://www.sefaria.org/topics/rabbah-b-nachmani"
+      },
+      "segmentIds": [
+        "s10",
+        "s15",
+        "s16",
+        "s18",
+        "s19",
+        "s20",
+        "s22",
+        "s23",
+        "s24",
+        "s27",
+        "s30",
+        "s34",
+        "s35",
+        "s36",
+        "s37",
+        "s39",
+        "s41"
+      ],
+      "summary": {
+        "essentiel": "אמורא de Babylonie (3e génération), ראש ישיבה à פומבדיתא, collègue de רב יוסף."
+      }
+    },
+    {
+      "id": "rav-yosef",
+      "name": "רב יוסף",
+      "full": "רב יוסף בר חייא",
+      "type": "אמורא",
+      "description": "אמורא de Babylonie, successeur de רבה à la tête de פומבדיתא. Célèbre pour sa connaissance des traditions (« סיני »).",
+      "era": "אמוראי בבל, דור שלישי",
+      "places": [
+        "פומבדיתא"
+      ],
+      "aliases": [
+        "רב יוסף",
+        "רב יוסף בר חייא"
+      ],
+      "colleagues": [
+        "rabba"
+      ],
+      "links": {
+        "wikipedia_he": "https://he.wikipedia.org/wiki/רב_יוסף",
+        "wikipedia_fr": "https://fr.wikipedia.org/wiki/Rav_Yossef",
+        "sefaria": "https://www.sefaria.org/topics/rav-yosef-b-chiyya"
+      },
+      "segmentIds": [
+        "s7",
+        "s8",
+        "s9",
+        "s10",
+        "s12",
+        "s13",
+        "s15",
+        "s18",
+        "s19",
+        "s20",
+        "s31",
+        "s34",
+        "s35",
+        "s38",
+        "s39"
+      ],
+      "summary": {
+        "essentiel": "אמורא de Babylonie, successeur de רבה à la tête de פומבדיתא."
+      }
+    },
+    {
+      "id": "ri",
+      "name": "ר״י",
+      "full": "רבי יצחק בן שמואל (הזקן) מדנפייר",
+      "type": "ראשון – בעל התוספות",
+      "description": "Tossafiste majeur (France, XIIe s.), arrière-petit-fils de רש״י. « ואור״י » = ואומר ר״י.",
+      "era": "בעלי התוספות, המאה ה־12",
+      "places": [
+        "דנפייר"
+      ],
+      "aliases": [
+        "ר״י",
+        "ר״י הזקן"
+      ],
+      "links": {
+        "wikipedia_he": "https://he.wikipedia.org/wiki/ר%22י_הזקן",
+        "wikipedia_fr": "https://fr.wikipedia.org/wiki/Isaac_ben_Samuel_de_Dampierre",
+        "sefaria": "https://www.sefaria.org/topics/isaac-ben-samuel-of-dampierre"
+      },
+      "segmentIds": [
+        "s10",
+        "s20"
+      ],
+      "summary": {
+        "essentiel": "Tossafiste majeur (France, XIIe s.), arrière-petit-fils de רש״י."
+      }
+    },
+    {
+      "id": "rach",
+      "name": "ר״ח",
+      "full": "רבינו חננאל בן חושיאל",
+      "type": "ראשון",
+      "description": "Kairouan (Afrique du Nord), XIe s. Commentaire sur le תלמוד souvent cité par les תוספות.",
+      "era": "ראשונים, המאה ה־11",
+      "places": [
+        "קירואן"
+      ],
+      "aliases": [
+        "ר״ח",
+        "רבינו חננאל"
+      ],
+      "links": {
+        "wikipedia_he": "https://he.wikipedia.org/wiki/רבנו_חננאל",
+        "wikipedia_fr": "https://fr.wikipedia.org/wiki/Hananel_ben_Houshiel",
+        "sefaria": "https://www.sefaria.org/topics/rabeinu-chananel"
+      },
+      "segmentIds": [
+        "s8"
+      ],
+      "summary": {
+        "essentiel": "Kairouan (Afrique du Nord), XIe s."
+      }
+    },
+    {
+      "id": "bahag",
+      "name": "בה״ג",
+      "full": "הלכות גדולות",
+      "type": "גאונים",
+      "description": "Code halakhique de l'époque des גאונים (attribué en général à ר׳ שמעון קיירא). Le תוספות écrit « ה״ג ».",
+      "era": "תקופת הגאונים",
+      "aliases": [
+        "בה״ג",
+        "ה״ג",
+        "הלכות גדולות"
+      ],
+      "links": {
+        "wikipedia_he": "https://he.wikipedia.org/wiki/הלכות_גדולות"
+      },
+      "segmentIds": [
+        "s8"
+      ],
+      "summary": {
+        "essentiel": "Code halakhique de l'époque des גאונים (attribué en général à ר׳ שמעון קיירא)."
+      }
+    },
+    {
+      "id": "rashi",
+      "name": "רש״י",
+      "full": "רבי שלמה יצחקי",
+      "type": "ראשון",
+      "description": "Les תוספות l'appellent souvent « הקונטרס » (= son commentaire).",
+      "era": "ראשונים",
+      "places": [
+        "טרואה"
+      ],
+      "aliases": [
+        "רש״י",
+        "קונטרס"
+      ],
+      "dates": {
+        "from": 1040,
+        "to": 1105
+      },
+      "students": [
+        "rashbam"
+      ],
+      "links": {
+        "wikipedia_he": "https://he.wikipedia.org/wiki/רש%22י",
+        "wikipedia_fr": "https://fr.wikipedia.org/wiki/Rachi",
+        "sefaria": "https://www.sefaria.org/topics/rashi"
+      },
+      "segmentIds": [
+        "s32"
+      ],
+      "summary": {
+        "essentiel": "Les תוספות l'appellent souvent « הקונטרס » (= son commentaire)."
+      }
+    },
+    {
+      "id": "rav-nachman",
+      "name": "רב נחמן",
+      "full": "רב נחמן בר יעקב",
+      "type": "אמורא",
+      "description": "Règle : « הלכה כרב נחמן בדיני » — on suit son avis en droit monétaire.",
+      "places": [
+        "נהרדעא"
+      ],
+      "aliases": [
+        "רב נחמן",
+        "רב נחמן בר יעקב"
+      ],
+      "links": {
+        "wikipedia_he": "https://he.wikipedia.org/wiki/רב_נחמן",
+        "sefaria": "https://www.sefaria.org/topics/rav-nachman-b-yaakov"
+      },
+      "segmentIds": [
+        "s25",
+        "s28"
+      ],
+      "summary": {
+        "essentiel": "Règle : « הלכה כרב נחמן בדיני » — on suit son avis en droit monétaire."
+      }
+    },
+    {
+      "id": "rav-huna",
+      "name": "רב הונא",
+      "type": "אמורא",
+      "description": "En ב״מ מג. : le changeur qui peut utiliser l'argent est responsable même des אונסין.",
+      "era": "אמוראי בבל, דור שני",
+      "places": [
+        "סורא"
+      ],
+      "aliases": [
+        "רב הונא"
+      ],
+      "links": {
+        "wikipedia_he": "https://he.wikipedia.org/wiki/רב_הונא",
+        "wikipedia_fr": "https://fr.wikipedia.org/wiki/Rav_Houna",
+        "sefaria": "https://www.sefaria.org/topics/rav-huna"
+      },
+      "segmentIds": [],
+      "summary": {
+        "essentiel": "En ב״מ מג. : le changeur qui peut utiliser l'argent est responsable même des אונסין."
+      }
+    },
+    {
+      "id": "r-tarfon",
+      "name": "ר׳ טרפון",
+      "type": "תנא",
+      "description": "En ב״מ כח: : le trouveur peut utiliser l'argent de la vente de l'objet, donc il est responsable s'il est perdu.",
+      "places": [
+        "לוד"
+      ],
+      "aliases": [
+        "ר׳ טרפון"
+      ],
+      "colleagues": [
+        "r-akiva"
+      ],
+      "links": {
+        "wikipedia_he": "https://he.wikipedia.org/wiki/רבי_טרפון",
+        "wikipedia_fr": "https://fr.wikipedia.org/wiki/Rabbi_Tarfon",
+        "sefaria": "https://www.sefaria.org/topics/rabbi-tarfon"
+      },
+      "segmentIds": [
+        "s27",
+        "s36"
+      ],
+      "summary": {
+        "essentiel": "En ב״מ כח: : le trouveur peut utiliser l'argent de la vente de l'objet, donc il est responsable s'il est perdu."
+      }
+    },
+    {
+      "id": "r-akiva",
+      "name": "ר׳ עקיבא",
+      "type": "תנא",
+      "description": "En ב״מ כח: : il ne doit pas utiliser l'argent, donc il n'est pas responsable. En ב״מ פא: : « אבד המשכון – אבדו מעותיך ».",
+      "era": "תנאים, דור שלישי",
+      "places": [
+        "בני ברק"
+      ],
+      "aliases": [
+        "ר׳ עקיבא",
+        "ר״ע"
+      ],
+      "teachers": [
+        "r-eliezer"
+      ],
+      "colleagues": [
+        "r-tarfon",
+        "r-eliezer"
+      ],
+      "links": {
+        "wikipedia_he": "https://he.wikipedia.org/wiki/רבי_עקיבא",
+        "wikipedia_fr": "https://fr.wikipedia.org/wiki/Rabbi_Akiva",
+        "sefaria": "https://www.sefaria.org/topics/rabbi-akiva"
+      },
+      "segmentIds": [
+        "s35",
+        "s36",
+        "s37",
+        "s39"
+      ],
+      "summary": {
+        "essentiel": "En ב״מ כח: : il ne doit pas utiliser l'argent, donc il n'est pas responsable."
+      }
+    },
+    {
+      "id": "r-eliezer",
+      "name": "ר׳ אליעזר",
+      "full": "ר׳ אליעזר בן הורקנוס",
+      "type": "תנא",
+      "description": "En ב״מ פא: : le prêteur dont le gage est perdu « ישבע ויטול מעותיו ». Appelé « שמותי » ; on ne suit pas sa הלכה. Abrégé « ר״א » dans les segments s34, s35 et s37.",
+      "era": "תנאים, דור שני",
+      "places": [
+        "לוד"
+      ],
+      "aliases": [
+        "ר׳ אליעזר",
+        "ר׳ אליעזר בן הורקנוס",
+        "ר׳ אליעזר הגדול"
+      ],
+      "students": [
+        "r-akiva"
+      ],
+      "links": {
+        "wikipedia_he": "https://he.wikipedia.org/wiki/רבי_אליעזר_בן_הורקנוס",
+        "wikipedia_fr": "https://fr.wikipedia.org/wiki/Eliezer_ben_Hyrcanos",
+        "sefaria": "https://www.sefaria.org/topics/rabbi-eliezer-b-hyrcanus"
+      },
+      "segmentIds": [
+        "s30",
+        "s31",
+        "s34",
+        "s35",
+        "s37",
+        "s38"
+      ],
+      "summary": {
+        "essentiel": "En ב״מ פא: : le prêteur dont le gage est perdu « ישבע ויטול מעותיו »."
+      }
+    },
+    {
+      "id": "r-elazar",
+      "name": "ר׳ אלעזר",
+      "full": "ר׳ אלעזר בן פדת",
+      "type": "אמורא",
+      "description": "« הכל צריכין דעת בעלים חוץ מהשבת אבידה ». Abrégé « ר״א » dans le segment s15 (« דקרא כדר״א אתי ») : à ne pas confondre avec ר׳ אליעזר.",
+      "era": "אמוראי ארץ ישראל",
+      "aliases": [
+        "ר׳ אלעזר",
+        "ר׳ אלעזר בן פדת"
+      ],
+      "links": {
+        "wikipedia_he": "https://he.wikipedia.org/wiki/רבי_אלעזר_בן_פדת",
+        "wikipedia_fr": "https://fr.wikipedia.org/wiki/Eléazar_ben_Pedat",
+        "sefaria": "https://www.sefaria.org/topics/rabbi-elazar-b-pedat"
+      },
+      "segmentIds": [
+        "s13",
+        "s15"
+      ],
+      "summary": {
+        "essentiel": "« הכל צריכין דעת בעלים חוץ מהשבת אבידה »."
+      }
+    },
+    {
+      "id": "shmuel",
+      "name": "שמואל",
+      "type": "אמורא",
+      "description": "« אבד קתא דמגלא – אבדו אלפא זוזי » : un gage, même de faible valeur, est accepté comme garantie de toute la dette.",
+      "era": "אמוראי בבל, דור ראשון",
+      "places": [
+        "נהרדעא"
+      ],
+      "aliases": [
+        "שמואל",
+        "מר שמואל"
+      ],
+      "links": {
+        "wikipedia_he": "https://he.wikipedia.org/wiki/שמואל_(אמורא)",
+        "wikipedia_fr": "https://fr.wikipedia.org/wiki/Shmouel",
+        "sefaria": "https://www.sefaria.org/topics/shmuel-(amora)"
+      },
+      "segmentIds": [
+        "s37",
+        "s38",
+        "s39"
+      ],
+      "summary": {
+        "essentiel": "« אבד קתא דמגלא – אבדו אלפא זוזי » : un gage, même de faible valeur, est accepté comme garantie de toute la dette."
+      }
+    },
+    {
+      "id": "rashbag",
+      "name": "רשב״ג",
+      "full": "רבן שמעון בן גמליאל",
+      "type": "תנא",
+      "description": "Règle : là où il enseigne dans la משנה, la הלכה est comme lui, sauf trois cas (ערב, צידן, ראיה אחרונה).",
+      "era": "תנאים",
+      "aliases": [
+        "רשב״ג",
+        "רבן שמעון בן גמליאל"
+      ],
+      "links": {
+        "wikipedia_he": "https://he.wikipedia.org/wiki/רבן_שמעון_בן_גמליאל",
+        "wikipedia_fr": "https://fr.wikipedia.org/wiki/Shimon_ben_Gamliel_II",
+        "sefaria": "https://www.sefaria.org/topics/rabban-shimon-b-gamliel-(ii)"
+      },
+      "segmentIds": [
+        "s22",
+        "s24"
+      ],
+      "summary": {
+        "essentiel": "Règle : là où il enseigne dans la משנה, la הלכה est comme lui, sauf trois cas (ערב, צידן, ראיה אחרונה)."
+      }
+    },
+    {
+      "id": "rashbam",
+      "name": "רשב״ם",
+      "full": "רבי שמואל בן מאיר",
+      "type": "ראשון",
+      "description": "Petit-fils de רש״י ; commente בבא בתרא à partir de la page כט.",
+      "era": "ראשונים, בעלי התוספות",
+      "aliases": [
+        "רשב״ם"
+      ],
+      "dates": {
+        "from": 1085,
+        "to": 1158,
+        "approx": true
+      },
+      "teachers": [
+        "rashi"
+      ],
+      "links": {
+        "wikipedia_he": "https://he.wikipedia.org/wiki/רשב%22ם",
+        "wikipedia_fr": "https://fr.wikipedia.org/wiki/Rashbam",
+        "sefaria": "https://www.sefaria.org/topics/rashbam"
+      },
+      "segmentIds": [],
+      "summary": {
+        "essentiel": "Petit-fils de רש״י ; commente בבא בתרא à partir de la page כט."
+      }
+    },
+    {
+      "id": "rav-tzemach",
+      "name": "רב צמח גאון",
+      "type": "גאון",
+      "description": "Selon le תוספות de ב״מ כט., ce sont ses תשובות qui limitent « הלכה כרבה » aux sujets de בבא בתרא (les « יש מפרשים »).",
+      "aliases": [
+        "רב צמח גאון"
+      ],
+      "segmentIds": [],
+      "summary": {
+        "essentiel": "Selon le תוספות de ב״מ כט., ce sont ses תשובות qui limitent « הלכה כרבה » aux sujets de בבא בתרא (les « יש מפרשים »)."
+      }
+    },
+    {
+      "id": "ran",
+      "name": "ר״ן",
+      "full": "רבינו נסים",
+      "type": "ראשון",
+      "description": "Commentaire de référence sur נדרים.",
+      "era": "ראשונים",
+      "aliases": [
+        "ר״ן"
+      ],
+      "links": {
+        "wikipedia_he": "https://he.wikipedia.org/wiki/ר%22ן",
+        "wikipedia_fr": "https://fr.wikipedia.org/wiki/Nissim_Gerondi",
+        "sefaria": "https://www.sefaria.org/topics/nissim-of-gerona-(ran)"
+      },
+      "segmentIds": [],
+      "summary": {
+        "essentiel": "Commentaire de référence sur נדרים."
+      }
+    },
+    {
+      "id": "rambam",
+      "name": "רמב״ם",
+      "type": "ראשון",
+      "description": "משנה תורה.",
+      "aliases": [
+        "רמב״ם"
+      ],
+      "dates": {
+        "from": 1138,
+        "to": 1204
+      },
+      "links": {
+        "wikipedia_he": "https://he.wikipedia.org/wiki/רמב%22ם",
+        "wikipedia_fr": "https://fr.wikipedia.org/wiki/Moïse_Maïmonide",
+        "sefaria": "https://www.sefaria.org/topics/rambam"
+      },
+      "segmentIds": [],
+      "summary": {
+        "essentiel": "משנה תורה."
+      }
+    },
+    {
+      "id": "rosh",
+      "name": "רא״ש",
+      "type": "ראשון",
+      "description": "Cité par le רמ״א : suit רבה.",
+      "places": [
+        "טולדו"
+      ],
+      "aliases": [
+        "רא״ש"
+      ],
+      "dates": {
+        "from": 1250,
+        "to": 1327,
+        "approx": true
+      },
+      "links": {
+        "wikipedia_he": "https://he.wikipedia.org/wiki/רא%22ש",
+        "wikipedia_fr": "https://fr.wikipedia.org/wiki/Asher_ben_Yehiel",
+        "sefaria": "https://www.sefaria.org/topics/rosh"
+      },
+      "segmentIds": [],
+      "summary": {
+        "essentiel": "Cité par le רמ״א : suit רבה."
+      }
+    },
+    {
+      "id": "rema",
+      "name": "רמ״א",
+      "type": "אחרון",
+      "description": "Gloses sur le שולחן ערוך.",
+      "places": [
+        "קרקוב"
+      ],
+      "aliases": [
+        "רמ״א"
+      ],
+      "dates": {
+        "from": 1530,
+        "to": 1572
+      },
+      "links": {
+        "wikipedia_he": "https://he.wikipedia.org/wiki/משה_איסרליש",
+        "wikipedia_fr": "https://fr.wikipedia.org/wiki/Rema",
+        "sefaria": "https://www.sefaria.org/topics/moses-isserles-(rema)"
+      },
+      "segmentIds": [],
+      "summary": {
+        "essentiel": "Gloses sur le שולחן ערוך."
+      }
+    }
   ],
-
   "structure": [
     {
       "id": "I",
@@ -109,14 +704,49 @@
         "standard": "Le תוספות pose la règle (seulement pendant l'occupation active), puis l'appuie par trois arguments : le פסוק de סוכה, une סברא (les תפילין), et la Guemara de נדרים (« פרוטה דרב יוסף לא שכיח »).",
         "approfondi": "Cette définition prépare toute la suite : si l'avantage est rare, on peut discuter s'il suffit à faire un שומר שכר (II.A). Le même raisonnement figure dans תוספות סוכה כה. ד״ה שלוחי מצוה et dans תוספות ב״מ כט. ד״ה והוי."
       },
-      "segmentIds": ["s1", "s2", "s3", "s4"],
+      "segmentIds": [
+        "s1",
+        "s2",
+        "s3",
+        "s4"
+      ],
       "children": [
-        { "id": "I.1", "number": "1", "title": "Preuve du פסוק : סוכה כה.", "role": "preuve", "segmentIds": ["s5"],
-          "summary": { "essentiel": "Le פסוק ne dispense que si l'on ne peut pas faire les deux." } },
-        { "id": "I.2", "number": "2", "title": "Preuve de סברא : les תפילין", "role": "preuve", "segmentIds": ["s6"],
-          "summary": { "essentiel": "Sinon, celui qui porte des תפילין serait dispensé de toutes les מצוות." } },
-        { "id": "I.3", "number": "3", "title": "Preuve de נדרים לג: : « פרוטה דרב יוסף לא שכיח »", "role": "preuve", "segmentIds": ["s7"],
-          "summary": { "essentiel": "La Guemara dit que ce cas est rare ; il ne le serait pas si la dispense durait tant que l'objet est à la maison." } }
+        {
+          "id": "I.1",
+          "number": "1",
+          "title": "Preuve du פסוק : סוכה כה.",
+          "role": "preuve",
+          "segmentIds": [
+            "s5"
+          ],
+          "summary": {
+            "essentiel": "Le פסוק ne dispense que si l'on ne peut pas faire les deux."
+          }
+        },
+        {
+          "id": "I.2",
+          "number": "2",
+          "title": "Preuve de סברא : les תפילין",
+          "role": "preuve",
+          "segmentIds": [
+            "s6"
+          ],
+          "summary": {
+            "essentiel": "Sinon, celui qui porte des תפילין serait dispensé de toutes les מצוות."
+          }
+        },
+        {
+          "id": "I.3",
+          "number": "3",
+          "title": "Preuve de נדרים לג: : « פרוטה דרב יוסף לא שכיח »",
+          "role": "preuve",
+          "segmentIds": [
+            "s7"
+          ],
+          "summary": {
+            "essentiel": "La Guemara dit que ce cas est rare ; il ne le serait pas si la dispense durait tant que l'objet est à la maison."
+          }
+        }
       ],
       "conclusion": "Donc : seulement quand il s'occupe activement de l'objet."
     },
@@ -130,26 +760,78 @@
         "standard": "Deux preuves possibles pour רב יוסף sont examinées et rejetées par ר״י. (A) נדרים : tout le monde reconnaît la « פרוטה דרב יוסף ». Réponse : רבה aussi reconnaît la dispense ; il nie seulement qu'elle fasse un שומר שכר. (B) Notre סוגיא (נז.) et ב״מ לא. : on lit le פסוק « תשיבם » comme רב יוסף (une גינה gardée). Réponse : רבה accepte cette lecture ; son avis n'a jamais reposé sur le פסוק.",
         "approfondi": "Les deux rejets ont la même forme : ce qui semble un accord général avec רב יוסף porte sur un point que רבה admet aussi. La controverse se réduit à une סברא : un avantage rare et accessoire vaut-il un salaire ?"
       },
-      "segmentIds": ["s8"],
+      "segmentIds": [
+        "s8"
+      ],
       "children": [
         {
-          "id": "II.A", "number": "A", "title": "1re preuve : נדרים לג: – « כ״ע אית להו פרוטה דרב יוסף »", "role": "preuve",
-          "summary": { "essentiel": "Les deux אמוראים de נדרים prennent la פרוטה au sérieux. ר״י : רבה aussi l'admet, mais elle ne fait pas un שומר שכר." },
-          "segmentIds": ["s9"],
+          "id": "II.A",
+          "number": "A",
+          "title": "1re preuve : נדרים לג: – « כ״ע אית להו פרוטה דרב יוסף »",
+          "role": "preuve",
+          "summary": {
+            "essentiel": "Les deux אמוראים de נדרים prennent la פרוטה au sérieux. ר״י : רבה aussi l'admet, mais elle ne fait pas un שומר שכר."
+          },
+          "segmentIds": [
+            "s9"
+          ],
           "children": [
-            { "id": "II.A.r", "number": "↳", "title": "Rejet de ר״י", "role": "dechiya", "segmentIds": ["s10", "s11"],
-              "summary": { "essentiel": "Pour un נדר, tout avantage est interdit ; pour devenir שומר שכר, un avantage rare ne suffit pas." } }
+            {
+              "id": "II.A.r",
+              "number": "↳",
+              "title": "Rejet de ר״י",
+              "role": "dechiya",
+              "segmentIds": [
+                "s10",
+                "s11"
+              ],
+              "summary": {
+                "essentiel": "Pour un נדר, tout avantage est interdit ; pour devenir שומר שכר, un avantage rare ne suffit pas."
+              }
+            }
           ]
         },
         {
-          "id": "II.B", "number": "B", "title": "2e preuve : notre סוגיא (נז.) et ב״מ לא. – « לגינתו המשתמרת »", "role": "preuve",
-          "summary": { "essentiel": "La Guemara adopte la lecture de רב יוסף du פסוק. ר״י : רבה l'a acceptée ; il ne s'appuyait que sur une סברא." },
-          "segmentIds": ["s12", "s13", "s14"],
+          "id": "II.B",
+          "number": "B",
+          "title": "2e preuve : notre סוגיא (נז.) et ב״מ לא. – « לגינתו המשתמרת »",
+          "role": "preuve",
+          "summary": {
+            "essentiel": "La Guemara adopte la lecture de רב יוסף du פסוק. ר״י : רבה l'a acceptée ; il ne s'appuyait que sur une סברא."
+          },
+          "segmentIds": [
+            "s12",
+            "s13",
+            "s14"
+          ],
           "children": [
-            { "id": "II.B.r", "number": "↳", "title": "Rejet : רבה a accepté la lecture du פסוק ; ce n'était qu'une אסמכתא", "role": "dechiya", "segmentIds": ["s15", "s16", "s17", "s18"],
-              "summary": { "essentiel": "La raison de רבה est « מאי הנאה קא מטי ליה ». Ils ne divergent que sur une סברא." } },
-            { "id": "II.B.e", "number": "↳", "title": "Explication de ב״מ לא. selon les deux avis", "role": "explication", "segmentIds": ["s19"],
-              "summary": { "essentiel": "« Gardée » = gardée selon le niveau de chacun : contre la פשיעה pour רבה, contre le vol et la perte pour רב יוסף." } }
+            {
+              "id": "II.B.r",
+              "number": "↳",
+              "title": "Rejet : רבה a accepté la lecture du פסוק ; ce n'était qu'une אסמכתא",
+              "role": "dechiya",
+              "segmentIds": [
+                "s15",
+                "s16",
+                "s17",
+                "s18"
+              ],
+              "summary": {
+                "essentiel": "La raison de רבה est « מאי הנאה קא מטי ליה ». Ils ne divergent que sur une סברא."
+              }
+            },
+            {
+              "id": "II.B.e",
+              "number": "↳",
+              "title": "Explication de ב״מ לא. selon les deux avis",
+              "role": "explication",
+              "segmentIds": [
+                "s19"
+              ],
+              "summary": {
+                "essentiel": "« Gardée » = gardée selon le niveau de chacun : contre la פשיעה pour רבה, contre le vol et la perte pour רב יוסף."
+              }
+            }
           ]
         }
       ]
@@ -167,39 +849,142 @@
       "segmentIds": [],
       "children": [
         {
-          "id": "III.1", "number": "1", "title": "Règle : « הלכה כרבה… בר משדה ענין ומחצה » (ב״ב קמג:)", "role": "preuve",
-          "segmentIds": ["s20"],
-          "summary": { "essentiel": "Partout la הלכה est comme רבה contre רב יוסף, sauf dans trois cas." },
+          "id": "III.1",
+          "number": "1",
+          "title": "Règle : « הלכה כרבה… בר משדה ענין ומחצה » (ב״ב קמג:)",
+          "role": "preuve",
+          "segmentIds": [
+            "s20"
+          ],
+          "summary": {
+            "essentiel": "Partout la הלכה est comme רבה contre רב יוסף, sauf dans trois cas."
+          },
           "children": [
-            { "id": "III.1.a", "number": "a", "title": "Objection : la règle ne vaudrait qu'en בבא בתרא (יש מפרשים)", "role": "kushya", "segmentIds": ["s21"],
-              "summary": { "essentiel": "Certains limitent la règle aux sujets de בבא בתרא." } },
-            { "id": "III.1.b", "number": "b", "title": "Rejet : גיטין עד: (« ובהא אין הלכה כרשב״ג »)", "role": "dechiya", "segmentIds": ["s22"],
-              "summary": { "essentiel": "En גיטין (hors בבא בתרא), la Guemara applique la règle sans restriction ; elle ne restreint que pour רשב״ג (« ובהא »)." } },
-            { "id": "III.1.c", "number": "c", "title": "Objection : c'était peut-être une tradition propre à ce cas", "role": "kushya", "segmentIds": ["s23"],
-              "summary": { "essentiel": "On savait peut-être que, dans ce cas précis, la הלכה est comme רבה." } },
-            { "id": "III.1.d", "number": "d", "title": "Rejet : elle aurait dit « בהא » aussi pour רבה", "role": "dechiya", "segmentIds": ["s24"],
-              "summary": { "essentiel": "La Guemara aurait écrit « בהא הלכתא כרבה », comme pour רשב״ג." } }
+            {
+              "id": "III.1.a",
+              "number": "a",
+              "title": "Objection : la règle ne vaudrait qu'en בבא בתרא (יש מפרשים)",
+              "role": "kushya",
+              "segmentIds": [
+                "s21"
+              ],
+              "summary": {
+                "essentiel": "Certains limitent la règle aux sujets de בבא בתרא."
+              }
+            },
+            {
+              "id": "III.1.b",
+              "number": "b",
+              "title": "Rejet : גיטין עד: (« ובהא אין הלכה כרשב״ג »)",
+              "role": "dechiya",
+              "segmentIds": [
+                "s22"
+              ],
+              "summary": {
+                "essentiel": "En גיטין (hors בבא בתרא), la Guemara applique la règle sans restriction ; elle ne restreint que pour רשב״ג (« ובהא »)."
+              }
+            },
+            {
+              "id": "III.1.c",
+              "number": "c",
+              "title": "Objection : c'était peut-être une tradition propre à ce cas",
+              "role": "kushya",
+              "segmentIds": [
+                "s23"
+              ],
+              "summary": {
+                "essentiel": "On savait peut-être que, dans ce cas précis, la הלכה est comme רבה."
+              }
+            },
+            {
+              "id": "III.1.d",
+              "number": "d",
+              "title": "Rejet : elle aurait dit « בהא » aussi pour רבה",
+              "role": "dechiya",
+              "segmentIds": [
+                "s24"
+              ],
+              "summary": {
+                "essentiel": "La Guemara aurait écrit « בהא הלכתא כרבה », comme pour רשב״ג."
+              }
+            }
           ]
         },
         {
-          "id": "III.2", "number": "2", "title": "רב נחמן (ב״מ מג.) et ר׳ טרפון (ב״מ כט.)", "role": "preuve",
-          "summary": { "essentiel": "Pour רב נחמן, la permission d'utiliser ne fait qu'un שומר שכר. Seul רבה lit ainsi ר׳ טרפון ; pour רב יוסף, ר׳ טרפון en ferait un שואל." },
+          "id": "III.2",
+          "number": "2",
+          "title": "רב נחמן (ב״מ מג.) et ר׳ טרפון (ב״מ כט.)",
+          "role": "preuve",
+          "summary": {
+            "essentiel": "Pour רב נחמן, la permission d'utiliser ne fait qu'un שומר שכר. Seul רבה lit ainsi ר׳ טרפון ; pour רב יוסף, ר׳ טרפון en ferait un שואל."
+          },
           "segmentIds": [],
           "children": [
-            { "id": "III.2.a", "number": "i", "title": "Le changeur (ב״מ מג.) : רב נחמן – « נאנסו לא »", "role": "preuve", "segmentIds": ["s25", "s26"],
-              "summary": { "essentiel": "Le changeur qui peut utiliser l'argent n'est que שומר שכר (et la הלכה est comme רב נחמן en דינים)." } },
-            { "id": "III.2.b", "number": "ii", "title": "Donc ר׳ טרפון (ב״מ כט.) : seulement שומר שכר, comme l'explique רבה", "role": "preuve", "segmentIds": ["s27"],
-              "summary": { "essentiel": "Le trouveur autorisé à utiliser l'argent de la vente devient שומר שכר, pas שואל. C'est la lecture de רבה." } },
-            { "id": "III.2.c", "number": "iii", "title": "Objection : deux raisons ensemble feraient un שואל", "role": "kushya", "segmentIds": ["s28"],
-              "summary": { "essentiel": "Peut-être que là, déjà שומר שכר comme gardien d'objet perdu, la permission d'utiliser le fait monter au niveau de שואל." } },
-            { "id": "III.2.d", "number": "iv", "title": "Rejet : deux raisons de שומר שכר ne font pas un שואל", "role": "dechiya", "segmentIds": ["s29"],
-              "summary": { "essentiel": "Ajouter un deuxième « salaire » ne change pas la nature : il reste שומר שכר." } }
+            {
+              "id": "III.2.a",
+              "number": "i",
+              "title": "Le changeur (ב״מ מג.) : רב נחמן – « נאנסו לא »",
+              "role": "preuve",
+              "segmentIds": [
+                "s25",
+                "s26"
+              ],
+              "summary": {
+                "essentiel": "Le changeur qui peut utiliser l'argent n'est que שומר שכר (et la הלכה est comme רב נחמן en דינים)."
+              }
+            },
+            {
+              "id": "III.2.b",
+              "number": "ii",
+              "title": "Donc ר׳ טרפון (ב״מ כט.) : seulement שומר שכר, comme l'explique רבה",
+              "role": "preuve",
+              "segmentIds": [
+                "s27"
+              ],
+              "summary": {
+                "essentiel": "Le trouveur autorisé à utiliser l'argent de la vente devient שומר שכר, pas שואל. C'est la lecture de רבה."
+              }
+            },
+            {
+              "id": "III.2.c",
+              "number": "iii",
+              "title": "Objection : deux raisons ensemble feraient un שואל",
+              "role": "kushya",
+              "segmentIds": [
+                "s28"
+              ],
+              "summary": {
+                "essentiel": "Peut-être que là, déjà שומר שכר comme gardien d'objet perdu, la permission d'utiliser le fait monter au niveau de שואל."
+              }
+            },
+            {
+              "id": "III.2.d",
+              "number": "iv",
+              "title": "Rejet : deux raisons de שומר שכר ne font pas un שואל",
+              "role": "dechiya",
+              "segmentIds": [
+                "s29"
+              ],
+              "summary": {
+                "essentiel": "Ajouter un deuxième « salaire » ne change pas la nature : il reste שומר שכר."
+              }
+            }
           ]
         },
         {
-          "id": "III.3", "number": "3", "title": "« מחוורתא מתניתין דלא כר׳ אליעזר » (ב״מ פא:-פב:)", "role": "preuve",
-          "summary": { "essentiel": "Selon רב יוסף, la משנה aurait pu aller même selon ר׳ אליעזר (prêteur qui n'a pas besoin du gage). La Guemara ne le dit pas : elle suit donc רבה." },
-          "segmentIds": ["s30", "s31", "s32", "s33"]
+          "id": "III.3",
+          "number": "3",
+          "title": "« מחוורתא מתניתין דלא כר׳ אליעזר » (ב״מ פא:-פב:)",
+          "role": "preuve",
+          "summary": {
+            "essentiel": "Selon רב יוסף, la משנה aurait pu aller même selon ר׳ אליעזר (prêteur qui n'a pas besoin du gage). La Guemara ne le dit pas : elle suit donc רבה."
+          },
+          "segmentIds": [
+            "s30",
+            "s31",
+            "s32",
+            "s33"
+          ]
         }
       ]
     },
@@ -215,16 +1000,67 @@
       },
       "segmentIds": [],
       "children": [
-        { "id": "IV.1", "number": "1", "title": "Objection : רבה = ר׳ אליעזר (שמותי)", "role": "kushya", "segmentIds": ["s34"],
-          "summary": { "essentiel": "La Guemara a voulu mettre רבה avec ר׳ אליעזר, dont on ne suit pas la הלכה." } },
-        { "id": "IV.2", "number": "2", "title": "Objection : « רבה ודאי תנאי היא » (lecture de רש״י)", "role": "kushya", "segmentIds": ["s35"],
-          "summary": { "essentiel": "רבה ne pourrait aller qu'avec ר׳ אליעזר, car pour ר׳ עקיבא le prêteur serait sûrement שומר שכר." } },
-        { "id": "IV.3", "number": "3", "title": "Réponse : pour רבה, même ר׳ עקיבא tient שומר חנם (ב״מ כט.)", "role": "terutz", "segmentIds": ["s36"],
-          "summary": { "essentiel": "Si chez ר׳ טרפון (qui permet d'utiliser) on n'est que שומר שכר, chez ר׳ עקיבא (qui interdit) on n'est que שומר חנם." } },
-        { "id": "IV.4", "number": "4", "title": "Donc : pour רבה, la מחלוקת porte sur la règle de שמואל", "role": "terutz", "segmentIds": ["s37"],
-          "summary": { "essentiel": "Tous disent שומר חנם. ר׳ עקיבא suit שמואל (le gage remplace toute la dette), ר׳ אליעזר non." } },
-        { "id": "IV.5", "number": "5", "title": "Pourquoi רב יוסף ne peut pas dire cela", "role": "explication", "segmentIds": ["s38", "s39"],
-          "summary": { "essentiel": "Avec שמואל, ר׳ אליעזר exempterait le prêteur même de la valeur du gage, ce qui contredit רב יוסף (שומר שכר). D'où « לימא דרב יוסף תנאי », et la réponse : צריך למשכון." } }
+        {
+          "id": "IV.1",
+          "number": "1",
+          "title": "Objection : רבה = ר׳ אליעזר (שמותי)",
+          "role": "kushya",
+          "segmentIds": [
+            "s34"
+          ],
+          "summary": {
+            "essentiel": "La Guemara a voulu mettre רבה avec ר׳ אליעזר, dont on ne suit pas la הלכה."
+          }
+        },
+        {
+          "id": "IV.2",
+          "number": "2",
+          "title": "Objection : « רבה ודאי תנאי היא » (lecture de רש״י)",
+          "role": "kushya",
+          "segmentIds": [
+            "s35"
+          ],
+          "summary": {
+            "essentiel": "רבה ne pourrait aller qu'avec ר׳ אליעזר, car pour ר׳ עקיבא le prêteur serait sûrement שומר שכר."
+          }
+        },
+        {
+          "id": "IV.3",
+          "number": "3",
+          "title": "Réponse : pour רבה, même ר׳ עקיבא tient שומר חנם (ב״מ כט.)",
+          "role": "terutz",
+          "segmentIds": [
+            "s36"
+          ],
+          "summary": {
+            "essentiel": "Si chez ר׳ טרפון (qui permet d'utiliser) on n'est que שומר שכר, chez ר׳ עקיבא (qui interdit) on n'est que שומר חנם."
+          }
+        },
+        {
+          "id": "IV.4",
+          "number": "4",
+          "title": "Donc : pour רבה, la מחלוקת porte sur la règle de שמואל",
+          "role": "terutz",
+          "segmentIds": [
+            "s37"
+          ],
+          "summary": {
+            "essentiel": "Tous disent שומר חנם. ר׳ עקיבא suit שמואל (le gage remplace toute la dette), ר׳ אליעזר non."
+          }
+        },
+        {
+          "id": "IV.5",
+          "number": "5",
+          "title": "Pourquoi רב יוסף ne peut pas dire cela",
+          "role": "explication",
+          "segmentIds": [
+            "s38",
+            "s39"
+          ],
+          "summary": {
+            "essentiel": "Avec שמואל, ר׳ אליעזר exempterait le prêteur même de la valeur du gage, ce qui contredit רב יוסף (שומר שכר). D'où « לימא דרב יוסף תנאי », et la réponse : צריך למשכון."
+          }
+        }
       ]
     },
     {
@@ -239,30 +1075,72 @@
       },
       "segmentIds": [],
       "children": [
-        { "id": "V.1", "number": "1", "title": "Difficulté", "role": "kushya", "segmentIds": ["s40"],
-          "summary": { "essentiel": "La משנה implique que le prêteur paie le gage perdu." } },
-        { "id": "V.2", "number": "2", "title": "Réponse : פשיעה", "role": "terutz", "segmentIds": ["s41"],
-          "summary": { "essentiel": "Selon רבה, on parle d'une perte par négligence, dont même un שומר חנם est responsable." } }
+        {
+          "id": "V.1",
+          "number": "1",
+          "title": "Difficulté",
+          "role": "kushya",
+          "segmentIds": [
+            "s40"
+          ],
+          "summary": {
+            "essentiel": "La משנה implique que le prêteur paie le gage perdu."
+          }
+        },
+        {
+          "id": "V.2",
+          "number": "2",
+          "title": "Réponse : פשיעה",
+          "role": "terutz",
+          "segmentIds": [
+            "s41"
+          ],
+          "summary": {
+            "essentiel": "Selon רבה, on parle d'une perte par négligence, dont même un שומר חנם est responsable."
+          }
+        }
       ]
     }
   ],
-
   "structureCorrections": {
     "title": "Différences avec la structure des notes (notes/Structure.md)",
     "items": [
-      { "section": "I", "change": "Partie I conservée : thèse + 3 preuves (סוכה, סברא, נדרים). Précision ajoutée : la phrase « אבל בשביל שאבידה בביתו… » appartient à la thèse, pas aux preuves. Le נדרים de I.3 est la preuve de la définition (« לא שכיח ») ; le נדרים de II.A est une autre utilisation du même passage (« כ״ע אית להו »)." },
-      { "section": "II", "change": "Partie II divisée en deux preuves pour רב יוסף, chacune suivie de son rejet par ר״י : A (נדרים) et B (notre סוגיא / ב״מ לא.). Ajout de la dernière phrase (s19), qui explique comment la Guemara de ב״מ לא. s'accorde avec les deux avis. Correction : en ב״מ לא. on ne cite pas une « Braïta de R. Elazar » ; c'est la Guemara (רבא) qui lit le פסוק comme רב יוסף, en s'appuyant sur le principe de ר׳ אלעזר." },
-      { "section": "III.1", "change": "Ajout de la 2e objection et de son rejet (« ואין לומר דשמא בההיא מילתא… »). Précision : « ובהא אין הלכה כרשב״ג » est la preuve, car la restriction « בהא » n'est dite que pour רשב״ג." },
-      { "section": "III.2", "change": "Ordre logique rétabli : (i) רב נחמן (le changeur : permission d'utiliser = שומר שכר seulement), (ii) donc ר׳ טרפון n'est que שומר שכר, ce qui suppose que sans permission le trouveur est שומר חנם, comme le dit רבה, (iii) objection des « deux raisons », (iv) rejet. Dans les notes, « R. Tarfon dit… il devient שומר שכר » est vrai seulement selon רבה ; selon רב יוסף, il deviendrait שואל." },
-      { "section": "III.3", "change": "Précision : la משנה de האומנין dit שומר שכר. Selon רב יוסף, on aurait pu l'expliquer même selon ר׳ אליעזר, dans le cas où le prêteur n'a pas besoin du gage. Les notes disent « va uniquement d'après R. Akiva » ; la Guemara dit plus précisément « מחוורתא דלא כר׳ אליעזר »." },
-      { "section": "IV", "change": "Partie IV reformulée : c'est une objection en deux points contre רבה, suivie d'une réponse en trois temps. Correction : ce n'est pas « R. Akiva dans Baba Metzia dit שומר חינם » ; c'est que, selon la lecture de רבה en ב״מ כט., ר׳ עקיבא doit tenir שומר חנם. Le 2e point de l'objection (« לימא דרב יוסף תנאי… ומשמע דרבה ודאי תנאי היא », lecture de רש״י) manquait." },
-      { "section": "V", "change": "Partie V ajoutée : la fin du תוספות (la משנה de שבועות et la réponse par la פשיעה) manquait dans les notes. Le cours enregistré s'achève justement sur ce point." }
+      {
+        "section": "I",
+        "change": "Partie I conservée : thèse + 3 preuves (סוכה, סברא, נדרים). Précision ajoutée : la phrase « אבל בשביל שאבידה בביתו… » appartient à la thèse, pas aux preuves. Le נדרים de I.3 est la preuve de la définition (« לא שכיח ») ; le נדרים de II.A est une autre utilisation du même passage (« כ״ע אית להו »)."
+      },
+      {
+        "section": "II",
+        "change": "Partie II divisée en deux preuves pour רב יוסף, chacune suivie de son rejet par ר״י : A (נדרים) et B (notre סוגיא / ב״מ לא.). Ajout de la dernière phrase (s19), qui explique comment la Guemara de ב״מ לא. s'accorde avec les deux avis. Correction : en ב״מ לא. on ne cite pas une « Braïta de R. Elazar » ; c'est la Guemara (רבא) qui lit le פסוק comme רב יוסף, en s'appuyant sur le principe de ר׳ אלעזר."
+      },
+      {
+        "section": "III.1",
+        "change": "Ajout de la 2e objection et de son rejet (« ואין לומר דשמא בההיא מילתא… »). Précision : « ובהא אין הלכה כרשב״ג » est la preuve, car la restriction « בהא » n'est dite que pour רשב״ג."
+      },
+      {
+        "section": "III.2",
+        "change": "Ordre logique rétabli : (i) רב נחמן (le changeur : permission d'utiliser = שומר שכר seulement), (ii) donc ר׳ טרפון n'est que שומר שכר, ce qui suppose que sans permission le trouveur est שומר חנם, comme le dit רבה, (iii) objection des « deux raisons », (iv) rejet. Dans les notes, « R. Tarfon dit… il devient שומר שכר » est vrai seulement selon רבה ; selon רב יוסף, il deviendrait שואל."
+      },
+      {
+        "section": "III.3",
+        "change": "Précision : la משנה de האומנין dit שומר שכר. Selon רב יוסף, on aurait pu l'expliquer même selon ר׳ אליעזר, dans le cas où le prêteur n'a pas besoin du gage. Les notes disent « va uniquement d'après R. Akiva » ; la Guemara dit plus précisément « מחוורתא דלא כר׳ אליעזר »."
+      },
+      {
+        "section": "IV",
+        "change": "Partie IV reformulée : c'est une objection en deux points contre רבה, suivie d'une réponse en trois temps. Correction : ce n'est pas « R. Akiva dans Baba Metzia dit שומר חינם » ; c'est que, selon la lecture de רבה en ב״מ כט., ר׳ עקיבא doit tenir שומר חנם. Le 2e point de l'objection (« לימא דרב יוסף תנאי… ומשמע דרבה ודאי תנאי היא », lecture de רש״י) manquait."
+      },
+      {
+        "section": "V",
+        "change": "Partie V ajoutée : la fin du תוספות (la משנה de שבועות et la réponse par la פשיעה) manquait dans les notes. Le cours enregistré s'achève justement sur ce point."
+      }
     ]
   },
-
   "segments": [
     {
-      "id": "s1", "nodeId": "I", "role": "dh", "attribution": "tosafot",
+      "id": "s1",
+      "nodeId": "I",
+      "role": "dh",
+      "attribution": "tosafot",
       "he": "בההיא הנאה דלא קבעי למיתב ריפתא לעניא -",
       "translation": "« Par cet avantage, qu'il n'a pas besoin de donner du pain au pauvre » –",
       "explanation": {
@@ -271,16 +1149,44 @@
         "approfondi": "Le texte de la Guemara imprimé a « דלא בעיא למיתב ליה ריפתא לעניא » ; le תוספות cite « דלא קבעי », une variante (ק׳ + בעי = קא בעי). Le sens est le même. Dans la question de l'utilisateur, « בהאי » est aussi une variante de « בההיא »."
       },
       "terms": [
-        { "he": "בההיא הנאה", "fr": "par cet avantage-là", "note": "ההיא = celle-là (araméen)." },
-        { "he": "קבעי", "fr": "a besoin (= קא בעי)", "note": "קא = particule du présent." },
-        { "he": "למיתב", "fr": "donner", "note": "Infinitif araméen de יהב." },
-        { "he": "ריפתא", "fr": "pain" },
-        { "he": "לעניא", "fr": "au pauvre" }
+        {
+          "he": "בההיא הנאה",
+          "fr": "par cet avantage-là",
+          "note": "ההיא = celle-là (araméen)."
+        },
+        {
+          "he": "קבעי",
+          "fr": "a besoin (= קא בעי)",
+          "note": "קא = particule du présent."
+        },
+        {
+          "he": "למיתב",
+          "fr": "donner",
+          "note": "Infinitif araméen de יהב."
+        },
+        {
+          "he": "ריפתא",
+          "fr": "pain"
+        },
+        {
+          "he": "לעניא",
+          "fr": "au pauvre"
+        }
       ],
-      "sourceIds": ["bk-56b", "rashi-bk-56b"]
+      "sourceIds": [
+        "bk-56b",
+        "rashi-bk-56b"
+      ],
+      "peopleIds": [],
+      "glossaryRefs": [
+        "g-shomer-sachar"
+      ]
     },
     {
-      "id": "s2", "nodeId": "I", "role": "these", "attribution": "tosafot",
+      "id": "s2",
+      "nodeId": "I",
+      "role": "these",
+      "attribution": "tosafot",
       "he": "משום דעוסק במצוה",
       "translation": "parce qu'il est occupé à une מצוה,",
       "explanation": {
@@ -288,11 +1194,27 @@
         "standard": "Garder un objet perdu fait partie de la מצוה de השבת אבידה. Celui qui est occupé à une מצוה est dispensé d'une autre מצוה (ici, la צדקה). רש״י (נו:) renvoie à la source en סוכה כה.",
         "approfondi": "רש״י en ב״מ כט. ד״ה כשומר שכר : « דשומר שכר מצוה הוא, דהעוסק במצוה פטור מן המצוה »."
       },
-      "terms": [ { "he": "עוסק במצוה", "fr": "occupé à une מצוה" } ],
-      "sourceIds": ["sukkah-25a", "rashi-bk-56b"]
+      "terms": [
+        {
+          "he": "עוסק במצוה",
+          "fr": "occupé à une מצוה"
+        }
+      ],
+      "sourceIds": [
+        "sukkah-25a",
+        "rashi-bk-56b"
+      ],
+      "peopleIds": [],
+      "glossaryRefs": [
+        "g-shomer-sachar",
+        "g-osek-bemitzva"
+      ]
     },
     {
-      "id": "s3", "nodeId": "I", "role": "precision", "attribution": "tosafot",
+      "id": "s3",
+      "nodeId": "I",
+      "role": "precision",
+      "attribution": "tosafot",
       "he": "ודוקא בשעה דמתעסק בה כגון שוטח לצורכה או משום עסק שצריך לה לאבידה",
       "translation": "et seulement au moment où il s'en occupe, par exemple quand il l'étend pour son besoin [à elle], ou pour un travail dont l'objet perdu a besoin.",
       "explanation": {
@@ -301,14 +1223,33 @@
         "approfondi": "C'est une restriction forte de la raison de רב יוסף. Elle prépare la question de la partie II : si le « salaire » est si rare, suffit-il à faire un שומר שכר ? Comparer le רמב״ם (גזילה ואבידה יג:י) : « ונפטר מכמה מצות עשה כל זמן שהוא עוסק בשמירתה », qui semble plus large que le תוספות."
       },
       "terms": [
-        { "he": "דוקא", "fr": "précisément, seulement" },
-        { "he": "מתעסק בה", "fr": "s'en occupe (activement)" },
-        { "he": "שוטח לצורכה", "fr": "il l'étend pour son besoin à elle (non pour son honneur à lui)" }
+        {
+          "he": "דוקא",
+          "fr": "précisément, seulement"
+        },
+        {
+          "he": "מתעסק בה",
+          "fr": "s'en occupe (activement)"
+        },
+        {
+          "he": "שוטח לצורכה",
+          "fr": "il l'étend pour son besoin à elle (non pour son honneur à lui)"
+        }
       ],
-      "sourceIds": ["bm-29b", "tosafot-sukkah-25a"]
+      "sourceIds": [
+        "bm-29b",
+        "tosafot-sukkah-25a"
+      ],
+      "peopleIds": [],
+      "glossaryRefs": [
+        "g-shomer-sachar"
+      ]
     },
     {
-      "id": "s4", "nodeId": "I", "role": "these", "attribution": "tosafot",
+      "id": "s4",
+      "nodeId": "I",
+      "role": "these",
+      "attribution": "tosafot",
       "he": "אבל בשביל שאבידה בביתו לא יפטר מלמיתב ריפתא לעניא כיון שיכול לקיים שתיהם",
       "translation": "Mais du seul fait que l'objet perdu est dans sa maison, il ne sera pas dispensé de donner du pain au pauvre, puisqu'il peut accomplir les deux.",
       "explanation": {
@@ -317,13 +1258,23 @@
         "approfondi": "Le mot « שתיהם » est écrit ainsi (et non שתיהן) dans l'édition."
       },
       "terms": [
-        { "he": "בשביל ש־", "fr": "du fait que" },
-        { "he": "יכול לקיים שתיהם", "fr": "il peut accomplir les deux" }
+        {
+          "he": "בשביל",
+          "fr": "du fait que"
+        },
+        {
+          "he": "יכול לקיים שתיהם",
+          "fr": "il peut accomplir les deux"
+        }
       ],
-      "sourceIds": []
+      "sourceIds": [],
+      "peopleIds": []
     },
     {
-      "id": "s5", "nodeId": "I.1", "role": "preuve", "attribution": "tosafot",
+      "id": "s5",
+      "nodeId": "I.1",
+      "role": "preuve",
+      "attribution": "tosafot",
       "he": "כדמוכח בסוכה (דף כה. ושם.) דלא נפקא לן מקרא דעוסק במצוה פטור מן המצוה אלא דוקא היכא שאינו יכול לקיים שתיהם",
       "translation": "Comme on le prouve en סוכה (כה.) : nous ne déduisons du פסוק que celui qui est occupé à une מצוה est dispensé d'une מצוה, que seulement là où il ne peut pas accomplir les deux.",
       "explanation": {
@@ -332,16 +1283,39 @@
         "approfondi": "Le תוספות de סוכה כה. ד״ה שלוחי מצוה pose la même question (« ותימה אם יכולין לקיים שניהם אמאי פטורין ») et répond avec les mêmes arguments (תפילין, נדרים). C'est le parallèle direct de toute la partie I."
       },
       "terms": [
-        { "he": "כדמוכח", "fr": "comme il est prouvé" },
-        { "he": "לא נפקא לן", "fr": "nous ne déduisons pas" },
-        { "he": "קרא", "fr": "le פסוק" },
-        { "he": "היכא ש־", "fr": "là où" }
+        {
+          "he": "כדמוכח",
+          "fr": "comme il est prouvé"
+        },
+        {
+          "he": "לא נפקא לן",
+          "fr": "nous ne déduisons pas"
+        },
+        {
+          "he": "קרא",
+          "fr": "le פסוק"
+        },
+        {
+          "he": "היכא",
+          "fr": "là où"
+        }
       ],
-      "notes": [ "« (דף כה. ושם.) » : renvoi des imprimeurs, avec un point en trop après ושם." ],
-      "sourceIds": ["sukkah-25a", "sukkah-25b", "rashi-sukkah-25a", "tosafot-sukkah-25a"]
+      "notes": [
+        "« (דף כה. ושם.) » : renvoi des imprimeurs, avec un point en trop après ושם."
+      ],
+      "sourceIds": [
+        "sukkah-25a",
+        "sukkah-25b",
+        "rashi-sukkah-25a",
+        "tosafot-sukkah-25a"
+      ],
+      "peopleIds": []
     },
     {
-      "id": "s6", "nodeId": "I.2", "role": "preuve", "attribution": "tosafot",
+      "id": "s6",
+      "nodeId": "I.2",
+      "role": "preuve",
+      "attribution": "tosafot",
       "he": "וסברא הוא דאטו אדם שיש לו תפילין בראשו וציצית בבגדו ומזוזה בפתחו יפטר מן המצות",
       "translation": "Et c'est logique : est-ce qu'un homme qui a des תפילין sur la tête, des ציצית à son vêtement et une מזוזה à sa porte serait dispensé des [autres] מצוות ?",
       "explanation": {
@@ -350,13 +1324,25 @@
         "approfondi": "La comparaison est précise : l'objet perdu posé chez lui ressemble à la מזוזה sur la porte. La מצוה est là, mais elle ne demande aucune action."
       },
       "terms": [
-        { "he": "סברא", "fr": "raisonnement logique" },
-        { "he": "אטו", "fr": "est-ce que… ? (question rhétorique)" }
+        {
+          "he": "סברא",
+          "fr": "raisonnement logique"
+        },
+        {
+          "he": "אטו",
+          "fr": "est-ce que… ? (question rhétorique)"
+        }
       ],
-      "sourceIds": ["tosafot-sukkah-25a"]
+      "sourceIds": [
+        "tosafot-sukkah-25a"
+      ],
+      "peopleIds": []
     },
     {
-      "id": "s7", "nodeId": "I.3", "role": "preuve", "attribution": "tosafot",
+      "id": "s7",
+      "nodeId": "I.3",
+      "role": "preuve",
+      "attribution": "tosafot",
       "he": "ועוד דבפרק אין בין המודר (נדרים לג:) אמר דפרוטה דרב יוסף לא שכיח ואי פטרת ליה כל זמן שהאבידה בביתו שכיח ושכיח הוא",
       "translation": "Et de plus, au פרק אין בין המודר (נדרים לג:), on dit que la « פרוטה de רב יוסף » n'est pas fréquente. Or si tu le dispensais tout le temps que l'objet est chez lui, ce serait fréquent.",
       "explanation": {
@@ -365,15 +1351,39 @@
         "approfondi": "Le ר״ן sur נדרים לג: : « פרוטה דרב יוסף לא שכיח – שיבא עני לישאל ממנו באותה שעה »."
       },
       "terms": [
-        { "he": "פרוטה דרב יוסף", "fr": "la « pièce de רב יוסף » : la צדקה qu'il est dispensé de donner" },
-        { "he": "לא שכיח", "fr": "pas fréquent" },
-        { "he": "ואי פטרת ליה", "fr": "et si tu le dispensais" }
+        {
+          "he": "פרוטה דרב יוסף",
+          "fr": "la « pièce de רב יוסף » : la צדקה qu'il est dispensé de donner"
+        },
+        {
+          "he": "לא שכיח",
+          "fr": "pas fréquent"
+        },
+        {
+          "he": "ואי פטרת ליה",
+          "fr": "et si tu le dispensais"
+        }
       ],
-      "notes": [ "« שכיח ושכיח הוא » : probablement un doublon de copiste. On lit « שכיח הוא » (c'est fréquent). Une autre lecture possible : « שכיח, ושכיח הוא » (ce serait fréquent, et c'est en effet fréquent)." ],
-      "sourceIds": ["nedarim-33b", "ran-nedarim-33b"]
+      "notes": [
+        "« שכיח ושכיח הוא » : probablement un doublon de copiste. On lit « שכיח הוא » (c'est fréquent). Une autre lecture possible : « שכיח, ושכיח הוא » (ce serait fréquent, et c'est en effet fréquent)."
+      ],
+      "sourceIds": [
+        "nedarim-33b",
+        "ran-nedarim-33b"
+      ],
+      "peopleIds": [
+        "rav-yosef"
+      ],
+      "glossaryRefs": [
+        "g-pruta-derav-yosef",
+        "g-mudar-hanaa"
+      ]
     },
     {
-      "id": "s8", "nodeId": "II", "role": "psak", "attribution": "rach-bahag",
+      "id": "s8",
+      "nodeId": "II",
+      "role": "psak",
+      "attribution": "rach-bahag",
       "he": "פסק ר״ח וה״ג דהלכה כרב יוסף",
       "translation": "ר״ח et les הלכות גדולות ont tranché que la הלכה est comme רב יוסף,",
       "explanation": {
@@ -381,11 +1391,30 @@
         "standard": "Ce פסק va contre la règle habituelle (הלכה כרבה contre רב יוסף, voir III.1). Il faut donc une preuve, et ils l'apportent de נדרים.",
         "approfondi": "Le texte de ר״ח n'est pas dans l'archive de Sefaria pour cette page ; on rapporte ce que le תוספות en dit. Le רמב״ם (גזילה ואבידה יג:י) et le שולחן ערוך (חו״מ רסז:טז) tranchent aussi comme רב יוסף."
       },
-      "terms": [ { "he": "ה״ג", "fr": "הלכות גדולות (בה״ג)" } ],
-      "sourceIds": ["rambam-gezela-13-10", "sa-cm-267-16"]
+      "terms": [
+        {
+          "he": "ה״ג",
+          "fr": "הלכות גדולות (בה״ג)"
+        }
+      ],
+      "sourceIds": [
+        "rambam-gezela-13-10",
+        "sa-cm-267-16"
+      ],
+      "peopleIds": [
+        "rach",
+        "bahag",
+        "rav-yosef"
+      ],
+      "glossaryRefs": [
+        "g-shomer-sachar"
+      ]
     },
     {
-      "id": "s9", "nodeId": "II.A", "role": "preuve", "attribution": "rach-bahag",
+      "id": "s9",
+      "nodeId": "II.A",
+      "role": "preuve",
+      "attribution": "rach-bahag",
       "he": "משום דאמרינן באין בין המודר (שם) דכ״ע אית להו פרוטה דרב יוסף ואפילו מאן דשרי למודר להחזיר אבידה לא שרי אלא משום דפרוטה דרב יוסף לא שכיח",
       "translation": "parce que nous disons au [פרק] אין בין המודר que tout le monde admet la פרוטה de רב יוסף : même celui qui permet au מודר de rendre l'objet perdu ne le permet que parce que la פרוטה de רב יוסף n'est pas fréquente.",
       "explanation": {
@@ -394,14 +1423,34 @@
         "approfondi": "Le même passage de נדרים sert deux fois : en I.3 pour définir la dispense (« לא שכיח »), ici comme preuve de פסק (« כ״ע אית להו »)."
       },
       "terms": [
-        { "he": "דכ״ע אית להו", "fr": "que tout le monde admet" },
-        { "he": "מאן דשרי", "fr": "celui qui permet" },
-        { "he": "מודר", "fr": "celui à qui un vœu interdit de tirer profit de l'autre" }
+        {
+          "he": "דכ״ע אית להו",
+          "fr": "que tout le monde admet"
+        },
+        {
+          "he": "מאן דשרי",
+          "fr": "celui qui permet"
+        },
+        {
+          "he": "מודר",
+          "fr": "celui à qui un vœu interdit de tirer profit de l'autre"
+        }
       ],
-      "sourceIds": ["nedarim-33b"]
+      "sourceIds": [
+        "nedarim-33b"
+      ],
+      "peopleIds": [
+        "rav-yosef"
+      ],
+      "glossaryRefs": [
+        "g-pruta-derav-yosef"
+      ]
     },
     {
-      "id": "s10", "nodeId": "II.A.r", "role": "dechiya", "attribution": "ri",
+      "id": "s10",
+      "nodeId": "II.A.r",
+      "role": "dechiya",
+      "attribution": "ri",
       "he": "ואור״י דאינה ראיה כלל דגם רבה מודה לרב יוסף דעוסק במצוה פטור מן המצוה אלא דס״ל דלא נעשה שומר שכר בכך",
       "translation": "Et ר״י dit que ce n'est pas du tout une preuve : רבה aussi reconnaît, avec רב יוסף, que celui qui est occupé à une מצוה est dispensé de la מצוה. Seulement, il pense qu'on ne devient pas שומר שכר par cela.",
       "explanation": {
@@ -410,15 +1459,40 @@
         "approfondi": "Le תוספות de ב״מ כט. donne la raison : « ואין סברא שיהא שומר שכר בעבור זה כיון דלא שכיח »."
       },
       "terms": [
-        { "he": "ואור״י", "fr": "ואומר ר״י – et ר״י dit" },
-        { "he": "אינה ראיה כלל", "fr": "ce n'est pas du tout une preuve" },
-        { "he": "ס״ל", "fr": "סבירא ליה – il pense" },
-        { "he": "בכך", "fr": "par cela" }
+        {
+          "he": "ואור״י",
+          "fr": "ואומר ר״י – et ר״י dit"
+        },
+        {
+          "he": "אינה ראיה כלל",
+          "fr": "ce n'est pas du tout une preuve"
+        },
+        {
+          "he": "ס״ל",
+          "fr": "סבירא ליה – il pense"
+        },
+        {
+          "he": "בכך",
+          "fr": "par cela"
+        }
       ],
-      "sourceIds": ["tosafot-bm-29a"]
+      "sourceIds": [
+        "tosafot-bm-29a"
+      ],
+      "peopleIds": [
+        "ri",
+        "rabba",
+        "rav-yosef"
+      ],
+      "glossaryRefs": [
+        "g-shomer-sachar"
+      ]
     },
     {
-      "id": "s11", "nodeId": "II.A.r", "role": "dechiya", "attribution": "ri",
+      "id": "s11",
+      "nodeId": "II.A.r",
+      "role": "dechiya",
+      "attribution": "ri",
       "he": "ומ״מ הוא נהנה לכך אסור למודר אבל לא הוה שומר שכר",
       "translation": "En tout cas, il en tire profit ; c'est pourquoi c'est interdit au מודר. Mais il n'est pas שומר שכר.",
       "explanation": {
@@ -427,15 +1501,36 @@
         "approfondi": "Le ר״ן (נדרים לג: ד״ה לא שכיח) dit l'inverse pour le second avis : « כיון דאפשר דאתי ומתהני מינה שומר שכר הוא עליה ». C'est la position de רב יוסף, et elle montre bien que la question est une סברא."
       },
       "terms": [
-        { "he": "מ״מ", "fr": "מכל מקום – en tout cas" },
-        { "he": "נהנה", "fr": "il tire profit" },
-        { "he": "לכך", "fr": "c'est pourquoi" },
-        { "he": "לא הוה", "fr": "il n'est pas" }
+        {
+          "he": "מ״מ",
+          "fr": "מכל מקום – en tout cas"
+        },
+        {
+          "he": "נהנה",
+          "fr": "il tire profit"
+        },
+        {
+          "he": "לכך",
+          "fr": "c'est pourquoi"
+        },
+        {
+          "he": "לא הוה",
+          "fr": "il n'est pas"
+        }
       ],
-      "sourceIds": ["ran-nedarim-33b"]
+      "sourceIds": [
+        "ran-nedarim-33b"
+      ],
+      "peopleIds": [],
+      "glossaryRefs": [
+        "g-shomer-sachar"
+      ]
     },
     {
-      "id": "s12", "nodeId": "II.B", "role": "preuve", "attribution": "ri",
+      "id": "s12",
+      "nodeId": "II.B",
+      "role": "preuve",
+      "attribution": "ri",
       "he": "ואין לדקדק נמי בשמעתין דהלכה כרב יוסף",
       "translation": "Et on ne peut pas non plus déduire de notre סוגיא que la הלכה est comme רב יוסף,",
       "explanation": {
@@ -444,14 +1539,31 @@
         "approfondi": "« שמעתין » = notre סוגיא, la suite de la discussion en נז."
       },
       "terms": [
-        { "he": "אין לדקדק", "fr": "on ne peut pas déduire" },
-        { "he": "נמי", "fr": "aussi" },
-        { "he": "שמעתין", "fr": "notre סוגיא" }
+        {
+          "he": "אין לדקדק",
+          "fr": "on ne peut pas déduire"
+        },
+        {
+          "he": "נמי",
+          "fr": "aussi"
+        },
+        {
+          "he": "שמעתין",
+          "fr": "notre סוגיא"
+        }
       ],
-      "sourceIds": ["bk-57a"]
+      "sourceIds": [
+        "bk-57a"
+      ],
+      "peopleIds": [
+        "rav-yosef"
+      ]
     },
     {
-      "id": "s13", "nodeId": "II.B", "role": "preuve", "attribution": "ri",
+      "id": "s13",
+      "nodeId": "II.B",
+      "role": "preuve",
+      "attribution": "ri",
       "he": "דמשני רב יוסף לעולם בגינתו המשתמרת וקמ״ל דלא בעינן דעת בעלים כדרבי אלעזר",
       "translation": "du fait que רב יוסף répond : « en réalité, il s'agit de son jardin gardé, et [le פסוק] nous apprend qu'on n'a pas besoin que le propriétaire le sache », comme ר׳ אלעזר.",
       "explanation": {
@@ -460,16 +1572,46 @@
         "approfondi": "Sans דעת בעלים : le voleur ou le gardien qui rend un objet doit en informer le propriétaire, sinon il reste responsable (רש״י ב״מ לא. ד״ה הכל צריכין). Pour l'objet perdu, la Torah dispense de cela."
       },
       "terms": [
-        { "he": "משני", "fr": "il répond (à une objection)" },
-        { "he": "לעולם", "fr": "en réalité (je maintiens que…)" },
-        { "he": "גינתו המשתמרת", "fr": "son jardin gardé" },
-        { "he": "קמ״ל", "fr": "קא משמע לן – il nous apprend" },
-        { "he": "דעת בעלים", "fr": "la connaissance du propriétaire" }
+        {
+          "he": "משני",
+          "fr": "il répond (à une objection)"
+        },
+        {
+          "he": "לעולם",
+          "fr": "en réalité (je maintiens que…)"
+        },
+        {
+          "he": "גינתו המשתמרת",
+          "fr": "son jardin gardé"
+        },
+        {
+          "he": "קמ״ל",
+          "fr": "קא משמע לן – il nous apprend"
+        },
+        {
+          "he": "דעת בעלים",
+          "fr": "la connaissance du propriétaire"
+        }
       ],
-      "sourceIds": ["bk-57a", "rashi-bk-57a", "bm-31a"]
+      "sourceIds": [
+        "bk-57a",
+        "rashi-bk-57a",
+        "bm-31a"
+      ],
+      "peopleIds": [
+        "rav-yosef",
+        "r-elazar"
+      ],
+      "glossaryRefs": [
+        "g-shomer-chinam",
+        "g-daat-bealim"
+      ]
     },
     {
-      "id": "s14", "nodeId": "II.B", "role": "preuve", "attribution": "ri",
+      "id": "s14",
+      "nodeId": "II.B",
+      "role": "preuve",
+      "attribution": "ri",
       "he": "והכי מוקי לה סוגיא דאלו מציאות (ב״מ ד׳ כט. ושם)",
       "translation": "et c'est ainsi que l'explique la סוגיא de אלו מציאות (ב״מ).",
       "explanation": {
@@ -477,12 +1619,28 @@
         "standard": "En ב״מ לא., רבא explique « תשיבם » comme רב יוסף : « לעולם דמינטרא, והא קמ״ל דלא בעינן דעת בעלים ». La Guemara de ב״מ prend donc la lecture de רב יוסף, ce qui pourrait prouver que la הלכה est comme lui.",
         "approfondi": "Le passage est en ב״מ לא. et non en כט. Le תוספות lui-même le cite en לא. au segment s19. « כט. » est sans doute une erreur dans le renvoi imprimé."
       },
-      "terms": [ { "he": "מוקי לה", "fr": "il l'explique, l'établit (dans tel cas)" } ],
-      "notes": [ "Renvoi « ד׳ כט. » : le texte se trouve en ב״מ לא. (שורות 13-14)." ],
-      "sourceIds": ["bm-31a"]
+      "terms": [
+        {
+          "he": "מוקי לה",
+          "fr": "il l'explique, l'établit (dans tel cas)"
+        }
+      ],
+      "notes": [
+        "Renvoi « ד׳ כט. » : le texte se trouve en ב״מ לא. (שורות 13-14)."
+      ],
+      "sourceIds": [
+        "bm-31a"
+      ],
+      "peopleIds": [],
+      "glossaryRefs": [
+        "g-daat-bealim"
+      ]
     },
     {
-      "id": "s15", "nodeId": "II.B.r", "role": "dechiya", "attribution": "ri",
+      "id": "s15",
+      "nodeId": "II.B.r",
+      "role": "dechiya",
+      "attribution": "ri",
       "he": "כי נראה דרבה קבלה מרב יוסף דקרא כדר״א אתי",
       "translation": "car il semble que רבה a accepté de רב יוסף que le פסוק vient [enseigner la règle] de ר׳ אלעזר.",
       "explanation": {
@@ -491,13 +1649,32 @@
         "approfondi": "Ici « ר״א » = ר׳ אלעזר (et non ר׳ אליעזר)."
       },
       "terms": [
-        { "he": "קבלה", "fr": "il a accepté" },
-        { "he": "אתי", "fr": "vient (enseigner)" }
+        {
+          "he": "קבלה",
+          "fr": "il a accepté"
+        },
+        {
+          "he": "אתי",
+          "fr": "vient (enseigner)"
+        }
       ],
-      "sourceIds": ["bk-57a"]
+      "sourceIds": [
+        "bk-57a"
+      ],
+      "peopleIds": [
+        "rabba",
+        "rav-yosef",
+        "r-elazar"
+      ],
+      "glossaryRefs": [
+        "g-daat-bealim"
+      ]
     },
     {
-      "id": "s16", "nodeId": "II.B.r", "role": "dechiya", "attribution": "ri",
+      "id": "s16",
+      "nodeId": "II.B.r",
+      "role": "dechiya",
+      "attribution": "ri",
       "he": "ורבה נמי שהיה מדקדק מתחילה דכשומר חנם דמי לא משמע ליה קרא אלא אסמכתא בעלמא",
       "translation": "Et même quand רבה déduisait au début qu'il est comme un שומר חנם, il ne comprenait pas [vraiment] cela du פסוק ; ce n'était qu'une simple אסמכתא.",
       "explanation": {
@@ -506,15 +1683,40 @@
         "approfondi": "Le תוספות de ב״מ כט. donne une autre réponse : רבה « הדר ביה » de sa lecture du פסוק, et il ajoute que pour les animaux רבה admet un devoir de garde renforcé."
       },
       "terms": [
-        { "he": "מדקדק", "fr": "déduisait" },
-        { "he": "מתחילה", "fr": "au début" },
-        { "he": "לא משמע ליה קרא", "fr": "il ne le comprenait pas du פסוק" },
-        { "he": "אסמכתא בעלמא", "fr": "simple appui (sans être la vraie source)" }
+        {
+          "he": "מדקדק",
+          "fr": "déduisait"
+        },
+        {
+          "he": "מתחילה",
+          "fr": "au début"
+        },
+        {
+          "he": "לא משמע ליה קרא",
+          "fr": "il ne le comprenait pas du פסוק"
+        },
+        {
+          "he": "אסמכתא בעלמא",
+          "fr": "simple appui (sans être la vraie source)"
+        }
       ],
-      "sourceIds": ["bk-57a", "tosafot-bm-29a"]
+      "sourceIds": [
+        "bk-57a",
+        "tosafot-bm-29a"
+      ],
+      "peopleIds": [
+        "rabba"
+      ],
+      "glossaryRefs": [
+        "g-shomer-chinam",
+        "g-asmachta"
+      ]
     },
     {
-      "id": "s17", "nodeId": "II.B.r", "role": "dechiya", "attribution": "ri",
+      "id": "s17",
+      "nodeId": "II.B.r",
+      "role": "dechiya",
+      "attribution": "ri",
       "he": "דהא טעמא משום דמאי הנאה קא מטי ליה כדלעיל",
       "translation": "Car la raison est : « quel avantage lui parvient-il ? », comme plus haut.",
       "explanation": {
@@ -523,14 +1725,32 @@
         "approfondi": ""
       },
       "terms": [
-        { "he": "דהא", "fr": "car voici que" },
-        { "he": "קא מטי ליה", "fr": "lui parvient" },
-        { "he": "כדלעיל", "fr": "comme plus haut" }
+        {
+          "he": "דהא",
+          "fr": "car voici que"
+        },
+        {
+          "he": "קא מטי ליה",
+          "fr": "lui parvient"
+        },
+        {
+          "he": "כדלעיל",
+          "fr": "comme plus haut"
+        }
       ],
-      "sourceIds": ["bk-56b"]
+      "sourceIds": [
+        "bk-56b"
+      ],
+      "peopleIds": [],
+      "glossaryRefs": [
+        "g-shomer-chinam"
+      ]
     },
     {
-      "id": "s18", "nodeId": "II.B.r", "role": "conclusion", "attribution": "ri",
+      "id": "s18",
+      "nodeId": "II.B.r",
+      "role": "conclusion",
+      "attribution": "ri",
       "he": "ולא פליגי רבה ורב יוסף אלא בסברא בעלמא",
       "translation": "Et רבה et רב יוסף ne divergent que sur une simple סברא.",
       "explanation": {
@@ -539,13 +1759,26 @@
         "approfondi": ""
       },
       "terms": [
-        { "he": "פליגי", "fr": "ils divergent" },
-        { "he": "סברא בעלמא", "fr": "simple raisonnement" }
+        {
+          "he": "פליגי",
+          "fr": "ils divergent"
+        },
+        {
+          "he": "סברא בעלמא",
+          "fr": "simple raisonnement"
+        }
       ],
-      "sourceIds": []
+      "sourceIds": [],
+      "peopleIds": [
+        "rabba",
+        "rav-yosef"
+      ]
     },
     {
-      "id": "s19", "nodeId": "II.B.e", "role": "explication", "attribution": "ri",
+      "id": "s19",
+      "nodeId": "II.B.e",
+      "role": "explication",
+      "attribution": "ri",
       "he": "וה״פ דההיא דאלו מציאות (שם ד׳ לא.) אי דמנטרא לרבה כדאית ליה מפשיעה לרב יוסף כדאית ליה מגניבה ואבידה פשיטא דלהא לא צריך קרא",
       "translation": "Et voici l'explication du [passage] de אלו מציאות (לא.) : « s'il est gardé » [= gardé] pour רבה selon son avis, contre la פשיעה, et pour רב יוסף selon son avis, contre le vol et la perte : c'est évident, pour cela on n'a pas besoin d'un פסוק.",
       "explanation": {
@@ -554,15 +1787,43 @@
         "approfondi": "Le תוספות de ב״מ כט. donne la même explication pour la suite de la question : « אי דלא מינטרא למר כדאית ליה… אמאי פטור »."
       },
       "terms": [
-        { "he": "וה״פ", "fr": "והכי פירושא – et voici l'explication" },
-        { "he": "דמנטרא", "fr": "qui est gardé" },
-        { "he": "כדאית ליה", "fr": "selon son avis" },
-        { "he": "פשיטא", "fr": "c'est évident" }
+        {
+          "he": "וה״פ",
+          "fr": "והכי פירושא – et voici l'explication"
+        },
+        {
+          "he": "דמנטרא",
+          "fr": "qui est gardé"
+        },
+        {
+          "he": "כדאית ליה",
+          "fr": "selon son avis"
+        },
+        {
+          "he": "פשיטא",
+          "fr": "c'est évident"
+        }
       ],
-      "sourceIds": ["bm-31a", "tosafot-bm-29a"]
+      "sourceIds": [
+        "bm-31a",
+        "tosafot-bm-29a"
+      ],
+      "peopleIds": [
+        "rabba",
+        "rav-yosef"
+      ],
+      "glossaryRefs": [
+        "g-shomer-aveda",
+        "g-shomer-chinam",
+        "g-shomer-sachar",
+        "g-peshia"
+      ]
     },
     {
-      "id": "s20", "nodeId": "III.1", "role": "psak", "attribution": "ri",
+      "id": "s20",
+      "nodeId": "III.1",
+      "role": "psak",
+      "attribution": "ri",
       "he": "ונראה לר״י דהלכה כרבה בכל מקום לגבי רב יוסף בר משדה ענין ומחצה כדאיתא במי שמת (ב״ב ד׳ קמג:)",
       "translation": "Et ר״י pense que la הלכה est comme רבה partout face à רב יוסף, sauf pour שדה, ענין et מחצה, comme il est dit au [פרק] מי שמת (ב״ב קמג:).",
       "explanation": {
@@ -571,15 +1832,38 @@
         "approfondi": "Les trois cas selon le רשב״ם : שדה (ב״ב יב: – le champ voisin, בר מצרא), ענין (ב״ב קיד. – jusqu'à quand on peut revenir sur un קנין : « כל זמן שעסוקים באותו ענין »), מחצה (ב״ב קמג. – « קנאי פלגא »). On rapporte en général qu'il y a aussi une raison historique : רבה a dirigé la ישיבה avant רב יוסף."
       },
       "terms": [
-        { "he": "לגבי", "fr": "face à" },
-        { "he": "בר מ־", "fr": "sauf" },
-        { "he": "שדה ענין ומחצה", "fr": "les trois exceptions (champ, sujet, moitié)" },
-        { "he": "כדאיתא", "fr": "comme il est dit" }
+        {
+          "he": "לגבי",
+          "fr": "face à"
+        },
+        {
+          "he": "בר משדה ענין ומחצה",
+          "fr": "sauf pour שדה, ענין et מחצה (les trois exceptions)"
+        },
+        {
+          "he": "כדאיתא",
+          "fr": "comme il est dit"
+        }
       ],
-      "sourceIds": ["bb-143b", "rashbam-bb-143b", "rashi-gittin-74b"]
+      "sourceIds": [
+        "bb-143b",
+        "rashbam-bb-143b",
+        "rashi-gittin-74b"
+      ],
+      "peopleIds": [
+        "ri",
+        "rabba",
+        "rav-yosef"
+      ],
+      "glossaryRefs": [
+        "g-shomer-aveda"
+      ]
     },
     {
-      "id": "s21", "nodeId": "III.1.a", "role": "kushya", "attribution": "ri",
+      "id": "s21",
+      "nodeId": "III.1.a",
+      "role": "kushya",
+      "attribution": "ri",
       "he": "ואין לפרש דהיינו דוקא בבבא בתרא כמו שיש מפרשים",
       "translation": "Et on ne doit pas expliquer que cela ne vaut qu'en בבא בתרא, comme certains l'expliquent,",
       "explanation": {
@@ -588,13 +1872,25 @@
         "approfondi": "Selon le תוספות de ב״מ כט., ces « יש מפרשים » sont les תשובות de רב צמח גאון."
       },
       "terms": [
-        { "he": "ואין לפרש", "fr": "et on ne doit pas expliquer" },
-        { "he": "יש מפרשים", "fr": "il y a des commentateurs (qui disent)" }
+        {
+          "he": "ואין לפרש",
+          "fr": "et on ne doit pas expliquer"
+        },
+        {
+          "he": "יש מפרשים",
+          "fr": "il y a des commentateurs (qui disent)"
+        }
       ],
-      "sourceIds": ["tosafot-bm-29a"]
+      "sourceIds": [
+        "tosafot-bm-29a"
+      ],
+      "peopleIds": []
     },
     {
-      "id": "s22", "nodeId": "III.1.b", "role": "dechiya", "attribution": "ri",
+      "id": "s22",
+      "nodeId": "III.1.b",
+      "role": "dechiya",
+      "attribution": "ri",
       "he": "מדאמר במי שאחזו (גיטין ד׳ עד: ושם) ותסברא והא קי״ל כרבה ובהא אין הלכה כרשב״ג",
       "translation": "puisqu'il est dit au [פרק] מי שאחזו (גיטין עד:) : « Et comment peux-tu le penser ? Nous tenons [que la הלכה est] comme רבה, et en cela la הלכה n'est pas comme רשב״ג. »",
       "explanation": {
@@ -603,14 +1899,33 @@
         "approfondi": "La règle pour רשב״ג : « כל מקום ששנה רשב״ג במשנתנו הלכה כמותו חוץ מערב וצידן וראיה אחרונה ». Notre cas (צידן) est une exception, d'où « ובהא »."
       },
       "terms": [
-        { "he": "ותסברא", "fr": "et comment peux-tu le penser ?" },
-        { "he": "קי״ל", "fr": "קיימא לן – nous tenons" },
-        { "he": "ובהא", "fr": "et dans ce cas-ci" }
+        {
+          "he": "ותסברא",
+          "fr": "et comment peux-tu le penser ?"
+        },
+        {
+          "he": "קי״ל",
+          "fr": "קיימא לן – nous tenons"
+        },
+        {
+          "he": "ובהא",
+          "fr": "et dans ce cas-ci"
+        }
       ],
-      "sourceIds": ["gittin-74b", "rashi-gittin-74b"]
+      "sourceIds": [
+        "gittin-74b",
+        "rashi-gittin-74b"
+      ],
+      "peopleIds": [
+        "rabba",
+        "rashbag"
+      ]
     },
     {
-      "id": "s23", "nodeId": "III.1.c", "role": "kushya", "attribution": "ri",
+      "id": "s23",
+      "nodeId": "III.1.c",
+      "role": "kushya",
+      "attribution": "ri",
       "he": "ואין לומר דשמא בההיא מילתא קיימא לן דהלכה כרבה",
       "translation": "Et on ne peut pas dire que peut-être, dans ce cas précis, nous tenons que la הלכה est comme רבה,",
       "explanation": {
@@ -619,14 +1934,31 @@
         "approfondi": ""
       },
       "terms": [
-        { "he": "ואין לומר", "fr": "et on ne peut pas dire" },
-        { "he": "שמא", "fr": "peut-être" },
-        { "he": "בההיא מילתא", "fr": "dans ce sujet-là" }
+        {
+          "he": "ואין לומר",
+          "fr": "et on ne peut pas dire"
+        },
+        {
+          "he": "שמא",
+          "fr": "peut-être"
+        },
+        {
+          "he": "בההיא מילתא",
+          "fr": "dans ce sujet-là"
+        }
       ],
-      "sourceIds": ["gittin-74b"]
+      "sourceIds": [
+        "gittin-74b"
+      ],
+      "peopleIds": [
+        "rabba"
+      ]
     },
     {
-      "id": "s24", "nodeId": "III.1.d", "role": "dechiya", "attribution": "ri",
+      "id": "s24",
+      "nodeId": "III.1.d",
+      "role": "dechiya",
+      "attribution": "ri",
       "he": "דהוה ליה למימר והא קי״ל בהא הלכתא כרבה כדאמר ובהא אין הלכה כרשב״ג",
       "translation": "car alors il aurait dû dire : « nous tenons que dans ce cas la הלכה est comme רבה », comme il a dit : « et dans ce cas la הלכה n'est pas comme רשב״ג ».",
       "explanation": {
@@ -634,11 +1966,25 @@
         "standard": "Dans la même phrase, la Guemara précise « ובהא » pour רשב״ג et ne le précise pas pour רבה. Le contraste montre que, pour רבה, elle parle de la règle générale.",
         "approfondi": ""
       },
-      "terms": [ { "he": "הוה ליה למימר", "fr": "il aurait dû dire" } ],
-      "sourceIds": ["gittin-74b"]
+      "terms": [
+        {
+          "he": "הוה ליה למימר",
+          "fr": "il aurait dû dire"
+        }
+      ],
+      "sourceIds": [
+        "gittin-74b"
+      ],
+      "peopleIds": [
+        "rabba",
+        "rashbag"
+      ]
     },
     {
-      "id": "s25", "nodeId": "III.2.a", "role": "preuve", "attribution": "ri",
+      "id": "s25",
+      "nodeId": "III.2.a",
+      "role": "preuve",
+      "attribution": "ri",
       "he": "ועוד דבפרק המפקיד (ב״מ מג.) גבי מפקיד מעות אצל שולחני מותרים ישתמש בהן (צרורים לא ישתמש בהן) לפיכך אם אבדו חייב באחריותם קאמר רב נחמן דקי״ל כוותיה בדיני נאנסו לא",
       "translation": "De plus, au פרק המפקיד (ב״מ מג.), à propos de celui qui dépose de l'argent chez un changeur : [s'il est] non attaché, il peut l'utiliser (attaché, il ne l'utilise pas) ; c'est pourquoi s'il est perdu, il en est responsable. רב נחמן, dont nous suivons l'avis en droit monétaire, dit : [s'il a été perdu] par force majeure, non.",
       "explanation": {
@@ -647,18 +1993,52 @@
         "approfondi": "« דקי״ל כוותיה בדיני » : règle connue, « הלכתא כרב נחמן בדיני ». La parenthèse « (צרורים לא ישתמש בהן) » est un ajout des imprimeurs : c'est la première partie de la משנה, insérée au mauvais endroit. Le texte de la משנה a « באחריותן » ; le תוספות écrit « באחריותם »."
       },
       "terms": [
-        { "he": "מפקיד", "fr": "celui qui dépose" },
-        { "he": "שולחני", "fr": "changeur, banquier" },
-        { "he": "מותרים", "fr": "non attachés (libres)" },
-        { "he": "צרורים", "fr": "attachés, liés dans un paquet" },
-        { "he": "חייב באחריותם", "fr": "responsable d'eux" },
-        { "he": "נאנסו", "fr": "perdus par force majeure (אונס)" }
+        {
+          "he": "מפקיד",
+          "fr": "celui qui dépose"
+        },
+        {
+          "he": "שולחני",
+          "fr": "changeur, banquier"
+        },
+        {
+          "he": "מותרים",
+          "fr": "non attachés (libres)"
+        },
+        {
+          "he": "צרורים",
+          "fr": "attachés, liés dans un paquet"
+        },
+        {
+          "he": "חייב באחריותם",
+          "fr": "responsable d'eux"
+        },
+        {
+          "he": "נאנסו",
+          "fr": "perdus par force majeure (אונס)"
+        }
       ],
-      "notes": [ "Parenthèse : ajout de l'édition." ],
-      "sourceIds": ["bm-43a", "rashi-bm-43a"]
+      "notes": [
+        "Parenthèse : ajout de l'édition."
+      ],
+      "sourceIds": [
+        "bm-43a",
+        "rashi-bm-43a"
+      ],
+      "peopleIds": [
+        "rav-nachman"
+      ],
+      "glossaryRefs": [
+        "g-shomer-sachar",
+        "g-shoel",
+        "g-ones"
+      ]
     },
     {
-      "id": "s26", "nodeId": "III.2.a", "role": "preuve", "attribution": "ri",
+      "id": "s26",
+      "nodeId": "III.2.a",
+      "role": "preuve",
+      "attribution": "ri",
       "he": "דמשום שהתירו לו חכמים להשתמש בהן אינו נעשה רק שומר שכר",
       "translation": "car du fait que les חכמים lui ont permis de les utiliser, il ne devient que שומר שכר.",
       "explanation": {
@@ -667,13 +2047,30 @@
         "approfondi": ""
       },
       "terms": [
-        { "he": "שהתירו לו", "fr": "qu'on lui a permis" },
-        { "he": "אינו נעשה רק", "fr": "il ne devient que" }
+        {
+          "he": "שהתירו לו",
+          "fr": "qu'on lui a permis"
+        },
+        {
+          "he": "אינו נעשה רק",
+          "fr": "il ne devient que"
+        }
       ],
-      "sourceIds": ["bm-43a"]
+      "sourceIds": [
+        "bm-43a"
+      ],
+      "peopleIds": [],
+      "glossaryRefs": [
+        "g-shomer-sachar",
+        "g-shoel",
+        "g-ones"
+      ]
     },
     {
-      "id": "s27", "nodeId": "III.2.b", "role": "preuve", "attribution": "ri",
+      "id": "s27",
+      "nodeId": "III.2.b",
+      "role": "preuve",
+      "attribution": "ri",
       "he": "א״כ באלו מציאות (שם דף כט.) גבי מה יהא בדמים רבי טרפון אומר ישתמש בהן לפיכך אם אבדו חייב באחריותן לא הוי אלא ש״ש כמו שאמר שם לרבה",
       "translation": "Si c'est ainsi, en אלו מציאות (כט.), à propos de « que faire de l'argent [de la vente] ? », où ר׳ טרפון dit « il peut l'utiliser ; c'est pourquoi s'il est perdu, il en est responsable », il n'est que שומר שכר, comme on l'a dit là-bas selon רבה.",
       "explanation": {
@@ -682,16 +2079,47 @@
         "approfondi": "Le תוספות de ב״מ כט. ד״ה והוי : « אלמא ס״ל דבהנאה שמותר להשתמש לא הוי אלא שומר שכר והיינו כרבה דלרב יוסף הוי שואל »."
       },
       "terms": [
-        { "he": "א״כ", "fr": "אם כן – si c'est ainsi" },
-        { "he": "מה יהא בדמים", "fr": "que fera-t-on de l'argent (de la vente) ?" },
-        { "he": "ש״ש", "fr": "שומר שכר" },
-        { "he": "כמו שאמר שם לרבה", "fr": "comme on l'a dit là-bas selon רבה" }
+        {
+          "he": "א״כ",
+          "fr": "אם כן – si c'est ainsi"
+        },
+        {
+          "he": "מה יהא בדמים",
+          "fr": "que fera-t-on de l'argent (de la vente) ?"
+        },
+        {
+          "he": "ש״ש",
+          "fr": "שומר שכר"
+        },
+        {
+          "he": "כמו שאמר שם לרבה",
+          "fr": "comme on l'a dit là-bas selon רבה"
+        }
       ],
-      "sourceIds": ["bm-28b", "bm-29a", "tosafot-bm-29a"],
-      "tableIds": ["t-tarfon"]
+      "sourceIds": [
+        "bm-28b",
+        "bm-29a",
+        "tosafot-bm-29a"
+      ],
+      "tableIds": [
+        "t-tarfon"
+      ],
+      "peopleIds": [
+        "r-tarfon",
+        "rabba"
+      ],
+      "glossaryRefs": [
+        "g-shomer-chinam",
+        "g-shomer-sachar",
+        "g-shoel",
+        "g-ones"
+      ]
     },
     {
-      "id": "s28", "nodeId": "III.2.c", "role": "kushya", "attribution": "ri",
+      "id": "s28",
+      "nodeId": "III.2.c",
+      "role": "kushya",
+      "attribution": "ri",
       "he": "ואין לומר דהתם מודה רב נחמן דחייב באונסין משום היתר תשמיש משום דבלאו הכי היה שומר שכר שהיה שומר אבידה",
       "translation": "Et on ne peut pas dire que là-bas, רב נחמן reconnaît qu'il est responsable de l'אונס à cause de la permission d'utiliser, parce que, même sans cela, il était [déjà] שומר שכר en tant que gardien d'objet perdu.",
       "explanation": {
@@ -700,15 +2128,40 @@
         "approfondi": ""
       },
       "terms": [
-        { "he": "דהתם", "fr": "que là-bas" },
-        { "he": "מודה", "fr": "reconnaît, est d'accord" },
-        { "he": "היתר תשמיש", "fr": "la permission d'utiliser" },
-        { "he": "בלאו הכי", "fr": "même sans cela" }
+        {
+          "he": "דהתם",
+          "fr": "que là-bas"
+        },
+        {
+          "he": "מודה",
+          "fr": "reconnaît, est d'accord"
+        },
+        {
+          "he": "היתר תשמיש",
+          "fr": "la permission d'utiliser"
+        },
+        {
+          "he": "בלאו הכי",
+          "fr": "même sans cela"
+        }
       ],
-      "sourceIds": ["tosafot-bm-29a"]
+      "sourceIds": [
+        "tosafot-bm-29a"
+      ],
+      "peopleIds": [
+        "rav-nachman"
+      ],
+      "glossaryRefs": [
+        "g-shomer-sachar",
+        "g-shoel",
+        "g-ones"
+      ]
     },
     {
-      "id": "s29", "nodeId": "III.2.d", "role": "dechiya", "attribution": "ri",
+      "id": "s29",
+      "nodeId": "III.2.d",
+      "role": "dechiya",
+      "attribution": "ri",
       "he": "דאין זה סברא דמשום שני סברות דפטור מלמיתב ריפתא לעניא ועוד דמותר להשתמש לא יעשה בשביל כך שואל אלא ש״ש בעלמא",
       "translation": "car ce n'est pas logique : à cause de deux raisons, qu'il est dispensé de donner du pain au pauvre et en plus qu'il a le droit d'utiliser, il ne deviendra pas pour autant שואל, mais simplement שומר שכר.",
       "explanation": {
@@ -717,15 +2170,39 @@
         "approfondi": "Il reste donc une contradiction entre la lecture de ר׳ טרפון par רב יוסף et רב נחמן. Cela renforce la preuve pour רבה."
       },
       "terms": [
-        { "he": "אין זה סברא", "fr": "ce n'est pas logique" },
-        { "he": "שני סברות", "fr": "deux raisons" },
-        { "he": "בשביל כך", "fr": "à cause de cela" },
-        { "he": "בעלמא", "fr": "simplement" }
+        {
+          "he": "אין זה סברא",
+          "fr": "ce n'est pas logique"
+        },
+        {
+          "he": "שני סברות",
+          "fr": "deux raisons"
+        },
+        {
+          "he": "בשביל כך",
+          "fr": "à cause de cela"
+        },
+        {
+          "he": "בעלמא",
+          "fr": "simplement"
+        }
       ],
-      "sourceIds": ["tosafot-bm-29a", "rashi-bm-43a"]
+      "sourceIds": [
+        "tosafot-bm-29a",
+        "rashi-bm-43a"
+      ],
+      "peopleIds": [],
+      "glossaryRefs": [
+        "g-shomer-sachar",
+        "g-shoel",
+        "g-ones"
+      ]
     },
     {
-      "id": "s30", "nodeId": "III.3", "role": "preuve", "attribution": "ri",
+      "id": "s30",
+      "nodeId": "III.3",
+      "role": "preuve",
+      "attribution": "ri",
       "he": "ועוד יש להביא ראיה דהלכתא כרבה מדמוקי סתמא דגמרא מתניתין דהאומנין (ב״מ דף פ:) הלוהו על המשכון שומר שכר מחוורתא דלא כרבי אליעזר דאמר במלוה חבירו על המשכון ואבד ישבע ויטול מעותיו",
       "translation": "Et on peut encore apporter une preuve que la הלכה est comme רבה : la Guemara anonyme établit la משנה de האומנין (ב״מ פ:) « s'il lui a prêté sur gage, il est שומר שכר » [en disant] : « il est clair qu'elle n'est pas comme ר׳ אליעזר », qui dit à propos de celui qui prête sur gage et le gage est perdu : « il jure et prend son argent ».",
       "explanation": {
@@ -734,16 +2211,46 @@
         "approfondi": "« סתמא דגמרא » : la voix anonyme de la Guemara, à qui on donne le poids d'une conclusion. La משנה est en פ:, mais la discussion est en פא:-פב:."
       },
       "terms": [
-        { "he": "סתמא דגמרא", "fr": "la Guemara anonyme" },
-        { "he": "מוקי", "fr": "établit (la משנה dans tel avis)" },
-        { "he": "הלוהו על המשכון", "fr": "il lui a prêté sur gage" },
-        { "he": "מחוורתא", "fr": "il est clair" },
-        { "he": "ישבע ויטול מעותיו", "fr": "il jure et prend son argent" }
+        {
+          "he": "סתמא דגמרא",
+          "fr": "la Guemara anonyme"
+        },
+        {
+          "he": "מוקי",
+          "fr": "établit (la משנה dans tel avis)"
+        },
+        {
+          "he": "הלוהו על המשכון",
+          "fr": "il lui a prêté sur gage"
+        },
+        {
+          "he": "מחוורתא",
+          "fr": "il est clair"
+        },
+        {
+          "he": "ישבע ויטול מעותיו",
+          "fr": "il jure et prend son argent"
+        }
       ],
-      "sourceIds": ["bm-81b", "bm-82a"]
+      "sourceIds": [
+        "bm-81b",
+        "bm-82a"
+      ],
+      "peopleIds": [
+        "rabba",
+        "r-eliezer"
+      ],
+      "glossaryRefs": [
+        "g-shomer-chinam",
+        "g-shomer-sachar",
+        "g-mashkon"
+      ]
     },
     {
-      "id": "s31", "nodeId": "III.3", "role": "preuve", "attribution": "ri",
+      "id": "s31",
+      "nodeId": "III.3",
+      "role": "preuve",
+      "attribution": "ri",
       "he": "ולרב יוסף הו״מ לאוקמה אפילו כרבי אליעזר דלמסקנא מוקי כולהו אליביה ופלוגתייהו במלוה צריך למשכון אי מצוה קעביד אי לא",
       "translation": "Or selon רב יוסף, on aurait pu l'établir même selon ר׳ אליעזר : car à la conclusion, on les met tous d'accord avec lui, et ils divergent sur le prêteur qui a besoin du gage : fait-il une מצוה ou non ?",
       "explanation": {
@@ -752,19 +2259,57 @@
         "approfondi": "Comme le rabbin l'a précisé au cours : utiliser le gage n'est pas « עוסק במצוה ». On ne dirait pas : je m'occupe d'un gage, donc je ne donne pas au pauvre."
       },
       "terms": [
-        { "he": "הו״מ", "fr": "הוה מצי – il aurait pu" },
-        { "he": "לאוקמה", "fr": "l'établir (selon tel avis / dans tel cas)" },
-        { "he": "למסקנא", "fr": "à la conclusion" },
-        { "he": "כולהו אליביה", "fr": "tous selon lui" },
-        { "he": "פלוגתייהו", "fr": "leur divergence" },
-        { "he": "צריך למשכון", "fr": "qui a besoin du gage" },
-        { "he": "קעביד", "fr": "קא עביד – il fait" }
+        {
+          "he": "הו״מ",
+          "fr": "הוה מצי – il aurait pu"
+        },
+        {
+          "he": "לאוקמה",
+          "fr": "l'établir (selon tel avis / dans tel cas)"
+        },
+        {
+          "he": "למסקנא",
+          "fr": "à la conclusion"
+        },
+        {
+          "he": "כולהו אליביה",
+          "fr": "tous selon lui"
+        },
+        {
+          "he": "פלוגתייהו",
+          "fr": "leur divergence"
+        },
+        {
+          "he": "צריך למשכון",
+          "fr": "qui a besoin du gage"
+        },
+        {
+          "he": "קעביד",
+          "fr": "קא עביד – il fait"
+        }
       ],
-      "sourceIds": ["bm-82a", "bm-82b"],
-      "tableIds": ["t-eliezer-akiva"]
+      "sourceIds": [
+        "bm-82a",
+        "bm-82b"
+      ],
+      "tableIds": [
+        "t-eliezer-akiva"
+      ],
+      "peopleIds": [
+        "rav-yosef",
+        "r-eliezer"
+      ],
+      "glossaryRefs": [
+        "g-shomer-aveda",
+        "g-shomer-chinam",
+        "g-shomer-sachar"
+      ]
     },
     {
-      "id": "s32", "nodeId": "III.3", "role": "explication", "attribution": "ri",
+      "id": "s32",
+      "nodeId": "III.3",
+      "role": "explication",
+      "attribution": "ri",
       "he": "פי׳ שצריך למשכון להשתמש בו ופוחת לו והולך מהלואתו כך פירש התם בקונטרס",
       "translation": "Explication : il a besoin du gage pour l'utiliser, et il réduit la dette au fur et à mesure. C'est ainsi que רש״י l'explique là-bas.",
       "explanation": {
@@ -773,14 +2318,32 @@
         "approfondi": "Comparer la ברייתא d'אבא שאול (פב:) : on peut louer le gage d'un pauvre et déduire le loyer de la dette (« פוחת והולך »)."
       },
       "terms": [
-        { "he": "פי׳", "fr": "פירוש – explication" },
-        { "he": "פוחת לו והולך", "fr": "il réduit progressivement" },
-        { "he": "קונטרס", "fr": "le commentaire de רש״י" }
+        {
+          "he": "פי׳",
+          "fr": "פירוש – explication"
+        },
+        {
+          "he": "פוחת לו והולך",
+          "fr": "il réduit progressivement"
+        },
+        {
+          "he": "קונטרס",
+          "fr": "le commentaire de רש״י"
+        }
       ],
-      "sourceIds": ["rashi-bm-82b", "bm-82b"]
+      "sourceIds": [
+        "rashi-bm-82b",
+        "bm-82b"
+      ],
+      "peopleIds": [
+        "rashi"
+      ]
     },
     {
-      "id": "s33", "nodeId": "III.3", "role": "conclusion", "attribution": "ri",
+      "id": "s33",
+      "nodeId": "III.3",
+      "role": "conclusion",
+      "attribution": "ri",
       "he": "וא״כ הו״מ לאוקמה מתניתין באין צריך למשכון דכ״ע מצוה קעביד ולכל הוי כשומר שכר",
       "translation": "Si c'est ainsi, on aurait pu établir la משנה dans le cas où il n'a pas besoin du gage, où tout le monde [dit qu']il fait une מצוה, et pour tous il est comme un שומר שכר.",
       "explanation": {
@@ -789,13 +2352,29 @@
         "approfondi": "Le תוספות de ב״מ כט. : « אלא ודאי משום דהלכה כרבה ואין הלכה כרב יוסף ולדידיה לא מצי לאוקמא מתניתין כר״א »."
       },
       "terms": [
-        { "he": "אין צריך למשכון", "fr": "qui n'a pas besoin du gage" },
-        { "he": "ולכל", "fr": "et pour tous" }
+        {
+          "he": "אין צריך למשכון",
+          "fr": "qui n'a pas besoin du gage"
+        },
+        {
+          "he": "ולכל",
+          "fr": "et pour tous"
+        }
       ],
-      "sourceIds": ["bm-82a", "tosafot-bm-29a"]
+      "sourceIds": [
+        "bm-82a",
+        "tosafot-bm-29a"
+      ],
+      "peopleIds": [],
+      "glossaryRefs": [
+        "g-shomer-sachar"
+      ]
     },
     {
-      "id": "s34", "nodeId": "IV.1", "role": "kushya", "attribution": "ri",
+      "id": "s34",
+      "nodeId": "IV.1",
+      "role": "kushya",
+      "attribution": "ri",
       "he": "והא דבעי לאוקמא פלוגתייהו בדרבה ורב יוסף והוי רבה כר״א שהוא שמותי",
       "translation": "Et ce [qui pose problème] : [la Guemara] veut établir leur divergence sur [la discussion] de רבה et רב יוסף, et alors רבה est comme ר׳ אליעזר, qui est שמותי.",
       "explanation": {
@@ -804,14 +2383,35 @@
         "approfondi": "« שמותי » : selon רש״י (שבת קל:), cela signifie « excommunié » (ברכוהו, après l'épisode du תנור של עכנאי, ב״מ נט:). Selon ר״ת et le רשב״ם (תוספות נדה ז:), cela signifie « disciple de שמאי ». Dans les deux cas, on ne tranche pas comme lui. Le rabbin, au cours, a utilisé la première explication (« בנידוי »). Ici « ר״א » = ר׳ אליעזר."
       },
       "terms": [
-        { "he": "והא ד־", "fr": "et ce que… (introduit une difficulté)" },
-        { "he": "בעי לאוקמא", "fr": "il veut établir" },
-        { "he": "שמותי", "fr": "excommunié, ou disciple de שמאי" }
+        {
+          "he": "והא דבעי לאוקמא",
+          "fr": "et ce que [la Guemara] veut établir… (introduit une difficulté)"
+        },
+        {
+          "he": "שמותי",
+          "fr": "excommunié, ou disciple de שמאי"
+        }
       ],
-      "sourceIds": ["bm-82a", "rashi-shabbat-130b", "tosafot-niddah-7b"]
+      "sourceIds": [
+        "bm-82a",
+        "rashi-shabbat-130b",
+        "tosafot-niddah-7b"
+      ],
+      "peopleIds": [
+        "rabba",
+        "rav-yosef",
+        "r-eliezer"
+      ],
+      "glossaryRefs": [
+        "g-shomer-aveda",
+        "g-shamuti"
+      ]
     },
     {
-      "id": "s35", "nodeId": "IV.2", "role": "kushya", "attribution": "ri",
+      "id": "s35",
+      "nodeId": "IV.2",
+      "role": "kushya",
+      "attribution": "ri",
       "he": "ועוד קאמר לימא דרב יוסף תנאי היא ומסיק דרב יוסף ככולי עלמא ומשמע דרבה ודאי תנאי היא ואינו יכול להעמיד אלא כר״א ולא כרבי עקיבא דאי לרבי עקיבא ודאי הוי שומר שכר",
       "translation": "Et de plus, elle dit : « disons que [l'avis de] רב יוסף est [une divergence de] תנאים », et elle conclut que רב יוסף est selon tout le monde. Cela implique que רבה est certainement [une divergence de] תנאים, et ne peut être établi que selon ר׳ אליעזר et non selon ר׳ עקיבא : car selon ר׳ עקיבא, il est certainement שומר שכר.",
       "explanation": {
@@ -820,17 +2420,51 @@
         "approfondi": "Le תוספות de ב״מ כט. ajoute : « וגם דמתניתי׳ לא אתיא כוותיה »."
       },
       "terms": [
-        { "he": "לימא", "fr": "disons que…" },
-        { "he": "תנאי היא", "fr": "c'est une divergence de תנאים" },
-        { "he": "מסיק", "fr": "il conclut" },
-        { "he": "ככולי עלמא", "fr": "selon tout le monde" },
-        { "he": "משמע", "fr": "cela implique" },
-        { "he": "להעמיד", "fr": "établir" }
+        {
+          "he": "לימא",
+          "fr": "disons que…"
+        },
+        {
+          "he": "תנאי היא",
+          "fr": "c'est une divergence de תנאים"
+        },
+        {
+          "he": "מסיק",
+          "fr": "il conclut"
+        },
+        {
+          "he": "ככולי עלמא",
+          "fr": "selon tout le monde"
+        },
+        {
+          "he": "משמע",
+          "fr": "cela implique"
+        },
+        {
+          "he": "להעמיד",
+          "fr": "établir"
+        }
       ],
-      "sourceIds": ["bm-82a", "rashi-bm-82a"]
+      "sourceIds": [
+        "bm-82a",
+        "rashi-bm-82a"
+      ],
+      "peopleIds": [
+        "rav-yosef",
+        "rabba",
+        "r-eliezer",
+        "r-akiva"
+      ],
+      "glossaryRefs": [
+        "g-shomer-sachar",
+        "g-tannai-hi"
+      ]
     },
     {
-      "id": "s36", "nodeId": "IV.3", "role": "terutz", "attribution": "ri",
+      "id": "s36",
+      "nodeId": "IV.3",
+      "role": "terutz",
+      "attribution": "ri",
       "he": "אי אפשר לומר כן דעל כרחך לרבה אפי׳ לרבי עקיבא שומר חנם הוי דבאלו מציאות (ב״מ דף כט. ושם) לרבה לא הוי לרבי טרפון דמתיר להשתמש אלא שומר שכר א״כ לר״ע לא הוי אלא שומר חנם",
       "translation": "Il est impossible de dire cela : forcément, selon רבה, même pour ר׳ עקיבא il est שומר חנם. Car en אלו מציאות (כט.), selon רבה, même pour ר׳ טרפון, qui permet d'utiliser, il n'est que שומר שכר. Donc pour ר׳ עקיבא [qui ne permet pas], il n'est que שומר חנם.",
       "explanation": {
@@ -839,15 +2473,43 @@
         "approfondi": "C'est une contradiction directe avec רש״י. Le תוספות de ב״מ פב. ד״ה לימא דרב יוסף תנאי le rappelle : « פירש בקונטרס דרבה ודאי תנאי היא ולעיל פירשתי… דרבה ודאי לאו תנאי »."
       },
       "terms": [
-        { "he": "אי אפשר לומר כן", "fr": "il est impossible de dire cela" },
-        { "he": "על כרחך", "fr": "forcément" },
-        { "he": "דמתיר להשתמש", "fr": "qui permet d'utiliser" }
+        {
+          "he": "אי אפשר לומר כן",
+          "fr": "il est impossible de dire cela"
+        },
+        {
+          "he": "על כרחך",
+          "fr": "forcément"
+        },
+        {
+          "he": "דמתיר להשתמש",
+          "fr": "qui permet d'utiliser"
+        }
       ],
-      "sourceIds": ["bm-29a", "tosafot-bm-82a"],
-      "tableIds": ["t-tarfon"]
+      "sourceIds": [
+        "bm-29a",
+        "tosafot-bm-82a"
+      ],
+      "tableIds": [
+        "t-tarfon"
+      ],
+      "peopleIds": [
+        "rabba",
+        "r-akiva",
+        "r-tarfon"
+      ],
+      "glossaryRefs": [
+        "g-shomer-aveda",
+        "g-shomer-chinam",
+        "g-shomer-sachar",
+        "g-tannai-hi"
+      ]
     },
     {
-      "id": "s37", "nodeId": "IV.4", "role": "terutz", "attribution": "ri",
+      "id": "s37",
+      "nodeId": "IV.4",
+      "role": "terutz",
+      "attribution": "ri",
       "he": "לכך נראה דרבה לא יעמיד כלל פלוגתייהו בשומר אבידה אלא יאמר דלכולי עלמא שומר חנם הוי ופלוגתייהו בדשמואל דר״ע אית ליה דשמואל אבד קתא דמגלא אבד אלפא זוזי ור״א לית ליה דשמואל",
       "translation": "C'est pourquoi il semble que רבה n'établira pas du tout leur divergence sur le שומר אבידה. Il dira que selon tout le monde il est שומר חנם, et qu'ils divergent sur [la règle] de שמואל : ר׳ עקיבא admet la règle de שמואל, « [si] le manche de la faucille est perdu, les mille זוז sont perdus », et ר׳ אליעזר n'admet pas la règle de שמואל.",
       "explanation": {
@@ -856,19 +2518,60 @@
         "approfondi": "Dans la Guemara (פב.), cette proposition (« לימא… בדשמואל קא מיפלגי ») est d'abord rejetée (« דכולי עלמא לית להו דשמואל »). Le תוספות de פב. ד״ה נימא explique que, selon la vérité (puisque la הלכה est comme רבה), ils divergent bien sur שמואל, « בין בדשוי ובין בדלא שוי ». Exemple du cours : prêt de 10 000 ₪, gage = une montre de 100 ₪. Selon שמואל, en perdant la montre, le prêteur perd les 10 000 ₪."
       },
       "terms": [
-        { "he": "לכך נראה", "fr": "c'est pourquoi il semble" },
-        { "he": "לא יעמיד כלל", "fr": "il n'établira pas du tout" },
-        { "he": "אית ליה", "fr": "il admet" },
-        { "he": "לית ליה", "fr": "il n'admet pas" },
-        { "he": "קתא דמגלא", "fr": "le manche d'une faucille" },
-        { "he": "אלפא זוזי", "fr": "mille זוז" },
-        { "he": "גוביינא", "fr": "recouvrement (de la dette)" }
+        {
+          "he": "לכך נראה",
+          "fr": "c'est pourquoi il semble"
+        },
+        {
+          "he": "לא יעמיד כלל",
+          "fr": "il n'établira pas du tout"
+        },
+        {
+          "he": "אית ליה",
+          "fr": "il admet"
+        },
+        {
+          "he": "לית ליה",
+          "fr": "il n'admet pas"
+        },
+        {
+          "he": "קתא דמגלא",
+          "fr": "le manche d'une faucille"
+        },
+        {
+          "he": "אלפא זוזי",
+          "fr": "mille זוז"
+        }
       ],
-      "sourceIds": ["bm-82a", "rashi-bm-82a", "tosafot-bm-82a", "shevuot-43b"],
-      "tableIds": ["t-eliezer-akiva", "t-shmuel"]
+      "sourceIds": [
+        "bm-82a",
+        "rashi-bm-82a",
+        "tosafot-bm-82a",
+        "shevuot-43b"
+      ],
+      "tableIds": [
+        "t-eliezer-akiva",
+        "t-shmuel"
+      ],
+      "peopleIds": [
+        "rabba",
+        "r-akiva",
+        "r-eliezer",
+        "shmuel"
+      ],
+      "glossaryRefs": [
+        "g-shomer-aveda",
+        "g-shomer-chinam",
+        "g-shomer-sachar",
+        "g-mashkon",
+        "g-gubayna"
+      ]
     },
     {
-      "id": "s38", "nodeId": "IV.5", "role": "explication", "attribution": "ri",
+      "id": "s38",
+      "nodeId": "IV.5",
+      "role": "explication",
+      "attribution": "ri",
       "he": "ורב יוסף כי מוקי פלוגתייהו בדשמואל לא קאי רבי אליעזר כוותיה שהוא פוטר את המלוה באבידה אף מדמי המשכון",
       "translation": "Et pour רב יוסף, s'il établissait leur divergence sur [la règle] de שמואל, ר׳ אליעזר ne serait pas avec lui : car il exempte le prêteur en cas de perte, même de la valeur du gage.",
       "explanation": {
@@ -877,16 +2580,45 @@
         "approfondi": "Exemple du cours : prêt de 10 000 ₪, montre de 100 ₪. Selon שמואל, le prêteur perd tout. Sans שמואל, un שומר שכר perd au moins 100 ₪. ר׳ אליעזר dit : il récupère les 10 000 ₪. Donc pour lui, le prêteur n'est que שומר חנם."
       },
       "terms": [
-        { "he": "כי מוקי", "fr": "s'il établissait" },
-        { "he": "לא קאי… כוותיה", "fr": "ne serait pas de son avis" },
-        { "he": "פוטר את המלוה", "fr": "il exempte le prêteur" },
-        { "he": "אף מדמי המשכון", "fr": "même de la valeur du gage" }
+        {
+          "he": "כי מוקי",
+          "fr": "s'il établissait"
+        },
+        {
+          "he": "לא קאי רבי אליעזר כוותיה",
+          "fr": "ר׳ אליעזר ne serait pas de son avis"
+        },
+        {
+          "he": "פוטר את המלוה",
+          "fr": "il exempte le prêteur"
+        },
+        {
+          "he": "אף מדמי המשכון",
+          "fr": "même de la valeur du gage"
+        }
       ],
-      "sourceIds": ["bm-81b", "tosafot-bm-29a"],
-      "tableIds": ["t-eliezer-akiva"]
+      "sourceIds": [
+        "bm-81b",
+        "tosafot-bm-29a"
+      ],
+      "tableIds": [
+        "t-eliezer-akiva"
+      ],
+      "peopleIds": [
+        "rav-yosef",
+        "r-eliezer",
+        "shmuel"
+      ],
+      "glossaryRefs": [
+        "g-shomer-chinam",
+        "g-shomer-sachar"
+      ]
     },
     {
-      "id": "s39", "nodeId": "IV.5", "role": "explication", "attribution": "ri",
+      "id": "s39",
+      "nodeId": "IV.5",
+      "role": "explication",
+      "attribution": "ri",
       "he": "ולכך מוקי פלוגתייהו בשומר אבידה והוי כר״ע וקאמר לימא דרב יוסף תנאי היא דרבה ודאי לאו תנאי דמוקי פלוגתייהו בדשמואל ומסיק דכולי עלמא אית להו דרב יוסף כו׳",
       "translation": "C'est pourquoi [la Guemara] établit leur divergence sur le שומר אבידה, et [רב יוסף] serait comme ר׳ עקיבא. Et elle dit : « disons que רב יוסף est [une divergence de] תנאים », car רבה n'est certainement pas [une divergence de] תנאים, puisqu'il établit leur divergence sur [la règle] de שמואל. Et elle conclut que tout le monde admet [l'avis] de רב יוסף, etc.",
       "explanation": {
@@ -895,14 +2627,40 @@
         "approfondi": "Le cours résume : « que ce soit רבה ou רב יוסף, chacun peut dire : je vais selon tous les avis ». Le « כו׳ » renvoie à la suite de la Guemara (« והכא במלוה צריך למשכון קא מיפלגי »)."
       },
       "terms": [
-        { "he": "ולכך", "fr": "et c'est pourquoi" },
-        { "he": "לאו תנאי", "fr": "n'est pas une divergence de תנאים" },
-        { "he": "כו׳", "fr": "וכולי – etc." }
+        {
+          "he": "ולכך",
+          "fr": "et c'est pourquoi"
+        },
+        {
+          "he": "לאו תנאי",
+          "fr": "n'est pas une divergence de תנאים"
+        },
+        {
+          "he": "כו׳",
+          "fr": "וכולי – etc."
+        }
       ],
-      "sourceIds": ["bm-82a", "bm-82b", "tosafot-bm-82a"]
+      "sourceIds": [
+        "bm-82a",
+        "bm-82b",
+        "tosafot-bm-82a"
+      ],
+      "peopleIds": [
+        "r-akiva",
+        "rav-yosef",
+        "rabba",
+        "shmuel"
+      ],
+      "glossaryRefs": [
+        "g-shomer-aveda",
+        "g-mashkon"
+      ]
     },
     {
-      "id": "s40", "nodeId": "V.1", "role": "kushya", "attribution": "ri",
+      "id": "s40",
+      "nodeId": "V.1",
+      "role": "kushya",
+      "attribution": "ri",
       "he": "והא דתנן בשבועות (ד׳ מג ושם) סלע הלויתני עליו ושתים היה שוה דמשמע שחייב לשלם המשכון כשאבד",
       "translation": "Et ce que nous avons appris en שבועות (מג.) : « tu m'as prêté un סלע dessus, et il valait deux », ce qui implique qu'il doit payer le gage quand il est perdu,",
       "explanation": {
@@ -911,15 +2669,38 @@
         "approfondi": "Valeurs : סלע = 4 דינרים (זוז) ; שקל = 2 דינרים. Le renvoi « (ד׳ מג) » : la משנה est en מג. ; la Guemara qui suit (שמואל, ר׳ אליעזר / ר׳ עקיבא) est en מג:. Ici il n'y a pas de question de שמואל : le gage vaut plus que la dette."
       },
       "terms": [
-        { "he": "והא דתנן", "fr": "et ce que nous avons appris (dans une משנה)" },
-        { "he": "סלע", "fr": "סלע : pièce de 4 דינרים" },
-        { "he": "הלויתני עליו", "fr": "tu m'as prêté dessus (sur ce gage)" },
-        { "he": "ושתים היה שוה", "fr": "et il en valait deux" }
+        {
+          "he": "והא דתנן",
+          "fr": "et ce que nous avons appris (dans une משנה)"
+        },
+        {
+          "he": "סלע",
+          "fr": "סלע : pièce de 4 דינרים"
+        },
+        {
+          "he": "הלויתני עליו",
+          "fr": "tu m'as prêté dessus (sur ce gage)"
+        },
+        {
+          "he": "ושתים היה שוה",
+          "fr": "et il en valait deux"
+        }
       ],
-      "sourceIds": ["shevuot-43a", "shevuot-43b"]
+      "sourceIds": [
+        "shevuot-43a",
+        "shevuot-43b"
+      ],
+      "peopleIds": [],
+      "glossaryRefs": [
+        "g-shomer-chinam",
+        "g-sela"
+      ]
     },
     {
-      "id": "s41", "nodeId": "V.2", "role": "terutz", "attribution": "ri",
+      "id": "s41",
+      "nodeId": "V.2",
+      "role": "terutz",
+      "attribution": "ri",
       "he": "מיירי שאבד בפשיעה לרבה דאמר שומר חנם הוי:",
       "translation": "parle [d'un cas] où il a été perdu par négligence, selon רבה qui dit qu'il est שומר חנם.",
       "explanation": {
@@ -928,156 +2709,972 @@
         "approfondi": "Le תוספות de ב״מ כט. précise : ce qui correspond à la dette est perdu même sans פשיעה (règle de שמואל) ; seul le surplus demande une פשיעה. Ce n'est pas une explication forcée : la Guemara de פב., à son premier stade, aurait dû expliquer la משנה de שבועות de la même façon."
       },
       "terms": [
-        { "he": "מיירי", "fr": "il parle (d'un cas où)" },
-        { "he": "בפשיעה", "fr": "par négligence" }
+        {
+          "he": "מיירי",
+          "fr": "il parle (d'un cas où)"
+        },
+        {
+          "he": "בפשיעה",
+          "fr": "par négligence"
+        }
       ],
-      "sourceIds": ["shevuot-43a", "tosafot-bm-29a"]
+      "sourceIds": [
+        "shevuot-43a",
+        "tosafot-bm-29a"
+      ],
+      "peopleIds": [
+        "rabba"
+      ],
+      "glossaryRefs": [
+        "g-shomer-chinam",
+        "g-peshia"
+      ]
     }
   ],
-
   "tables": [
     {
       "id": "t-shomrim",
       "title": "Les quatre gardiens (ארבעה שומרים)",
-      "columns": ["", "פשיעה", "גניבה ואבידה", "אונס"],
+      "columns": [
+        "",
+        "פשיעה",
+        "גניבה ואבידה",
+        "אונס"
+      ],
       "rows": [
-        ["שומר חנם", "חייב", "פטור", "פטור"],
-        ["שומר שכר", "חייב", "חייב", "פטור"],
-        ["שוכר", "חייב", "חייב", "פטור"],
-        ["שואל", "חייב", "חייב", "חייב"]
+        [
+          "שומר חנם",
+          "חייב",
+          "פטור",
+          "פטור"
+        ],
+        [
+          "שומר שכר",
+          "חייב",
+          "חייב",
+          "פטור"
+        ],
+        [
+          "שוכר",
+          "חייב",
+          "חייב",
+          "פטור"
+        ],
+        [
+          "שואל",
+          "חייב",
+          "חייב",
+          "חייב"
+        ]
       ],
       "note": "Rappel de base (ב״מ צג.-צד:). Le שוכר est comme le שומר שכר."
     },
     {
       "id": "t-base",
       "title": "La מחלוקת de base (ב״ק נו:)",
-      "columns": ["", "רבה", "רב יוסף"],
+      "columns": [
+        "",
+        "רבה",
+        "רב יוסף"
+      ],
       "rows": [
-        ["Statut du שומר אבידה", "שומר חנם", "שומר שכר"],
-        ["Raison", "« מאי הנאה קא מטי ליה »", "« פרוטה דרב יוסף » : dispense de donner au pauvre"],
-        ["La dispense existe-t-elle ?", "Oui (ר״י, s10)", "Oui"],
-        ["Suffit-elle pour un salaire ?", "Non : elle est rare", "Oui"],
-        ["Qui tranche ainsi", "ר״י, רא״ש (רמ״א)", "ר״ח, בה״ג, רמב״ם, שולחן ערוך"]
+        [
+          "Statut du שומר אבידה",
+          "שומר חנם",
+          "שומר שכר"
+        ],
+        [
+          "Raison",
+          "« מאי הנאה קא מטי ליה »",
+          "« פרוטה דרב יוסף » : dispense de donner au pauvre"
+        ],
+        [
+          "La dispense existe-t-elle ?",
+          "Oui (ר״י, s10)",
+          "Oui"
+        ],
+        [
+          "Suffit-elle pour un salaire ?",
+          "Non : elle est rare",
+          "Oui"
+        ],
+        [
+          "Qui tranche ainsi",
+          "ר״י, רא״ש (רמ״א)",
+          "ר״ח, בה״ג, רמב״ם, שולחן ערוך"
+        ]
       ]
     },
     {
       "id": "t-tarfon",
       "title": "ר׳ טרפון et ר׳ עקיבא (ב״מ כח:-כט.) selon chaque אמורא",
-      "columns": ["", "selon רבה", "selon רב יוסף"],
+      "columns": [
+        "",
+        "selon רבה",
+        "selon רב יוסף"
+      ],
       "rows": [
-        ["ר׳ עקיבא (« לא ישתמש »)", "שומר חנם", "שומר שכר"],
-        ["ר׳ טרפון (« ישתמש »)", "שומר שכר (la permission = salaire)", "שואל (responsable de l'אונס)"],
-        ["Avec רב נחמן (ב״מ מג.) ?", "Oui : la permission ne fait qu'un שומר שכר", "Non : la permission ferait un שואל"]
+        [
+          "ר׳ עקיבא (« לא ישתמש »)",
+          "שומר חנם",
+          "שומר שכר"
+        ],
+        [
+          "ר׳ טרפון (« ישתמש »)",
+          "שומר שכר (la permission = salaire)",
+          "שואל (responsable de l'אונס)"
+        ],
+        [
+          "Avec רב נחמן (ב״מ מג.) ?",
+          "Oui : la permission ne fait qu'un שומר שכר",
+          "Non : la permission ferait un שואל"
+        ]
       ],
       "note": "Base des segments s27-s29 (III.2) et s36 (IV.3)."
     },
     {
       "id": "t-eliezer-akiva",
       "title": "ר׳ אליעזר et ר׳ עקיבא sur le gage perdu (ב״מ פא:-פב:)",
-      "columns": ["", "ר׳ אליעזר", "ר׳ עקיבא"],
+      "columns": [
+        "",
+        "ר׳ אליעזר",
+        "ר׳ עקיבא"
+      ],
       "rows": [
-        ["Texte", "« ישבע ויטול מעותיו »", "« אבד המשכון – אבדו מעותיך »"],
-        ["Explication de רבה (selon le תוספות)", "שומר חנם ; n'admet pas שמואל", "שומר חנם ; admet שמואל (le gage remplace la dette)"],
-        ["Explication de רב יוסף (conclusion de la Guemara)", "Prêteur qui a besoin du gage : pas de מצוה → שומר חנם", "Même s'il en a besoin, il fait une מצוה → שומר שכר"],
-        ["Pourquoi רב יוסף ne peut pas dire « שמואל »", "Il devrait faire payer au moins la valeur du gage (שומר שכר)", "—"]
+        [
+          "Texte",
+          "« ישבע ויטול מעותיו »",
+          "« אבד המשכון – אבדו מעותיך »"
+        ],
+        [
+          "Explication de רבה (selon le תוספות)",
+          "שומר חנם ; n'admet pas שמואל",
+          "שומר חנם ; admet שמואל (le gage remplace la dette)"
+        ],
+        [
+          "Explication de רב יוסף (conclusion de la Guemara)",
+          "Prêteur qui a besoin du gage : pas de מצוה → שומר חנם",
+          "Même s'il en a besoin, il fait une מצוה → שומר שכר"
+        ],
+        [
+          "Pourquoi רב יוסף ne peut pas dire « שמואל »",
+          "Il devrait faire payer au moins la valeur du gage (שומר שכר)",
+          "—"
+        ]
       ],
       "note": "Base des segments s31, s37, s38."
     },
     {
       "id": "t-shmuel",
       "title": "Exemple chiffré (du cours) : prêt de 10 000 ₪, gage = une montre de 100 ₪, la montre est perdue sans פשיעה",
-      "columns": ["Approche", "Ce que perd le prêteur", "Récupère"],
+      "columns": [
+        "Approche",
+        "Ce que perd le prêteur",
+        "Récupère"
+      ],
       "rows": [
-        ["שמואל (ר׳ עקיבא selon רבה)", "Toute la dette (10 000 ₪)", "0"],
-        ["שומר שכר sans שמואל", "La valeur de la montre (100 ₪)", "9 900 ₪"],
-        ["שומר חנם sans שמואל (ר׳ אליעזר)", "Rien", "10 000 ₪"]
+        [
+          "שמואל (ר׳ עקיבא selon רבה)",
+          "Toute la dette (10 000 ₪)",
+          "0"
+        ],
+        [
+          "שומר שכר sans שמואל",
+          "La valeur de la montre (100 ₪)",
+          "9 900 ₪"
+        ],
+        [
+          "שומר חנם sans שמואל (ר׳ אליעזר)",
+          "Rien",
+          "10 000 ₪"
+        ]
       ],
       "note": "Exemple du rabbin, adapté. Les ₪ remplacent les זוז."
     }
   ],
-
   "sources": [
-    { "id": "bk-56b", "ref": "בבא קמא נו:", "sefaria": "Bava Kamma 56b", "url": "https://www.sefaria.org/Bava_Kamma_56b", "role": "La Guemara commentée", "consulted": true },
-    { "id": "bk-57a", "ref": "בבא קמא נז.", "sefaria": "Bava Kamma 57a", "url": "https://www.sefaria.org/Bava_Kamma_57a", "role": "Suite de la סוגיא : « השב… לגינתו ולחורבתו »", "consulted": true },
-    { "id": "rashi-bk-56b", "ref": "רש״י ב״ק נו:", "sefaria": "Rashi on Bava Kamma 56b", "url": "https://www.sefaria.org/Rashi_on_Bava_Kamma_56b", "consulted": true },
-    { "id": "rashi-bk-57a", "ref": "רש״י ב״ק נז.", "sefaria": "Rashi on Bava Kamma 57a", "url": "https://www.sefaria.org/Rashi_on_Bava_Kamma_57a", "consulted": true },
-    { "id": "sukkah-25a", "ref": "סוכה כה.", "sefaria": "Sukkah 25a", "url": "https://www.sefaria.org/Sukkah_25a", "role": "Source de העוסק במצוה פטור מן המצוה", "consulted": true },
-    { "id": "sukkah-25b", "ref": "סוכה כה:", "sefaria": "Sukkah 25b", "url": "https://www.sefaria.org/Sukkah_25b", "consulted": true },
-    { "id": "rashi-sukkah-25a", "ref": "רש״י סוכה כה.", "sefaria": "Rashi on Sukkah 25a", "url": "https://www.sefaria.org/Rashi_on_Sukkah_25a", "consulted": true },
-    { "id": "tosafot-sukkah-25a", "ref": "תוספות סוכה כה. ד״ה שלוחי מצוה", "sefaria": "Tosafot on Sukkah 25a", "url": "https://www.sefaria.org/Tosafot_on_Sukkah_25a", "role": "Parallèle de la partie I", "consulted": true },
-    { "id": "nedarim-33b", "ref": "נדרים לג:", "sefaria": "Nedarim 33b", "url": "https://www.sefaria.org/Nedarim_33b", "role": "« פרוטה דרב יוסף לא שכיח »", "consulted": true },
-    { "id": "ran-nedarim-33b", "ref": "ר״ן נדרים לג:", "sefaria": "Ran on Nedarim 33b", "url": "https://www.sefaria.org/Ran_on_Nedarim_33b", "consulted": true },
-    { "id": "bm-28b", "ref": "בבא מציעא כח:", "sefaria": "Bava Metzia 28b", "url": "https://www.sefaria.org/Bava_Metzia_28b", "role": "משנה : « מה יהא בדמים »", "consulted": true },
-    { "id": "bm-29a", "ref": "בבא מציעא כט.", "sefaria": "Bava Metzia 29a", "url": "https://www.sefaria.org/Bava_Metzia_29a", "role": "ר׳ טרפון / ר׳ עקיבא selon רבה et רב יוסף", "consulted": true },
-    { "id": "tosafot-bm-29a", "ref": "תוספות ב״מ כט. ד״ה והוי שואל עלייהו", "sefaria": "Tosafot on Bava Metzia 29a", "url": "https://www.sefaria.org/Tosafot_on_Bava_Metzia_29a", "role": "Parallèle presque complet de notre תוספות", "consulted": true },
-    { "id": "bm-29b", "ref": "בבא מציעא כט:", "sefaria": "Bava Metzia 29b", "url": "https://www.sefaria.org/Bava_Metzia_29b", "role": "« מצא כסות… שוטחה לצרכה »", "consulted": true },
-    { "id": "bm-31a", "ref": "בבא מציעא לא.", "sefaria": "Bava Metzia 31a", "url": "https://www.sefaria.org/Bava_Metzia_31a", "role": "« תשיבם… לגינתו ולחורבתו »", "consulted": true },
-    { "id": "bm-43a", "ref": "בבא מציעא מג.", "sefaria": "Bava Metzia 43a", "url": "https://www.sefaria.org/Bava_Metzia_43a", "role": "Le changeur ; רב נחמן « נאנסו לא »", "consulted": true },
-    { "id": "rashi-bm-43a", "ref": "רש״י ב״מ מג.", "sefaria": "Rashi on Bava Metzia 43a", "url": "https://www.sefaria.org/Rashi_on_Bava_Metzia_43a", "consulted": true },
-    { "id": "bm-81b", "ref": "בבא מציעא פא:", "sefaria": "Bava Metzia 81b", "url": "https://www.sefaria.org/Bava_Metzia_81b", "role": "ר׳ אליעזר et ר׳ עקיבא sur le gage", "consulted": true },
-    { "id": "bm-82a", "ref": "בבא מציעא פב.", "sefaria": "Bava Metzia 82a", "url": "https://www.sefaria.org/Bava_Metzia_82a", "role": "« מחוורתא דלא כר׳ אליעזר » ; « לימא דרב יוסף תנאי היא »", "consulted": true },
-    { "id": "bm-82b", "ref": "בבא מציעא פב:", "sefaria": "Bava Metzia 82b", "url": "https://www.sefaria.org/Bava_Metzia_82b", "role": "« במלוה צריך למשכון קמיפלגי »", "consulted": true },
-    { "id": "rashi-bm-82a", "ref": "רש״י ב״מ פב.", "sefaria": "Rashi on Bava Metzia 82a", "url": "https://www.sefaria.org/Rashi_on_Bava_Metzia_82a", "role": "« רבה ודאי תנאי היא » (contesté par le תוספות)", "consulted": true },
-    { "id": "rashi-bm-82b", "ref": "רש״י ב״מ פב:", "sefaria": "Rashi on Bava Metzia 82b", "url": "https://www.sefaria.org/Rashi_on_Bava_Metzia_82b", "consulted": true },
-    { "id": "tosafot-bm-82a", "ref": "תוספות ב״מ פב.", "sefaria": "Tosafot on Bava Metzia 82a", "url": "https://www.sefaria.org/Tosafot_on_Bava_Metzia_82a", "consulted": true },
-    { "id": "gittin-74b", "ref": "גיטין עד:", "sefaria": "Gittin 74b", "url": "https://www.sefaria.org/Gittin_74b", "role": "« והא קיימא לן הלכתא כוותיה דרבה »", "consulted": true },
-    { "id": "rashi-gittin-74b", "ref": "רש״י גיטין עד:", "sefaria": "Rashi on Gittin 74b", "url": "https://www.sefaria.org/Rashi_on_Gittin_74b", "consulted": true },
-    { "id": "bb-143b", "ref": "בבא בתרא קמג:", "sefaria": "Bava Batra 143b", "url": "https://www.sefaria.org/Bava_Batra_143b", "role": "« הלכתא כרב יוסף בשדה ענין ומחצה »", "consulted": true },
-    { "id": "rashbam-bb-143b", "ref": "רשב״ם ב״ב קמג:", "sefaria": "Rashbam on Bava Batra 143b", "url": "https://www.sefaria.org/Rashbam_on_Bava_Batra_143b", "consulted": true },
-    { "id": "shevuot-43a", "ref": "שבועות מג.", "sefaria": "Shevuot 43a", "url": "https://www.sefaria.org/Shevuot_43a", "role": "משנה : « סלע הלויתני עליו »", "consulted": true },
-    { "id": "shevuot-43b", "ref": "שבועות מג:", "sefaria": "Shevuot 43b", "url": "https://www.sefaria.org/Shevuot_43b", "role": "שמואל : « קתא דמגלא »", "consulted": true },
-    { "id": "rashi-shabbat-130b", "ref": "רש״י שבת קל: ד״ה שמותי הוא", "sefaria": "Rashi on Shabbat 130b", "url": "https://www.sefaria.org/Rashi_on_Shabbat_130b", "consulted": true },
-    { "id": "tosafot-niddah-7b", "ref": "תוספות נדה ז: ד״ה שמותי הוא", "sefaria": "Tosafot on Niddah 7b", "url": "https://www.sefaria.org/Tosafot_on_Niddah_7b", "consulted": true },
-    { "id": "rambam-gezela-13-10", "ref": "רמב״ם הל׳ גזילה ואבידה יג:י", "sefaria": "Mishneh Torah, Robbery and Lost Property 13:10", "url": "https://www.sefaria.org/Mishneh_Torah,_Robbery_and_Lost_Property_13:10", "consulted": true },
-    { "id": "sa-cm-267-16", "ref": "שו״ע חו״מ רסז:טז", "sefaria": "Shulchan Arukh, Choshen Mishpat 267:16", "url": "https://www.sefaria.org/Shulchan_Arukh,_Choshen_Mishpat_267:16", "consulted": true },
-    { "id": "sa-cm-72-2", "ref": "שו״ע חו״מ עב:ב", "sefaria": "Shulchan Arukh, Choshen Mishpat 72:2", "url": "https://www.sefaria.org/Shulchan_Arukh,_Choshen_Mishpat_72:2", "role": "Le gage ; רמ״א cite le רא״ש : « הלכה כרבה »", "consulted": true }
+    {
+      "id": "bk-56b",
+      "ref": "בבא קמא נו:",
+      "sefaria": "Bava Kamma 56b",
+      "url": "https://www.sefaria.org/Bava_Kamma_56b",
+      "role": "La Guemara commentée",
+      "consulted": true,
+      "quote": {
+        "he": "רבה אמר כשומר חנם דמי – מאי הנאה קא מטי ליה? רב יוסף אמר כשומר שכר דמי – בההיא הנאה דלא בעיא למיתבי ליה ריפתא לעניא, הוי כשומר שכר.",
+        "fr": "רבה dit qu'il est comme un שומר חנם : quel avantage lui parvient-il ? רב יוסף dit qu'il est comme un שומר שכר : par cet avantage-là, qu'il n'a pas besoin de donner du pain au pauvre, il est comme un שומר שכר.",
+        "ref": "Bava Kamma 56b:10"
+      },
+      "location": {
+        "sefariaRef": "Bava Kamma 56b:9-11",
+        "label": "בבא קמא נו: · Sefaria 9-11",
+        "url": "https://www.sefaria.org/Bava_Kamma.56b.9-11"
+      }
+    },
+    {
+      "id": "bk-57a",
+      "ref": "בבא קמא נז.",
+      "sefaria": "Bava Kamma 57a",
+      "url": "https://www.sefaria.org/Bava_Kamma_57a",
+      "role": "Suite de la סוגיא : « השב… לגינתו ולחורבתו »",
+      "consulted": true,
+      "quote": {
+        "he": "אמר ליה: לעולם לגינתו המשתמרת ולחורבתו המשתמרת, ודקא קשיא לך: היינו ביתו, הא קא משמע לן – דלא בעינן דעת בעלים, כדרבי אלעזר.",
+        "fr": "Il lui dit : en réalité, [il s'agit de] son jardin gardé et de sa ruine gardée ; et quant à ce qui te fait difficulté, que c'est la même chose que sa maison, [le פסוק] nous enseigne qu'on n'a pas besoin de דעת בעלים, comme ר׳ אלעזר.",
+        "ref": "Bava Kamma 57a:11"
+      },
+      "location": {
+        "sefariaRef": "Bava Kamma 57a:9-12",
+        "label": "בבא קמא נז. · Sefaria 9-12",
+        "url": "https://www.sefaria.org/Bava_Kamma.57a.9-12"
+      }
+    },
+    {
+      "id": "rashi-bk-56b",
+      "ref": "רש״י ב״ק נו:",
+      "sefaria": "Rashi on Bava Kamma 56b",
+      "url": "https://www.sefaria.org/Rashi_on_Bava_Kamma_56b",
+      "consulted": true,
+      "quote": {
+        "he": "דלא בעי למיתב רפתא לעניא - דהעוסק במצוה פטור מן המצוה מובלכתך בדרך נפקא לן במס׳ סוכה (ד׳ כה:):",
+        "fr": "דלא בעי למיתב רפתא לעניא : car celui qui est occupé à une מצוה est dispensé de la מצוה ; nous l'apprenons de « ובלכתך בדרך » dans la מסכת סוכה (ד׳ כה:).",
+        "ref": "Rashi on Bava Kamma 56b:10:1"
+      },
+      "location": {
+        "sefariaRef": "Rashi on Bava Kamma 56b:10:1",
+        "label": "רש״י ב״ק נו: · Sefaria 10:1",
+        "url": "https://www.sefaria.org/Rashi_on_Bava_Kamma.56b.10.1"
+      }
+    },
+    {
+      "id": "rashi-bk-57a",
+      "ref": "רש״י ב״ק נז.",
+      "sefaria": "Rashi on Bava Kamma 57a",
+      "url": "https://www.sefaria.org/Rashi_on_Bava_Kamma_57a",
+      "consulted": true,
+      "quote": {
+        "he": "הכל צריכין דעת בעלים - גונב וגוזל או אחד מארבעה שומרין שהחזיר צריך להודיעו לבעלים ואם לא הודיעו חייב המחזיר באחריותן:",
+        "fr": "הכל צריכין דעת בעלים : le voleur, le גזלן ou l'un des quatre שומרים qui a rendu [l'objet] doit en informer le propriétaire ; et s'il ne l'en a pas informé, celui qui rend en reste responsable.",
+        "ref": "Rashi on Bava Kamma 57a:12:1"
+      },
+      "location": {
+        "sefariaRef": "Rashi on Bava Kamma 57a:12:1",
+        "label": "רש״י ב״ק נז. · Sefaria 12:1",
+        "url": "https://www.sefaria.org/Rashi_on_Bava_Kamma.57a.12.1"
+      }
+    },
+    {
+      "id": "sukkah-25a",
+      "ref": "סוכה כה.",
+      "sefaria": "Sukkah 25a",
+      "url": "https://www.sefaria.org/Sukkah_25a",
+      "role": "Source de העוסק במצוה פטור מן המצוה",
+      "consulted": true,
+      "quote": {
+        "he": "תנו רבנן: ״בשבתך בביתך״ — פרט לעוסק במצוה, ״ובלכתך בדרך״ — פרט לחתן. מכאן אמרו: הכונס את הבתולה — פטור, ואת האלמנה — חייב.",
+        "fr": "תנו רבנן : « בשבתך בביתך » : à l'exclusion de celui qui est occupé à une מצוה ; « ובלכתך בדרך » : à l'exclusion du חתן. De là ils ont dit : celui qui épouse une vierge est dispensé, et [celui qui épouse] une veuve est obligé.",
+        "ref": "Sukkah 25a:5"
+      },
+      "location": {
+        "sefariaRef": "Sukkah 25a:5-11",
+        "label": "סוכה כה. · Sefaria 5-11",
+        "url": "https://www.sefaria.org/Sukkah.25a.5-11"
+      }
+    },
+    {
+      "id": "sukkah-25b",
+      "ref": "סוכה כה:",
+      "sefaria": "Sukkah 25b",
+      "url": "https://www.sefaria.org/Sukkah_25b",
+      "consulted": true,
+      "quote": {
+        "he": "אלא, עוסקין במת מצוה היו שחל שביעי שלהן להיות בערב פסח, שנאמר: ״ולא יכלו לעשות הפסח ביום ההוא״, ביום ההוא אין יכולין לעשות, הא למחר — יכולין לעשות!",
+        "fr": "Mais ils étaient occupés à un מת מצוה et leur septième jour tombait la veille de פסח, comme il est dit : « Et ils ne purent pas faire le פסח ce jour-là » ; ce jour-là ils ne pouvaient pas le faire, mais le lendemain ils pouvaient le faire !",
+        "ref": "Sukkah 25b:2"
+      },
+      "location": {
+        "sefariaRef": "Sukkah 25b:2",
+        "label": "סוכה כה: · Sefaria 2",
+        "url": "https://www.sefaria.org/Sukkah.25b.2"
+      }
+    },
+    {
+      "id": "rashi-sukkah-25a",
+      "ref": "רש״י סוכה כה.",
+      "sefaria": "Rashi on Sukkah 25a",
+      "url": "https://www.sefaria.org/Rashi_on_Sukkah_25a",
+      "consulted": true,
+      "quote": {
+        "he": "כונס אלמנה לא טריד - ויכול לקיים את שתיהן:",
+        "fr": "כונס אלמנה לא טריד : et il peut accomplir les deux.",
+        "ref": "Rashi on Sukkah 25a:8:2"
+      },
+      "location": {
+        "sefariaRef": "Rashi on Sukkah 25a:8:2",
+        "label": "רש״י סוכה כה. · Sefaria 8:2",
+        "url": "https://www.sefaria.org/Rashi_on_Sukkah.25a.8.2"
+      }
+    },
+    {
+      "id": "tosafot-sukkah-25a",
+      "ref": "תוספות סוכה כה. ד״ה שלוחי מצוה",
+      "sefaria": "Tosafot on Sukkah 25a",
+      "url": "https://www.sefaria.org/Tosafot_on_Sukkah_25a",
+      "role": "Parallèle de la partie I",
+      "consulted": true,
+      "quote": {
+        "he": "ותימה אם יכולין לקיים שניהם אמאי פטורין דאטו אדם שיש לו ציצית בבגדו ותפילין בראשו מי מיפטר בכך משאר מצות",
+        "fr": "Et c'est étonnant : s'ils peuvent accomplir les deux, pourquoi sont-ils dispensés ? Un homme qui a des ציצית à son vêtement et des תפילין sur la tête serait-il dispensé par cela des autres מצוות ?",
+        "ref": "Tosafot on Sukkah 25a:4:1"
+      },
+      "location": {
+        "sefariaRef": "Tosafot on Sukkah 25a:4:1",
+        "label": "תוספות סוכה כה. ד״ה שלוחי מצוה · Sefaria 4:1",
+        "url": "https://www.sefaria.org/Tosafot_on_Sukkah.25a.4.1"
+      }
+    },
+    {
+      "id": "nedarim-33b",
+      "ref": "נדרים לג:",
+      "sefaria": "Nedarim 33b",
+      "url": "https://www.sefaria.org/Nedarim_33b",
+      "role": "« פרוטה דרב יוסף לא שכיח »",
+      "consulted": true,
+      "quote": {
+        "he": "וחד אמר: אפילו נכסי בעל אבידה אסורין על מחזיר מהדר ליה, ומשום פרוטה דרב יוסף לא שכיח.",
+        "fr": "Et l'un dit : même si les biens du propriétaire de l'objet perdu sont interdits à celui qui le rend, il le lui rend ; et la פרוטה דרב יוסף n'est pas fréquente.",
+        "ref": "Nedarim 33b:7"
+      },
+      "location": {
+        "sefariaRef": "Nedarim 33b:6-7",
+        "label": "נדרים לג: · Sefaria 6-7",
+        "url": "https://www.sefaria.org/Nedarim.33b.6-7"
+      }
+    },
+    {
+      "id": "ran-nedarim-33b",
+      "ref": "ר״ן נדרים לג:",
+      "sefaria": "Ran on Nedarim 33b",
+      "url": "https://www.sefaria.org/Ran_on_Nedarim_33b",
+      "consulted": true,
+      "quote": {
+        "he": "פרוטה דרב יוסף לא שכיח - שיבא עני לישאל ממנו באותה שעה",
+        "fr": "פרוטה דרב יוסף לא שכיח : [il n'est pas fréquent] qu'un pauvre vienne lui demander à ce moment-là.",
+        "ref": "Ran on Nedarim 33b:7:1"
+      },
+      "location": {
+        "sefariaRef": "Ran on Nedarim 33b:7:1",
+        "label": "ר״ן נדרים לג: · Sefaria 7:1",
+        "url": "https://www.sefaria.org/Ran_on_Nedarim.33b.7.1"
+      }
+    },
+    {
+      "id": "bm-28b",
+      "ref": "בבא מציעא כח:",
+      "sefaria": "Bava Metzia 28b",
+      "url": "https://www.sefaria.org/Bava_Metzia_28b",
+      "role": "משנה : « מה יהא בדמים »",
+      "consulted": true,
+      "quote": {
+        "he": "מה יהא בדמים? רבי טרפון אומר: ישתמש בהן, לפיכך אם אבדו – חייב באחריותן. רבי עקיבא אומר: לא ישתמש בהן, לפיכך אם אבדו – אין חייב באחריותן.",
+        "fr": "Que faire de l'argent ? ר׳ טרפון dit : il peut l'utiliser ; c'est pourquoi, s'il est perdu, il en est responsable. ר׳ עקיבא dit : il ne doit pas l'utiliser ; c'est pourquoi, s'il est perdu, il n'en est pas responsable.",
+        "ref": "Bava Metzia 28b:14"
+      },
+      "location": {
+        "sefariaRef": "Bava Metzia 28b:14",
+        "label": "בבא מציעא כח: · Sefaria 14",
+        "url": "https://www.sefaria.org/Bava_Metzia.28b.14"
+      }
+    },
+    {
+      "id": "bm-29a",
+      "ref": "בבא מציעא כט.",
+      "sefaria": "Bava Metzia 29a",
+      "url": "https://www.sefaria.org/Bava_Metzia_29a",
+      "role": "ר׳ טרפון / ר׳ עקיבא selon רבה et רב יוסף",
+      "consulted": true,
+      "quote": {
+        "he": "אמר לך רב יוסף: בגניבה ואבידה – דכולי עלמא לא פליגי דחייב, כי פליגי באונסין דשואל, רבי טרפון סבר: שרו ליה רבנן לאשתמושי בגוייהו, והוה ליה שואל עלייהו. ורבי עקיבא סבר: לא שרו ליה רבנן לאשתמושי בגוייהו, הלכך לא הוי שואל עלייהו.",
+        "fr": "רב יוסף te dirait : pour le vol et la perte, tous s'accordent qu'il est responsable ; ils divergent sur les אונסין, [dont est responsable] le שואל. ר׳ טרפון pense : les רבנן lui ont permis de l'utiliser, il est donc שואל à son égard. Et ר׳ עקיבא pense : les רבנן ne lui ont pas permis de l'utiliser, c'est pourquoi il n'est pas שואל à son égard.",
+        "ref": "Bava Metzia 29a:3"
+      },
+      "location": {
+        "sefariaRef": "Bava Metzia 29a:2-7",
+        "label": "בבא מציעא כט. · Sefaria 2-7",
+        "url": "https://www.sefaria.org/Bava_Metzia.29a.2-7"
+      }
+    },
+    {
+      "id": "tosafot-bm-29a",
+      "ref": "תוספות ב״מ כט. ד״ה והוי שואל עלייהו",
+      "sefaria": "Tosafot on Bava Metzia 29a",
+      "url": "https://www.sefaria.org/Tosafot_on_Bava_Metzia_29a",
+      "role": "Parallèle presque complet de notre תוספות",
+      "consulted": true,
+      "quote": {
+        "he": "וכל רבותינו שוין דבשאר דברים סתמא הלכה כרבה אי ליכא הוכחה כרב יוסף",
+        "fr": "Et tous nos maîtres s'accordent que pour les autres sujets, en règle générale, la הלכה est comme רבה, s'il n'y a pas de preuve [qu'elle est] comme רב יוסף.",
+        "ref": "Tosafot on Bava Metzia 29a:3:1"
+      },
+      "location": {
+        "sefariaRef": "Tosafot on Bava Metzia 29a:3:1",
+        "label": "תוספות ב״מ כט. ד״ה והוי שואל עלייהו · Sefaria 3:1",
+        "url": "https://www.sefaria.org/Tosafot_on_Bava_Metzia.29a.3.1"
+      }
+    },
+    {
+      "id": "bm-29b",
+      "ref": "בבא מציעא כט:",
+      "sefaria": "Bava Metzia 29b",
+      "url": "https://www.sefaria.org/Bava_Metzia_29b",
+      "role": "« מצא כסות… שוטחה לצרכה »",
+      "consulted": true,
+      "quote": {
+        "he": "מצא כסות – מנערה אחד לשלשים יום ושוטחה לצרכה, אבל לא לכבודו.",
+        "fr": "S'il a trouvé un vêtement, il le secoue une fois tous les trente jours et l'étale pour son bien, mais pas pour son propre honneur.",
+        "ref": "Bava Metzia 29b:5"
+      },
+      "location": {
+        "sefariaRef": "Bava Metzia 29b:5",
+        "label": "בבא מציעא כט: · Sefaria 5",
+        "url": "https://www.sefaria.org/Bava_Metzia.29b.5"
+      }
+    },
+    {
+      "id": "bm-31a",
+      "ref": "בבא מציעא לא.",
+      "sefaria": "Bava Metzia 31a",
+      "url": "https://www.sefaria.org/Bava_Metzia_31a",
+      "role": "« תשיבם… לגינתו ולחורבתו »",
+      "consulted": true,
+      "quote": {
+        "he": "לעולם דמינטרא, והא קא משמע לן: דלא בעינן דעת בעלים",
+        "fr": "En réalité, [il s'agit d'un lieu] gardé, et [le פסוק] nous enseigne ceci : qu'on n'a pas besoin de דעת בעלים.",
+        "ref": "Bava Metzia 31a:14"
+      },
+      "location": {
+        "sefariaRef": "Bava Metzia 31a:13-14",
+        "label": "בבא מציעא לא. · Sefaria 13-14",
+        "url": "https://www.sefaria.org/Bava_Metzia.31a.13-14"
+      }
+    },
+    {
+      "id": "bm-43a",
+      "ref": "בבא מציעא מג.",
+      "sefaria": "Bava Metzia 43a",
+      "url": "https://www.sefaria.org/Bava_Metzia_43a",
+      "role": "Le changeur ; רב נחמן « נאנסו לא »",
+      "consulted": true,
+      "quote": {
+        "he": "ורב נחמן אמר: נאנסו לא. אמר ליה רבא לרב נחמן: לדידך דאמרת נאנסו לא, אלמא לא הוי שואל עלייהו, אי שואל לא הוי שומר שכר נמי לא הוי! אמר ליה: בהא מודינא לך, דהואיל ונהנה מהנה, בההוא הנאה דאי מיתרמי ליה זבינא דאית בה רווחא זבן בהו, הוי עלייהו שומר שכר.",
+        "fr": "Et רב נחמן dit : s'ils ont été perdus par אונס, non. רבא dit à רב נחמן : selon toi, qui dis « par אונס, non », il n'est donc pas שואל à leur égard ; s'il n'est pas שואל, il n'est pas non plus שומר שכר ! Il lui dit : sur ce point je te l'accorde : puisqu'il en tire profit, par ce profit-là, que s'il se présente une affaire avantageuse il achète avec, il est שומר שכר à leur égard.",
+        "ref": "Bava Metzia 43a:5"
+      },
+      "location": {
+        "sefariaRef": "Bava Metzia 43a:2-5",
+        "label": "בבא מציעא מג. · Sefaria 2-5",
+        "url": "https://www.sefaria.org/Bava_Metzia.43a.2-5"
+      }
+    },
+    {
+      "id": "rashi-bm-43a",
+      "ref": "רש״י ב״מ מג.",
+      "sefaria": "Rashi on Bava Metzia 43a",
+      "url": "https://www.sefaria.org/Rashi_on_Bava_Metzia_43a",
+      "consulted": true,
+      "quote": {
+        "he": "נאנסו לא - כל זמן שלא נשתמש לא הוי שואל אלא אבדו דוקא חייב כשומר שכר:",
+        "fr": "נאנסו לא : tant qu'il ne s'en est pas servi, il n'est pas שואל ; mais s'ils sont perdus seulement, il est responsable comme un שומר שכר.",
+        "ref": "Rashi on Bava Metzia 43a:5:1"
+      },
+      "location": {
+        "sefariaRef": "Rashi on Bava Metzia 43a:5:1",
+        "label": "רש״י ב״מ מג. · Sefaria 5:1",
+        "url": "https://www.sefaria.org/Rashi_on_Bava_Metzia.43a.5.1"
+      }
+    },
+    {
+      "id": "bm-81b",
+      "ref": "בבא מציעא פא:",
+      "sefaria": "Bava Metzia 81b",
+      "url": "https://www.sefaria.org/Bava_Metzia_81b",
+      "role": "ר׳ אליעזר et ר׳ עקיבא sur le gage",
+      "consulted": true,
+      "quote": {
+        "he": "המלוה את חבירו על המשכון ואבד המשכון – ישבע ויטול מעותיו, דברי רבי אליעזר.",
+        "fr": "Celui qui prête à son prochain sur un משכון, et le משכון est perdu : il jure et prend son argent. Ce sont les paroles de ר׳ אליעזר.",
+        "ref": "Bava Metzia 81b:11"
+      },
+      "location": {
+        "sefariaRef": "Bava Metzia 81b:11-12",
+        "label": "בבא מציעא פא: · Sefaria 11-12",
+        "url": "https://www.sefaria.org/Bava_Metzia.81b.11-12"
+      }
+    },
+    {
+      "id": "bm-82a",
+      "ref": "בבא מציעא פב.",
+      "sefaria": "Bava Metzia 82a",
+      "url": "https://www.sefaria.org/Bava_Metzia_82a",
+      "role": "« מחוורתא דלא כר׳ אליעזר » ; « לימא דרב יוסף תנאי היא »",
+      "consulted": true,
+      "quote": {
+        "he": "אלא מחוורתא מתניתין דלא כרבי אליעזר",
+        "fr": "Mais il est clair que la משנה ne va pas selon ר׳ אליעזר.",
+        "ref": "Bava Metzia 82a:4"
+      },
+      "location": {
+        "sefariaRef": "Bava Metzia 82a:4-10",
+        "label": "בבא מציעא פב. · Sefaria 4-10",
+        "url": "https://www.sefaria.org/Bava_Metzia.82a.4-10"
+      }
+    },
+    {
+      "id": "bm-82b",
+      "ref": "בבא מציעא פב:",
+      "sefaria": "Bava Metzia 82b",
+      "url": "https://www.sefaria.org/Bava_Metzia_82b",
+      "role": "« במלוה צריך למשכון קמיפלגי »",
+      "consulted": true,
+      "quote": {
+        "he": "במלוה צריך למשכון קמיפלגי. מר סבר: מצוה קא עביד שהלוהו, והוי שומר שכר. ומר סבר: לאו מצוה קא עביד, שלהנאתו מתכוין, והוי שומר חנם.",
+        "fr": "Ils divergent sur le prêteur qui a besoin du משכון. L'un pense : il fait une מצוה en lui prêtant, et il est שומר שכר. L'autre pense : il ne fait pas de מצוה, car il vise son propre profit, et il est שומר חנם.",
+        "ref": "Bava Metzia 82b:1"
+      },
+      "location": {
+        "sefariaRef": "Bava Metzia 82b:1",
+        "label": "בבא מציעא פב: · Sefaria 1",
+        "url": "https://www.sefaria.org/Bava_Metzia.82b.1"
+      }
+    },
+    {
+      "id": "rashi-bm-82a",
+      "ref": "רש״י ב״מ פב.",
+      "sefaria": "Rashi on Bava Metzia 82a",
+      "url": "https://www.sefaria.org/Rashi_on_Bava_Metzia_82a",
+      "role": "« רבה ודאי תנאי היא » (contesté par le תוספות)",
+      "consulted": true,
+      "quote": {
+        "he": "לימא דרב יוסף תנאי - דהא רבה ודאי תנאי היא דהא ר׳ עקיבא לית ליה דרבה ולית ליה לאוקמי פלוגתייהו בטעמא אחרינא דהא אהדרן בכמה טעמי ולא אתוקמא אלא לרב יוסף מי מיבעיא למימר תנאי דר׳ אליעזר לית ליה דרב יוסף:",
+        "fr": "לימא דרב יוסף תנאי : car pour רבה c'est certainement une divergence de תנאים, puisque ר׳ עקיבא n'admet pas [l'avis] de רבה, et on ne peut pas expliquer leur divergence par une autre raison, car on a essayé plusieurs raisons sans y parvenir ; mais pour רב יוסף, faut-il dire que c'est une divergence de תנאים, que ר׳ אליעזר n'admet pas [l'avis] de רב יוסף ?",
+        "ref": "Rashi on Bava Metzia 82a:10:1"
+      },
+      "location": {
+        "sefariaRef": "Rashi on Bava Metzia 82a:10:1",
+        "label": "רש״י ב״מ פב. · Sefaria 10:1",
+        "url": "https://www.sefaria.org/Rashi_on_Bava_Metzia.82a.10.1"
+      }
+    },
+    {
+      "id": "rashi-bm-82b",
+      "ref": "רש״י ב״מ פב:",
+      "sefaria": "Rashi on Bava Metzia 82b",
+      "url": "https://www.sefaria.org/Rashi_on_Bava_Metzia_82b",
+      "consulted": true,
+      "quote": {
+        "he": "במלוה צריך למשכון - להשתמש בו ולפסוק עליו להיות פוחת מן החוב והולך קמיפלגי ורבי עקיבא סבר אפי׳ הכי איכא מצוה:",
+        "fr": "במלוה צריך למשכון : [qui en a besoin] pour s'en servir et convenir qu'il déduise [cet usage] de la dette au fur et à mesure : c'est sur cela qu'ils divergent ; et ר׳ עקיבא pense que même ainsi il y a une מצוה.",
+        "ref": "Rashi on Bava Metzia 82b:1:1"
+      },
+      "location": {
+        "sefariaRef": "Rashi on Bava Metzia 82b:1:1",
+        "label": "רש״י ב״מ פב: · Sefaria 1:1",
+        "url": "https://www.sefaria.org/Rashi_on_Bava_Metzia.82b.1.1"
+      }
+    },
+    {
+      "id": "tosafot-bm-82a",
+      "ref": "תוספות ב״מ פב.",
+      "sefaria": "Tosafot on Bava Metzia 82a",
+      "url": "https://www.sefaria.org/Tosafot_on_Bava_Metzia_82a",
+      "consulted": true,
+      "quote": {
+        "he": "ולעיל פירשתי בפרק שני (דף כט. ושם ד״ה והוי) דרבה ודאי לאו תנאי ומוקי פלוגתייהו בדשמואל וכולי עלמא אית להו דרבה",
+        "fr": "Et plus haut, au deuxième פרק (דף כט., ד״ה והוי), j'ai expliqué que pour רבה ce n'est certainement pas une divergence de תנאים : il explique leur divergence par [la règle] de שמואל, et tous admettent [l'avis] de רבה.",
+        "ref": "Tosafot on Bava Metzia 82a:10:1"
+      },
+      "location": {
+        "sefariaRef": "Tosafot on Bava Metzia 82a:10:1",
+        "label": "תוספות ב״מ פב. · Sefaria 10:1",
+        "url": "https://www.sefaria.org/Tosafot_on_Bava_Metzia.82a.10.1"
+      }
+    },
+    {
+      "id": "gittin-74b",
+      "ref": "גיטין עד:",
+      "sefaria": "Gittin 74b",
+      "url": "https://www.sefaria.org/Gittin_74b",
+      "role": "« והא קיימא לן הלכתא כוותיה דרבה »",
+      "consulted": true,
+      "quote": {
+        "he": "ותיסברא?! והא קיימא לן הילכתא כוותיה דרבה; ובהא – אין הלכה כרבן שמעון בן גמליאל!",
+        "fr": "Et comment peux-tu le penser ? Or nous tenons que la הלכה est comme רבה ; et sur ce point, la הלכה n'est pas comme רבן שמעון בן גמליאל !",
+        "ref": "Gittin 74b:15"
+      },
+      "location": {
+        "sefariaRef": "Gittin 74b:12-16",
+        "label": "גיטין עד: · Sefaria 12-16",
+        "url": "https://www.sefaria.org/Gittin.74b.12-16"
+      }
+    },
+    {
+      "id": "rashi-gittin-74b",
+      "ref": "רש״י גיטין עד:",
+      "sefaria": "Rashi on Gittin 74b",
+      "url": "https://www.sefaria.org/Rashi_on_Gittin_74b",
+      "consulted": true,
+      "quote": {
+        "he": "הלכתא כרבה - בכל מקום שנחלק עם רב יוסף חוץ משדה ענין ומחצה:",
+        "fr": "הלכתא כרבה : partout où il diverge avec רב יוסף, sauf pour שדה, ענין et מחצה.",
+        "ref": "Rashi on Gittin 74b:15:1"
+      },
+      "location": {
+        "sefariaRef": "Rashi on Gittin 74b:15:1",
+        "label": "רש״י גיטין עד: · Sefaria 15:1",
+        "url": "https://www.sefaria.org/Rashi_on_Gittin.74b.15.1"
+      }
+    },
+    {
+      "id": "bb-143b",
+      "ref": "בבא בתרא קמג:",
+      "sefaria": "Bava Batra 143b",
+      "url": "https://www.sefaria.org/Bava_Batra_143b",
+      "role": "« הלכתא כרב יוסף בשדה ענין ומחצה »",
+      "consulted": true,
+      "quote": {
+        "he": "והלכתא כוותיה דרב יוסף בשדה, ענין ומחצה.",
+        "fr": "Et la הלכה est comme רב יוסף pour שדה, ענין et מחצה.",
+        "ref": "Bava Batra 143b:3"
+      },
+      "location": {
+        "sefariaRef": "Bava Batra 143b:3",
+        "label": "בבא בתרא קמג: · Sefaria 3",
+        "url": "https://www.sefaria.org/Bava_Batra.143b.3"
+      }
+    },
+    {
+      "id": "rashbam-bb-143b",
+      "ref": "רשב״ם ב״ב קמג:",
+      "sefaria": "Rashbam on Bava Batra 143b",
+      "url": "https://www.sefaria.org/Rashbam_on_Bava_Batra_143b",
+      "consulted": true,
+      "quote": {
+        "he": "והלכתא כוותיה דרב יוסף בשדה כו׳ - משום דבכולי גמרא רבה ורב יוסף הלכתא כרבה איצטריך למימר דהלכתא כרב יוסף בהני תלת:",
+        "fr": "והלכתא כוותיה דרב יוסף בשדה כו׳ : comme dans toute la Guemara, entre רבה et רב יוסף, la הלכה est comme רבה, il fallait dire que la הלכה est comme רב יוסף dans ces trois [cas].",
+        "ref": "Rashbam on Bava Batra 143b:3:1"
+      },
+      "location": {
+        "sefariaRef": "Rashbam on Bava Batra 143b:3:1-4",
+        "label": "רשב״ם ב״ב קמג: · Sefaria 3:1-4",
+        "url": "https://www.sefaria.org/Rashbam_on_Bava_Batra.143b.3.1-4"
+      }
+    },
+    {
+      "id": "shevuot-43a",
+      "ref": "שבועות מג.",
+      "sefaria": "Shevuot 43a",
+      "url": "https://www.sefaria.org/Shevuot_43a",
+      "role": "משנה : « סלע הלויתני עליו »",
+      "consulted": true,
+      "quote": {
+        "he": "״סלע הלויתני עליו ושתים היה שוה״, והלה אומר: ״לא כי, אלא סלע הלויתיך עליו וסלע היה שוה״ – פטור",
+        "fr": "« Tu m'as prêté un סלע sur lui, et il valait deux » ; et l'autre dit : « Non, je t'ai prêté un סלע sur lui, et il valait un סלע » : il est פטור.",
+        "ref": "Shevuot 43a:19"
+      },
+      "location": {
+        "sefariaRef": "Shevuot 43a:19",
+        "label": "שבועות מג. · Sefaria 19",
+        "url": "https://www.sefaria.org/Shevuot.43a.19"
+      }
+    },
+    {
+      "id": "shevuot-43b",
+      "ref": "שבועות מג:",
+      "sefaria": "Shevuot 43b",
+      "url": "https://www.sefaria.org/Shevuot_43b",
+      "role": "שמואל : « קתא דמגלא »",
+      "consulted": true,
+      "quote": {
+        "he": "אמר שמואל: האי מאן דאוזפיה אלפא זוזי לחבריה, ומשכן ליה קתא דמגלא; אבד קתא דמגלא – אבד אלפא זוזי. אבל תרתי קתאתי – לא.",
+        "fr": "שמואל dit : celui qui prête mille זוז à son prochain et prend en gage le manche d'une faucille : si le manche est perdu, les mille זוז sont perdus. Mais deux manches, non.",
+        "ref": "Shevuot 43b:5"
+      },
+      "location": {
+        "sefariaRef": "Shevuot 43b:5",
+        "label": "שבועות מג: · Sefaria 5",
+        "url": "https://www.sefaria.org/Shevuot.43b.5"
+      }
+    },
+    {
+      "id": "rashi-shabbat-130b",
+      "ref": "רש״י שבת קל: ד״ה שמותי הוא",
+      "sefaria": "Rashi on Shabbat 130b",
+      "url": "https://www.sefaria.org/Rashi_on_Shabbat_130b",
+      "consulted": true,
+      "quote": {
+        "he": "שמותי הוא - ברכוהו כדאמרינן בהזהב (ב״מ דף נט:) ובתלמוד ירושלמי מפ׳ שמותי הוא מתלמידי שמאי היה:",
+        "fr": "שמותי הוא : ils l'avaient « béni » (c'est-à-dire excommunié), comme nous le disons dans [le פרק] הזהב (ב״מ דף נט:) ; et le תלמוד ירושלמי explique שמותי הוא : il était des disciples de שמאי.",
+        "ref": "Rashi on Shabbat 130b:5:3"
+      },
+      "location": {
+        "sefariaRef": "Rashi on Shabbat 130b:5:3",
+        "label": "רש״י שבת קל: ד״ה שמותי הוא · Sefaria 5:3",
+        "url": "https://www.sefaria.org/Rashi_on_Shabbat.130b.5.3"
+      }
+    },
+    {
+      "id": "tosafot-niddah-7b",
+      "ref": "תוספות נדה ז: ד״ה שמותי הוא",
+      "sefaria": "Tosafot on Niddah 7b",
+      "url": "https://www.sefaria.org/Tosafot_on_Niddah_7b",
+      "consulted": true,
+      "quote": {
+        "he": "ופירש ר״ת ורשב״ם דשמותי הוא היינו דהוה מתלמידי שמאי",
+        "fr": "Et ר״ת et רשב״ם ont expliqué que שמותי הוא signifie qu'il était des disciples de שמאי.",
+        "ref": "Tosafot on Niddah 7b:7:1"
+      },
+      "location": {
+        "sefariaRef": "Tosafot on Niddah 7b:7:1",
+        "label": "תוספות נדה ז: ד״ה שמותי הוא · Sefaria 7:1",
+        "url": "https://www.sefaria.org/Tosafot_on_Niddah.7b.7.1"
+      }
+    },
+    {
+      "id": "rambam-gezela-13-10",
+      "ref": "רמב״ם הל׳ גזילה ואבידה יג:י",
+      "sefaria": "Mishneh Torah, Robbery and Lost Property 13:10",
+      "url": "https://www.sefaria.org/Mishneh_Torah,_Robbery_and_Lost_Property_13:10",
+      "consulted": true,
+      "quote": {
+        "he": "ששומר אבדה כשומר שכר הוא מפני שהוא עוסק במצוה ונפטר מכמה מצות עשה כל זמן שהוא עוסק בשמירתה",
+        "fr": "Car le gardien d'un objet perdu est comme un שומר שכר, parce qu'il est occupé à une מצוה et dispensé de plusieurs מצוות עשה tout le temps qu'il est occupé à le garder.",
+        "ref": "Mishneh Torah, Robbery and Lost Property 13:10"
+      },
+      "location": {
+        "sefariaRef": "Mishneh Torah, Robbery and Lost Property 13:10",
+        "label": "רמב״ם הל׳ גזילה ואבידה יג:י · Sefaria 13:10",
+        "url": "https://www.sefaria.org/Mishneh_Torah,_Robbery_and_Lost_Property.13.10"
+      }
+    },
+    {
+      "id": "sa-cm-267-16",
+      "ref": "שו״ע חו״מ רסז:טז",
+      "sefaria": "Shulchan Arukh, Choshen Mishpat 267:16",
+      "url": "https://www.sefaria.org/Shulchan_Arukh,_Choshen_Mishpat_267:16",
+      "consulted": true,
+      "quote": {
+        "he": "כל זמן שהאבידה אצלו אם נגנבה או אבדה חייב באחריותה כדין שומר שכר: הגה וי״א דשומר אבידה אינו אלא שומר חנם (טור בשם ר״י והרא״ש) ועיין לעיל סי׳ ע״ב סעיף ב׳ כיצד נקטינן לענין משכון והוא הדין כאן:",
+        "fr": "Tout le temps que l'objet perdu est chez lui, s'il est volé ou perdu, il en est responsable selon la loi du שומר שכר. הגה : et certains disent que le gardien d'un objet perdu n'est qu'un שומר חנם (טור au nom de ר״י et du רא״ש) ; et voir plus haut סימן ע״ב סעיף ב׳ comment nous tenons pour le משכון, et il en est de même ici.",
+        "ref": "Shulchan Arukh, Choshen Mishpat 267:16"
+      },
+      "location": {
+        "sefariaRef": "Shulchan Arukh, Choshen Mishpat 267:16",
+        "label": "שו״ע חו״מ רסז:טז · Sefaria 267:16",
+        "url": "https://www.sefaria.org/Shulchan_Arukh,_Choshen_Mishpat.267.16"
+      }
+    },
+    {
+      "id": "sa-cm-72-2",
+      "ref": "שו״ע חו״מ עב:ב",
+      "sefaria": "Shulchan Arukh, Choshen Mishpat 72:2",
+      "url": "https://www.sefaria.org/Shulchan_Arukh,_Choshen_Mishpat_72:2",
+      "role": "Le gage ; רמ״א cite le רא״ש : « הלכה כרבה »",
+      "consulted": true,
+      "quote": {
+        "he": "הגה וי״א דמלוה על המשכון לא הוי אלא שומר חנם לענין זה שאם דמי המשכון יתירים על החוב אין המלוה נותן ללוה היתרון אלא אבד מעותיו ולא יותר (טור בשם ר׳ ירוחם והרא״ש) וכן מוכח באמת דעת הרא״ש בכמה דוכתי ובפרט בסוף פ׳ שבועת הדיינים כתב ומכל אלו הראיות ברורות נראה דהלכה כרבה",
+        "fr": "הגה : et certains disent que celui qui prête sur un משכון n'est qu'un שומר חנם à cet égard : si la valeur du משכון dépasse la dette, le prêteur ne rend pas la différence à l'emprunteur, mais il perd son argent et rien de plus (טור au nom de ר׳ ירוחם et du רא״ש). Et c'est vraiment ce que montre l'avis du רא״ש en plusieurs endroits, en particulier à la fin du פרק שבועת הדיינים, où il écrit : « De toutes ces preuves claires, il apparaît que la הלכה est comme רבה ».",
+        "ref": "Shulchan Arukh, Choshen Mishpat 72:2"
+      },
+      "location": {
+        "sefariaRef": "Shulchan Arukh, Choshen Mishpat 72:2",
+        "label": "שו״ע חו״מ עב:ב · Sefaria 72:2",
+        "url": "https://www.sefaria.org/Shulchan_Arukh,_Choshen_Mishpat.72.2"
+      }
+    }
   ],
-
   "abbreviations": [
-    { "he": "ד״ה", "full": "דיבור המתחיל" },
-    { "he": "ר״ח", "full": "רבינו חננאל" },
-    { "he": "ה״ג / בה״ג", "full": "(בעל) הלכות גדולות" },
-    { "he": "ר״י", "full": "רבי יצחק (הזקן)" },
-    { "he": "ואור״י", "full": "ואומר ר״י" },
-    { "he": "כ״ע", "full": "כולי עלמא" },
-    { "he": "ס״ל", "full": "סבירא ליה" },
-    { "he": "מ״מ", "full": "מכל מקום" },
-    { "he": "קמ״ל", "full": "קא משמע לן" },
-    { "he": "ב״מ", "full": "בבא מציעא" },
-    { "he": "ב״ב", "full": "בבא בתרא" },
-    { "he": "ר״א", "full": "רבי אלעזר (s15) / רבי אליעזר (s34, s35, s37)", "warning": "Même abréviation pour deux personnes différentes." },
-    { "he": "וה״פ", "full": "והכי פירושא" },
-    { "he": "קי״ל", "full": "קיימא לן" },
-    { "he": "רשב״ג", "full": "רבן שמעון בן גמליאל" },
-    { "he": "א״כ", "full": "אם כן" },
-    { "he": "ש״ש", "full": "שומר שכר" },
-    { "he": "הו״מ", "full": "הוה מצי" },
-    { "he": "פי׳", "full": "פירוש" },
-    { "he": "ר״ע", "full": "רבי עקיבא" },
-    { "he": "אפי׳", "full": "אפילו" },
-    { "he": "כו׳", "full": "וכולי" },
-    { "he": "ד׳", "full": "דף" }
+    {
+      "he": "ד״ה",
+      "full": "דיבור המתחיל"
+    },
+    {
+      "he": "ר״ח",
+      "full": "רבינו חננאל"
+    },
+    {
+      "he": "ה״ג / בה״ג",
+      "full": "(בעל) הלכות גדולות"
+    },
+    {
+      "he": "ר״י",
+      "full": "רבי יצחק (הזקן)"
+    },
+    {
+      "he": "ואור״י",
+      "full": "ואומר ר״י"
+    },
+    {
+      "he": "כ״ע",
+      "full": "כולי עלמא"
+    },
+    {
+      "he": "ס״ל",
+      "full": "סבירא ליה"
+    },
+    {
+      "he": "מ״מ",
+      "full": "מכל מקום"
+    },
+    {
+      "he": "קמ״ל",
+      "full": "קא משמע לן"
+    },
+    {
+      "he": "ב״מ",
+      "full": "בבא מציעא"
+    },
+    {
+      "he": "ב״ב",
+      "full": "בבא בתרא"
+    },
+    {
+      "he": "ר״א",
+      "full": "רבי אלעזר / רבי אליעזר",
+      "warning": "Même abréviation pour deux personnes différentes.",
+      "bySegment": {
+        "s15": "רבי אלעזר",
+        "s34": "רבי אליעזר",
+        "s35": "רבי אליעזר",
+        "s37": "רבי אליעזר"
+      }
+    },
+    {
+      "he": "וה״פ",
+      "full": "והכי פירושא"
+    },
+    {
+      "he": "קי״ל",
+      "full": "קיימא לן"
+    },
+    {
+      "he": "רשב״ג",
+      "full": "רבן שמעון בן גמליאל"
+    },
+    {
+      "he": "א״כ",
+      "full": "אם כן"
+    },
+    {
+      "he": "ש״ש",
+      "full": "שומר שכר"
+    },
+    {
+      "he": "הו״מ",
+      "full": "הוה מצי"
+    },
+    {
+      "he": "פי׳",
+      "full": "פירוש"
+    },
+    {
+      "he": "ר״ע",
+      "full": "רבי עקיבא"
+    },
+    {
+      "he": "אפי׳",
+      "full": "אפילו"
+    },
+    {
+      "he": "כו׳",
+      "full": "וכולי"
+    },
+    {
+      "he": "ד׳",
+      "full": "דף"
+    }
   ],
-
   "glossary": [
-    { "he": "שומר אבידה", "fr": "Celui qui a ramassé un objet perdu et le garde jusqu'à le rendre." },
-    { "he": "שומר חנם", "fr": "Gardien bénévole : responsable seulement en cas de פשיעה." },
-    { "he": "שומר שכר", "fr": "Gardien rémunéré : responsable aussi du vol et de la perte (גניבה ואבידה)." },
-    { "he": "שואל", "fr": "Emprunteur : responsable même de l'אונס, car tout le profit est à lui." },
-    { "he": "פשיעה", "fr": "Négligence." },
-    { "he": "אונס", "fr": "Force majeure." },
-    { "he": "העוסק במצוה פטור מן המצוה", "fr": "Celui qui est occupé à une מצוה est dispensé d'une autre מצוה." },
-    { "he": "פרוטה דרב יוסף", "fr": "La pièce qu'on n'a pas à donner au pauvre pendant qu'on s'occupe d'une מצוה." },
-    { "he": "מודר הנאה", "fr": "Personne à qui un vœu interdit de tirer profit d'une autre." },
-    { "he": "דעת בעלים", "fr": "Le fait que le propriétaire sache que son objet a été rendu." },
-    { "he": "אסמכתא", "fr": "Appui dans un פסוק, qui n'est pas la vraie source de la règle." },
-    { "he": "משכון", "fr": "Gage." },
-    { "he": "גוביינא", "fr": "Recouvrement : le gage pris comme paiement de la dette." },
-    { "he": "תנאי היא", "fr": "« C'est une divergence de תנאים » : l'avis d'un אמורא va contre l'un des תנאים." },
-    { "he": "שמותי", "fr": "Excommunié (רש״י), ou disciple de שמאי (ר״ת, רשב״ם)." },
-    { "he": "סלע", "fr": "Pièce de 4 דינרים (זוז)." }
+    {
+      "id": "g-shomer-aveda",
+      "he": "שומר אבידה",
+      "fr": "Celui qui a ramassé un objet perdu et le garde jusqu'à le rendre."
+    },
+    {
+      "id": "g-shomer-chinam",
+      "he": "שומר חנם",
+      "fr": "Gardien bénévole : responsable seulement en cas de פשיעה."
+    },
+    {
+      "id": "g-shomer-sachar",
+      "he": "שומר שכר",
+      "fr": "Gardien rémunéré : responsable aussi du vol et de la perte (גניבה ואבידה)."
+    },
+    {
+      "id": "g-shoel",
+      "he": "שואל",
+      "fr": "Emprunteur : responsable même de l'אונס, car tout le profit est à lui."
+    },
+    {
+      "id": "g-peshia",
+      "he": "פשיעה",
+      "fr": "Négligence."
+    },
+    {
+      "id": "g-ones",
+      "he": "אונס",
+      "fr": "Force majeure."
+    },
+    {
+      "id": "g-osek-bemitzva",
+      "he": "העוסק במצוה פטור מן המצוה",
+      "fr": "Celui qui est occupé à une מצוה est dispensé d'une autre מצוה."
+    },
+    {
+      "id": "g-pruta-derav-yosef",
+      "he": "פרוטה דרב יוסף",
+      "fr": "La pièce qu'on n'a pas à donner au pauvre pendant qu'on s'occupe d'une מצוה."
+    },
+    {
+      "id": "g-mudar-hanaa",
+      "he": "מודר הנאה",
+      "fr": "Personne à qui un vœu interdit de tirer profit d'une autre."
+    },
+    {
+      "id": "g-daat-bealim",
+      "he": "דעת בעלים",
+      "fr": "Le fait que le propriétaire sache que son objet a été rendu."
+    },
+    {
+      "id": "g-asmachta",
+      "he": "אסמכתא",
+      "fr": "Appui dans un פסוק, qui n'est pas la vraie source de la règle."
+    },
+    {
+      "id": "g-mashkon",
+      "he": "משכון",
+      "fr": "Gage."
+    },
+    {
+      "id": "g-gubayna",
+      "he": "גוביינא",
+      "fr": "Recouvrement : le gage pris comme paiement de la dette."
+    },
+    {
+      "id": "g-tannai-hi",
+      "he": "תנאי היא",
+      "fr": "« C'est une divergence de תנאים » : l'avis d'un אמורא va contre l'un des תנאים."
+    },
+    {
+      "id": "g-shamuti",
+      "he": "שמותי",
+      "fr": "Excommunié (רש״י), ou disciple de שמאי (ר״ת, רשב״ם)."
+    },
+    {
+      "id": "g-sela",
+      "he": "סלע",
+      "fr": "Pièce de 4 דינרים (זוז)."
+    }
   ],
-
   "synthesis": {
     "takeaways": [
       "La dispense de « העוסק במצוה » n'existe que pendant l'occupation active ; un objet simplement posé chez soi ne dispense de rien (סוכה, תפילין, נדרים).",
@@ -1089,43 +3686,205 @@
       "approfondi": "Le רמ״א (רסז:טז) renvoie à חו״מ עב:ב, sur le gage, où il rapporte que le רא״ש conclut « דהלכה כרבה », et ajoute « ומספיקא לא מפקינן ממונא » (מרדכי)."
     },
     "review": [
-      { "q": "Pourquoi l'objet perdu posé chez soi ne dispense-t-il pas de la צדקה ?", "a": "Parce qu'on peut faire les deux. Le פסוק de סוכה ne dispense que si l'on ne peut pas, et sinon les תפילין dispenseraient de tout (s4-s6)." },
-      { "q": "Comment רבה peut-il accepter la « פרוטה דרב יוסף » et nier le statut de שומר שכר ?", "a": "Le נדר interdit tout profit, même rare ; pour un salaire, un profit rare ne suffit pas (s10-s11)." },
-      { "q": "Pourquoi la lecture de ר׳ טרפון par רב יוסף contredit-elle רב נחמן ?", "a": "Pour רב יוסף, la permission d'utiliser ferait un שואל ; pour רב נחמן, elle ne fait qu'un שומר שכר. Deux salaires ne font pas un שואל (s25-s29)." },
-      { "q": "Pourquoi « מחוורתא דלא כר׳ אליעזר » prouve-t-il qu'on suit רבה ?", "a": "Selon רב יוסף, la משנה aurait pu aller selon tous (prêteur qui n'a pas besoin du gage). La Guemara ne le dit pas (s30-s33)." },
-      { "q": "Pourquoi רב יוסף ne peut-il pas expliquer la מחלוקת de ר׳ אליעזר et ר׳ עקיבא par שמואל ?", "a": "ר׳ אליעזר exempte le prêteur même de la valeur du gage ; or un שומר שכר devrait la payer (s38)." },
-      { "q": "Comment la משנה de שבועות s'accorde-t-elle avec רבה ?", "a": "Elle parle d'une perte par פשיעה, dont même un שומר חנם est responsable (s40-s41)." }
+      {
+        "q": "Pourquoi l'objet perdu posé chez soi ne dispense-t-il pas de la צדקה ?",
+        "a": "Parce qu'on peut faire les deux. Le פסוק de סוכה ne dispense que si l'on ne peut pas, et sinon les תפילין dispenseraient de tout.",
+        "segmentIds": [
+          "s4",
+          "s5",
+          "s6"
+        ]
+      },
+      {
+        "q": "Comment רבה peut-il accepter la « פרוטה דרב יוסף » et nier le statut de שומר שכר ?",
+        "a": "Le נדר interdit tout profit, même rare ; pour un salaire, un profit rare ne suffit pas.",
+        "segmentIds": [
+          "s10",
+          "s11"
+        ]
+      },
+      {
+        "q": "Pourquoi la lecture de ר׳ טרפון par רב יוסף contredit-elle רב נחמן ?",
+        "a": "Pour רב יוסף, la permission d'utiliser ferait un שואל ; pour רב נחמן, elle ne fait qu'un שומר שכר. Deux salaires ne font pas un שואל.",
+        "segmentIds": [
+          "s25",
+          "s26",
+          "s27",
+          "s28",
+          "s29"
+        ]
+      },
+      {
+        "q": "Pourquoi « מחוורתא דלא כר׳ אליעזר » prouve-t-il qu'on suit רבה ?",
+        "a": "Selon רב יוסף, la משנה aurait pu aller selon tous (prêteur qui n'a pas besoin du gage). La Guemara ne le dit pas.",
+        "segmentIds": [
+          "s30",
+          "s31",
+          "s32",
+          "s33"
+        ]
+      },
+      {
+        "q": "Pourquoi רב יוסף ne peut-il pas expliquer la מחלוקת de ר׳ אליעזר et ר׳ עקיבא par שמואל ?",
+        "a": "ר׳ אליעזר exempte le prêteur même de la valeur du gage ; or un שומר שכר devrait la payer.",
+        "segmentIds": [
+          "s38"
+        ]
+      },
+      {
+        "q": "Comment la משנה de שבועות s'accorde-t-elle avec רבה ?",
+        "a": "Elle parle d'une perte par פשיעה, dont même un שומר חנם est responsable.",
+        "segmentIds": [
+          "s40",
+          "s41"
+        ]
+      }
     ],
     "nextPreview": "בבא קמא נז. commence par l'objection de רב יוסף contre רבה : « החזירה למקום שיראנה… נגנבה או אבדה חייב באחריותה »."
   },
-
   "visualSummary": {
     "recommended": "argument-map",
     "why": "Le תוספות est une chaîne de thèses, preuves, objections et rejets. Une carte d'arguments (arbre orienté, flèches typées « prouve », « rejette », « répond ») garde l'ordre et la logique. Une carte mentale radiale perd ces deux informations.",
     "edges": [
-      { "from": "I.1", "to": "I", "type": "prouve" },
-      { "from": "I.2", "to": "I", "type": "prouve" },
-      { "from": "I.3", "to": "I", "type": "prouve" },
-      { "from": "I", "to": "II.A.r", "type": "fonde", "label": "si l'avantage est rare…" },
-      { "from": "II.A", "to": "II", "type": "prouve" },
-      { "from": "II.A.r", "to": "II.A", "type": "rejette" },
-      { "from": "II.B", "to": "II", "type": "prouve" },
-      { "from": "II.B.r", "to": "II.B", "type": "rejette" },
-      { "from": "III.1", "to": "III", "type": "prouve" },
-      { "from": "III.1.a", "to": "III.1", "type": "objecte" },
-      { "from": "III.1.b", "to": "III.1.a", "type": "rejette" },
-      { "from": "III.1.c", "to": "III.1", "type": "objecte" },
-      { "from": "III.1.d", "to": "III.1.c", "type": "rejette" },
-      { "from": "III.2", "to": "III", "type": "prouve" },
-      { "from": "III.2.c", "to": "III.2", "type": "objecte" },
-      { "from": "III.2.d", "to": "III.2.c", "type": "rejette" },
-      { "from": "III.3", "to": "III", "type": "prouve" },
-      { "from": "IV.1", "to": "III", "type": "objecte" },
-      { "from": "IV.2", "to": "III", "type": "objecte" },
-      { "from": "IV.3", "to": "IV.2", "type": "répond" },
-      { "from": "IV.4", "to": "IV.1", "type": "répond" },
-      { "from": "V.1", "to": "III", "type": "objecte" },
-      { "from": "V.2", "to": "V.1", "type": "répond" }
+      {
+        "from": "I.1",
+        "to": "I",
+        "type": "prouve",
+        "explanation": "La preuve de סוכה כה. (le פסוק ne dispense que si l'on ne peut pas faire les deux) établit la définition de I : la dispense ne vaut que pendant l'occupation active."
+      },
+      {
+        "from": "I.2",
+        "to": "I",
+        "type": "prouve",
+        "explanation": "L'argument des תפילין (sinon celui qui les porte serait dispensé de toutes les מצוות) établit que la dispense ne dure pas tout le temps où l'objet est chez soi."
+      },
+      {
+        "from": "I.3",
+        "to": "I",
+        "type": "prouve",
+        "explanation": "נדרים לג: dit que la פרוטה דרב יוסף est rare ; elle ne le serait pas si la dispense durait tant que l'objet est à la maison, ce qui prouve la définition de I."
+      },
+      {
+        "from": "I",
+        "to": "II.A.r",
+        "type": "fonde",
+        "label": "si l'avantage est rare…",
+        "explanation": "La définition de I (l'avantage n'existe que pendant l'occupation active, donc il est rare) permet à ר״י de dire qu'un avantage rare ne fait pas un שומר שכר."
+      },
+      {
+        "from": "II.A",
+        "to": "II",
+        "type": "prouve",
+        "explanation": "La 1re preuve (נדרים לג:, « כ״ע אית להו פרוטה דרב יוסף ») est l'un des appuis de ר״ח et בה״ג pour trancher comme רב יוסף."
+      },
+      {
+        "from": "II.A.r",
+        "to": "II.A",
+        "type": "rejette",
+        "explanation": "ר״י rejette la preuve de נדרים : pour un נדר tout avantage est interdit, mais un avantage rare ne suffit pas pour faire un שומר שכר."
+      },
+      {
+        "from": "II.B",
+        "to": "II",
+        "type": "prouve",
+        "explanation": "La 2e preuve (notre סוגיא et ב״מ לא., « לגינתו המשתמרת ») est l'autre appui de ר״ח et בה״ג : la Guemara adopte la lecture de רב יוסף du פסוק."
+      },
+      {
+        "from": "II.B.r",
+        "to": "II.B",
+        "type": "rejette",
+        "explanation": "ר״י rejette cette preuve : רבה a accepté la lecture du פסוק, qui n'était pour lui qu'une אסמכתא ; ils ne divergent que sur une סברא."
+      },
+      {
+        "from": "III.1",
+        "to": "III",
+        "type": "prouve",
+        "explanation": "La règle « הלכה כרבה… בר משדה ענין ומחצה » (ב״ב קמג:) est la 1re des trois preuves de ר״י que la הלכה est comme רבה."
+      },
+      {
+        "from": "III.1.a",
+        "to": "III.1",
+        "type": "objecte",
+        "explanation": "L'objection des יש מפרשים limite la règle de III.1 aux sujets de בבא בתרא."
+      },
+      {
+        "from": "III.1.b",
+        "to": "III.1.a",
+        "type": "rejette",
+        "explanation": "גיטין עד: applique la règle hors de בבא בתרא sans restriction (elle ne restreint que pour רשב״ג), ce qui rejette la limitation de III.1.a."
+      },
+      {
+        "from": "III.1.c",
+        "to": "III.1",
+        "type": "objecte",
+        "explanation": "L'objection suppose qu'en גיטין עד: on suivait רבה par une tradition propre à ce cas, ce qui ôterait sa portée générale à la règle de III.1."
+      },
+      {
+        "from": "III.1.d",
+        "to": "III.1.c",
+        "type": "rejette",
+        "explanation": "Si c'était une tradition propre à ce cas, la Guemara aurait écrit « בהא הלכתא כרבה », comme pour רשב״ג ; l'objection de III.1.c tombe donc."
+      },
+      {
+        "from": "III.2",
+        "to": "III",
+        "type": "prouve",
+        "explanation": "רב נחמן (ב״מ מג.) tient que la permission d'utiliser ne fait qu'un שומר שכר, comme la lecture de ר׳ טרפון par רבה : c'est la 2e preuve de ר״י que la הלכה est comme רבה."
+      },
+      {
+        "from": "III.2.c",
+        "to": "III.2",
+        "type": "objecte",
+        "explanation": "L'objection propose que, chez ר׳ טרפון, la permission d'utiliser s'ajoute au statut de gardien d'objet perdu et fasse un שואל, ce qui enlèverait la preuve de III.2."
+      },
+      {
+        "from": "III.2.d",
+        "to": "III.2.c",
+        "type": "rejette",
+        "explanation": "Deux raisons de שומר שכר ne font pas un שואל : ajouter un deuxième « salaire » ne change pas la nature, ce qui rejette III.2.c."
+      },
+      {
+        "from": "III.3",
+        "to": "III",
+        "type": "prouve",
+        "explanation": "« מחוורתא מתניתין דלא כר׳ אליעזר » (ב״מ פא:-פב:) est la 3e preuve : selon רב יוסף, la משנה aurait pu aller même selon ר׳ אליעזר, et la Guemara ne le dit pas."
+      },
+      {
+        "from": "IV.1",
+        "to": "III",
+        "type": "objecte",
+        "explanation": "La Guemara de ב״מ פב. semble mettre רבה avec ר׳ אליעזר (שמותי), dont on ne suit pas la הלכה, ce qui va contre la conclusion de III (la הלכה est comme רבה)."
+      },
+      {
+        "from": "IV.2",
+        "to": "III",
+        "type": "objecte",
+        "explanation": "Selon la lecture de רש״י, « רבה ודאי תנאי היא » : רבה ne pourrait aller qu'avec ר׳ אליעזר, ce qui va contre la conclusion de III."
+      },
+      {
+        "from": "IV.3",
+        "to": "IV.2",
+        "type": "répond",
+        "explanation": "Pour רבה, même ר׳ עקיבא tient שומר חנם (ב״מ כט.) ; רבה n'est donc pas obligé d'aller avec ר׳ אליעזר, ce qui répond à IV.2."
+      },
+      {
+        "from": "IV.4",
+        "to": "IV.1",
+        "type": "répond",
+        "explanation": "Pour רבה, la מחלוקת porte sur la règle de שמואל et tous disent שומר חנם ; רבה n'est donc pas lié à ר׳ אליעזר, ce qui répond à IV.1."
+      },
+      {
+        "from": "V.1",
+        "to": "III",
+        "type": "objecte",
+        "explanation": "La משנה de שבועות implique que le prêteur paie le gage perdu, ce qui semble contredire רבה (שומר חנם) et donc la conclusion de III."
+      },
+      {
+        "from": "V.2",
+        "to": "V.1",
+        "type": "répond",
+        "explanation": "Selon רבה, la משנה parle d'une perte par פשיעה, dont même un שומר חנם est responsable, ce qui répond à la difficulté de V.1."
+      }
     ]
   }
 }

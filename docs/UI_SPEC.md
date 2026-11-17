@@ -160,20 +160,23 @@ Le schéma est générique : un autre תוספות = un autre fichier JSON avec 
 ## 10. Schéma (résumé)
 
 ```
-meta            id, title, levels[], roles[], attributions[], methodology
+meta            id, title, levels[], roles[], attributions[], methodology, version?, previousVersion?
 context         levels{essentiel,standard,approfondi}, gemara[{ref,text,translation,sourceId}], tableIds[]
 source          ref, sefariaUrl, normalization, tokenization, fullText
-people[]        id, name, full?, type, description
+people[]        id, name, full?, type, description, summary{niveau}?, era?, places[]?, aliases[]?,
+                confusions[{he,note}]?, dates{from,to,approx?}?, teachers[]?, students[]?, colleagues[]?,
+                links{wikipedia_he?,wikipedia_fr?,sefaria?}?, segmentIds[]?
 structure[]     id, number, title, role, summary{niveau}, segmentIds[], children[], conclusion?
 structureCorrections   items[{section, change}]   (différences avec les notes du cours)
 segments[]      id, nodeId, role, attribution, he, translation, explanation{niveau},
-                terms[{he,fr,note?}], notes[]?, sourceIds[], tableIds[]?
+                terms[{he,fr,note?}], notes[]?, sourceIds[], tableIds[]?, peopleIds[]?, glossaryRefs[]?
 tables[]        id, title, columns[], rows[][], note?
-sources[]       id, ref, sefaria, url, role?, consulted
-abbreviations[] he, full, warning?
-glossary[]      he, fr
-synthesis       takeaways[3], halacha{niveau}, review[{q,a}], nextPreview
-visualSummary   recommended, why, edges[{from,to,type,label?}]
+sources[]       id, ref, sefaria, url, role?, consulted, quote{he,fr,ref}?, location{sefariaRef,label,url?}?
+abbreviations[] he, full, warning?, bySegment{segmentId: forme développée}?
+glossary[]      id, he, fr
+synthesis       takeaways[3], halacha{niveau}, review[{q,a,segmentIds[]?}], nextPreview
+visualSummary   recommended, why, edges[{from,to,type,label?,explanation?}]
+reviewLog[]?    commentId, status, change?, answer?, targets[]?   (réponses aux remarques du רב)
 ```
 
 `structureCorrections` peut s'afficher dans une page « Notes de préparation » (pour comparer avec la structure du cours), pas dans la lecture principale.

@@ -71,5 +71,5 @@ Le prompt contient les consignes, puis chaque remarque sous deux formes : une li
 
 - [ ] Chaque remarque (sauf `valide`) a une entrée dans `reviewLog`.
 - [ ] Aucun id existant n'a changé.
-- [ ] `check_tosafot.py` passe (texte complet, structure dans l'ordre, références).
+- [ ] `check_tosafot.py <nouveau> --sefaria tools/raw_bk56b_10.txt --previous <ancien>` passe (texte complet, structure, références, ids stables).
 - [ ] `meta.version` et `meta.previousVersion` sont à jour.

@@ -130,3 +130,42 @@ Le front est construit. Les règles que l'IA doit suivre pour corriger (à ajout
 6. **Plusieurs relecteurs.** Faut-il prévoir plusieurs רבנים sur le même fichier, avec des avis différents ?
 
 Dès que tu as répondu, le front peut commencer par les étapes 1 à 4 (commenter dans l'UI et exporter le fichier), qui ne dépendent pas de toi.
+
+## Réponses du créateur du JSON (2026-11-17)
+
+Tout est fait dans `data/bk56b_tosafot_behahi_hanaa.json` (`meta.version` = `2026-11-17T14:09:10Z`). `tools/check_tosafot.py` vérifie maintenant chaque nouveau champ.
+
+### §1 Corrections
+- **1.1 Termes** : j'ai séparé ou remplacé les termes, sans champ `match`. Règle : `term.he` est une suite continue de mots de `segment.he`. La ponctuation est ignorée, et le premier mot peut porter 1 ou 2 lettres préfixes (ו ד ה כ ל ב מ ש) : le terme `עוסק במצוה` correspond donc au texte `דעוסק במצוה`. Les termes d'un segment ne se chevauchent pas. Le script vérifie les 135 termes.
+  - s20 : `בר משדה ענין ומחצה` (un seul terme) ;
+  - s34 : `והא דבעי לאוקמא` ;
+  - s37 : `גוביינא` retiré (il est dans le glossaire) ;
+  - s38 : `לא קאי רבי אליעזר כוותיה` ;
+  - aussi corrigés : s4 `בשביל ש־` → `בשביל`, et s5 `היכא ש־` → `היכא`.
+- **1.2 ר״א** : `bySegment` est ajouté. Le script confirme que ר״א n'apparaît que dans s15, s34, s35 et s37.
+
+### §2 Personnes
+- Ajouts : `era`, `places`, `aliases`, `dates`, `teachers` / `students` / `colleagues`, `links`, `segmentIds` et `summary.essentiel`. Les segments ont `peopleIds`, et `people[].segmentIds` en est l'inverse exact (vérifié par le script).
+- **Fiabilité** : je n'ai gardé une époque, un lieu ou des dates que si l'article Wikipédia hébreu (ou français, pour les dates) le confirmait. Sinon le champ est absent. Les dates manquent pour les תנאים et les אמוראים, pour qui elles seraient devinées.
+- **Liens** : chaque URL Wikipédia a été vérifiée avec l'API (la page existe, ce n'est pas une page d'homonymie, et c'est la bonne personne). Les liens Sefaria `topics/...` ont été vérifiés avec l'API v2. Certains liens manquent faute de page sûre : fr pour רבה et רב נחמן, tout pour רב צמח גאון.
+- `רבא` n'est **pas** dans les `aliases` de רבה : dans la Guemara, c'est une autre personne. Il est dans un champ séparé, `confusions: [{he, note}]`, qui sert à corriger la transcription du cours.
+- **Images** : d'accord pour ne pas en mettre.
+
+### §3 Autres liens
+Ajoutés :
+- `segments[].glossaryRefs` ;
+- `glossary[].id` (`g-…`) ;
+- `sources[].quote {he, fr, ref}` ;
+- `sources[].location {sefariaRef, label, url}` ;
+- `visualSummary.edges[].explanation` ;
+- `synthesis.review[].segmentIds` (la parenthèse « (s10-s11) » est retirée du texte des réponses).
+
+Chaque `quote.he` est la citation **exacte** du texte de Sefaria, sans voyelles. Les ״ ׳ sont normalisés, et la ponctuation éventuelle est gardée, comme les guillemets de la משנה de שבועות. Chaque `location.url` a été testée avec l'API Sefaria v3.
+
+### §4 Relecture : réponses aux questions
+1. **Ids stables** : oui. C'est la règle 3 de `REVIEW_LOOP.md`, et elle est vérifiée par `check_tosafot.py --previous ancien.json`. La vérification échoue si un id disparaît ou si `fullText` change.
+2. **Régénération ciblée** : oui (règle 1). Si le prompt est collé dans la même conversation, l'IA modifie seulement les champs visés. Le diff du front et `--previous` permettent de le contrôler.
+3. **Comment je génère** : une seule conversation avec un agent (Claude Opus) qui utilise le skill `/daf`. Il lit le texte et chaque source citée avec les scripts Sefaria, écrit le JSON par parties, puis lance le script de vérification. Il peut recevoir en entrée le texte source, la version précédente et le fichier de retours, c'est-à-dire exactement ce que contient le prompt du front.
+4. **Versions** : `meta.version` est ajouté. `previousVersion` sera rempli à la première correction : c'est la `baseVersion` reçue.
+5. **`reviewLog`** : le format convient. `refusé` et `discuté` permettent de ne pas appliquer une remarque fausse, avec la raison et la source (règle 6).
+6. **Plusieurs relecteurs** : à décider par vous. Proposition simple : un fichier de retours par רב (`reviewer` est déjà dans le fichier), envoyés un par un à l'IA. Si deux remarques se contredisent, l'IA répond `discuté` aux deux. Le JSON n'a pas besoin de changer pour cela.
