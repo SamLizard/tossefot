@@ -6,11 +6,6 @@ export interface AbbrMatch {
   warning?: string
 }
 
-/** Cas ambigu « ר״א » : la forme dépend du segment. */
-const SEGMENT_OVERRIDES: Record<string, Record<string, string>> = {
-  'ר״א': { s15: 'רבי אלעזר', s34: 'רבי אליעזר', s35: 'רבי אליעזר', s37: 'רבי אליעזר' },
-}
-
 const PREFIXES = ['ו', 'ד', 'כ', 'ל', 'ב', 'מ', 'ה', 'ש']
 const PUNCTUATION = /^[(\[]+|[).,:;\]]+$/g
 
@@ -37,7 +32,8 @@ export function findAbbreviation(
   for (const candidate of withoutPrefixes(clean)) {
     const abbr = index.get(candidate)
     if (!abbr) continue
-    const override = segmentId ? SEGMENT_OVERRIDES[candidate]?.[segmentId] : undefined
+    // Abréviation ambiguë (ex. ר״א) : le JSON donne la forme propre à chaque segment.
+    const override = segmentId ? abbr.bySegment?.[segmentId] : undefined
     return { full: override ?? abbr.full, warning: abbr.warning }
   }
   return undefined

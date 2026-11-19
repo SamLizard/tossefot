@@ -46,6 +46,25 @@
   "person": {
     "unknown": "Personne inconnue : {id}"
   },
+  "people": {
+    "teachers": "Maîtres",
+    "students": "Élèves",
+    "colleagues": "Collègues",
+    "appearsIn": "Apparaît dans :",
+    "inSegment": "Ouvrir le segment {id}",
+    "inThisSegment": "Personnes citées :",
+    "aliases": "Formes du nom :",
+    "confusion": "À ne pas confondre avec {name}",
+    "wikipediaHe": "Wikipédia (he)",
+    "wikipediaFr": "Wikipédia (fr)",
+    "sefaria": "Sefaria",
+    "dates": "{from} – {to}",
+    "datesApprox": "vers {from} – {to}",
+    "dateUnknown": "?",
+    "open": "Ouvrir la fiche de {name}",
+    "viewCard": "Voir la fiche",
+    "close": "Fermer la fiche"
+  },
   "menu": {
     "label": "Menu",
     "glossary": "Glossaire",
@@ -108,6 +127,9 @@
     "zoomOut": "Zoom arrière",
     "fit": "Ajuster",
     "fitAria": "Ajuster à la largeur",
+    "edgeExplanation": "{from} → {to} ({type})",
+    "links": "Liens :",
+    "linkItem": "→ {to} ({type}) : {explanation}",
     "edges": {
       "prouve": "Prouve",
       "rejette": "Rejette",
@@ -129,6 +151,14 @@
   },
   "segment": {
     "openSefaria": "Ouvrir sur Sefaria"
+  },
+  "sources": {
+    "quote": "Citation de la source",
+    "openLocation": "Ouvrir le passage sur Sefaria : {label}"
+  },
+  "glossaryRefs": {
+    "title": "Glossaire :",
+    "open": "Voir « {term} » dans le glossaire"
   },
   "panel": {
     "segment": "Segment",
@@ -331,6 +361,8 @@
     "takeaways": "À retenir",
     "halacha": "הלכה",
     "review": "Questions de révision",
-    "next": "La suite"
+    "next": "La suite",
+    "seeSegments": "Dans le texte :",
+    "openSegment": "Ouvrir le segment {id}"
   }
 }

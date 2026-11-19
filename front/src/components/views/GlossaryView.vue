@@ -36,7 +36,7 @@
       <v-window-item value="people">
         <v-row v-if="people.length" class="pt-2">
           <v-col v-for="p in people" :key="p.id" cols="12" sm="6">
-            <PersonCard :person-id="p.id" />
+            <PersonCard :person-id="p.id" compact />
           </v-col>
         </v-row>
         <p v-else class="text-medium-emphasis pa-4">{{ $t('glossary.noResult') }}</p>
@@ -47,7 +47,8 @@
 
 <script setup lang="ts">
 /** Glossaire, abréviations et personnes (docs/UI_SPEC.md §6), avec recherche. */
-import { computed, ref } from 'vue'
+import { computed, ref, watch } from 'vue'
+import { useRoute } from 'vue-router'
 import { useTosafot } from '@/composables/useTosafot'
 import { matchesQuery } from '@/utils/search'
 import GlossaryList, { type GlossaryItem } from './GlossaryList.vue'
@@ -56,6 +57,11 @@ import PersonCard from '@/components/common/PersonCard.vue'
 const { doc } = useTosafot()
 const query = ref('')
 const tab = ref<'glossary' | 'abbreviations' | 'people'>('glossary')
+// ?q= : recherche préremplie (clic sur un terme du glossaire dans un segment).
+const route = useRoute()
+watch(() => route.query.q, (q) => {
+  if (typeof q === 'string') [query.value, tab.value] = [q, 'glossary']
+}, { immediate: true })
 
 const glossary = computed<GlossaryItem[]>(() =>
   doc.value.glossary
@@ -68,6 +74,6 @@ const abbreviations = computed<GlossaryItem[]>(() =>
     .map((a) => ({ he: a.he, text: a.full, warning: a.warning })),
 )
 const people = computed(() =>
-  doc.value.people.filter((p) => matchesQuery(query.value, p.name, p.full, p.type, p.description)),
+  doc.value.people.filter((p) => matchesQuery(query.value, p.name, p.full, p.type, p.description, p.era, ...(p.aliases ?? []))),
 )
 </script>

@@ -28,6 +28,8 @@ export interface LayoutEdge {
   to: string
   type: MapEdgeType
   label?: string
+  /** Pourquoi cette flèche (JSON), affiché au survol. */
+  explanation?: string
   /** Attribut `d` du chemin SVG. */
   path: string
   /** Milieu de la flèche et direction (degrés) : croix de « rejette ». */
@@ -62,6 +64,7 @@ interface RawEdge {
   to: string
   type: MapEdgeType
   label?: string
+  explanation?: string
 }
 
 function subtree(node: StructureNode): StructureNode[] {
@@ -73,7 +76,7 @@ export function collectEdges(doc: TosafotDoc, nodes: StructureNode[]): RawEdge[]
   const ids = new Set(nodes.map((n) => n.id))
   const edges: RawEdge[] = doc.visualSummary.edges
     .filter((e) => ids.has(e.from) && ids.has(e.to))
-    .map((e) => ({ from: e.from, to: e.to, type: e.type, label: e.label }))
+    .map((e) => ({ from: e.from, to: e.to, type: e.type, label: e.label, explanation: e.explanation }))
   const linked = new Set(edges.flatMap((e) => [e.from, e.to]))
   const seen = new Set<string>()
   const add = (from: string, to: string) => {

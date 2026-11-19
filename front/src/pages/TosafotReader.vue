@@ -30,6 +30,7 @@
 
   <SegmentPanel />
   <TableDialog />
+  <PersonDialog />
   <PreferencesDrawer v-model="preferencesOpen" />
   <CommentDialog v-if="preferences.reviewMode" />
 </template>
@@ -51,6 +52,8 @@ import ViewTabs from '@/components/layout/ViewTabs.vue'
 import PreferencesDrawer from '@/components/layout/PreferencesDrawer.vue'
 import SegmentPanel from '@/components/segment/SegmentPanel.vue'
 import TableDialog from '@/components/tables/TableDialog.vue'
+import PersonDialog from '@/components/people/PersonDialog.vue'
+import { usePersonDialog } from '@/composables/usePersonDialog'
 import ContextView from '@/components/views/ContextView.vue'
 import StructureTree from '@/components/structure/StructureTree.vue'
 import ContinuousText from '@/components/text/ContinuousText.vue'
@@ -68,6 +71,7 @@ provideTosafot(toRef(props, 'doc'))
 
 const { currentView, goTo } = useViewNavigation()
 const panel = useSegmentPanel()
+const { closePerson } = usePersonDialog()
 const preferences = usePreferences()
 const preferencesOpen = ref(false)
 
@@ -83,6 +87,7 @@ onBeforeUnmount(() => {
   panel.closePanel()
   panel.closeTable()
   panel.highlightedSegmentId.value = null
+  closePerson()
 })
 </script>
 

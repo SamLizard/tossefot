@@ -1,33 +1,18 @@
 <template>
-  <v-list density="compact" bg-color="transparent" class="py-0">
-    <v-list-item
-      v-for="s in sources"
-      :key="s.id"
-      :href="s.url"
-      target="_blank"
-      rel="noopener"
-      rounded="lg"
-      append-icon="mdi-open-in-new"
-    >
-      <v-list-item-title>
-        <bdi lang="he" dir="rtl" class="he-inline">{{ s.ref }}</bdi>
-      </v-list-item-title>
-      <v-list-item-subtitle v-if="s.role" class="text-wrap">
-        <HebrewText :text="s.role" />
-      </v-list-item-subtitle>
-    </v-list-item>
-  </v-list>
+  <div class="d-flex flex-column">
+    <template v-for="(s, i) in sources" :key="s.id">
+      <v-divider v-if="i" class="my-3" />
+      <SourceItem :source="s" />
+    </template>
+  </div>
 </template>
-
 <script setup lang="ts">
-/** Sources citées par un segment : `ref` en hébreu, lien Sefaria du JSON, `role` en sous-titre. */
+/** Sources citées par un segment, chacune avec sa citation et son lien (SourceItem). */
 import { computed } from 'vue'
 import type { Source } from '@/types/tosafot'
 import { useTosafot } from '@/composables/useTosafot'
-import HebrewText from '@/components/common/HebrewText.vue'
-
+import SourceItem from './SourceItem.vue'
 const props = defineProps<{ sourceIds: string[] }>()
-
 const { source } = useTosafot()
 const sources = computed(() =>
   props.sourceIds.map((id) => source(id)).filter((s): s is Source => Boolean(s)),

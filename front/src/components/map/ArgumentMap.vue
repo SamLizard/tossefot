@@ -42,12 +42,13 @@
           >
             {{ s.id }}
           </text>
-          <MapEdge v-for="e in graph.edges" :key="e.id" :edge="e" />
+          <MapEdge v-for="e in graph.edges" :key="e.id" :edge="e" @hover="onEdgeHover" />
           <MapNode v-for="b in graph.nodes" :key="b.id" :box="b" @hover="onHover" />
         </g>
       </svg>
       </div>
       <MapTooltip :node-id="hoveredId" :target="hoveredEl" />
+      <MapEdgeTooltip :edge="hoveredEdge" :point="edgePoint" />
     </div>
     <MapLegend />
   </div>
@@ -61,8 +62,9 @@
 import { computed, nextTick, onBeforeUnmount, onMounted, ref, watch } from 'vue'
 import { usePanZoom } from '@/composables/usePanZoom'
 import { useTosafot } from '@/composables/useTosafot'
-import { layoutArguments } from '@/utils/argumentLayout'
+import { layoutArguments, type LayoutEdge } from '@/utils/argumentLayout'
 import MapEdge from './MapEdge.vue'
+import MapEdgeTooltip from './MapEdgeTooltip.vue'
 import MapLegend from './MapLegend.vue'
 import MapMarkers from './MapMarkers.vue'
 import MapNode from './MapNode.vue'
@@ -85,6 +87,14 @@ function onHover(id: string | null, el: Element | null) {
   hoveredId.value = dragging.value ? null : id
   hoveredEl.value = dragging.value ? null : el
 }
+// Flèche survolée : pas d'infobulle pendant un glissement.
+const hoveredEdge = ref<LayoutEdge | null>(null)
+const edgePoint = ref<[x: number, y: number] | null>(null)
+function onEdgeHover(edge: LayoutEdge | null, point: [x: number, y: number] | null) {
+  hoveredEdge.value = dragging.value ? null : edge
+  edgePoint.value = dragging.value ? null : point
+}
+watch(dragging, (d) => d && onEdgeHover(null, null))
 
 // « Ajuster » au premier affichage, puis à chaque changement de document.
 let fitted = false

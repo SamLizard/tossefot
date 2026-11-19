@@ -8,6 +8,7 @@
     />
 
     <SegmentExplanation :explanation="s.explanation" />
+    <SegmentPeople v-if="s.peopleIds?.length" :people-ids="s.peopleIds" />
 
     <div v-if="tables.length" class="d-flex flex-wrap ga-2">
       <v-btn
@@ -23,6 +24,7 @@
         <HebrewText :text="$t('details.viewTable', { title: t.title })" />
       </v-btn>
     </div>
+    <SegmentGlossary :segment-id="segmentId" />
 
     <v-expansion-panels
       v-if="s.terms.length || notes.length || s.sourceIds.length"
@@ -67,9 +69,11 @@ import { usePreferences } from '@/composables/usePreferences'
 import { useSegmentPanel } from '@/composables/useSegmentPanel'
 import HebrewText from '@/components/common/HebrewText.vue'
 import SegmentExplanation from '@/components/segment/SegmentExplanation.vue'
+import SegmentPeople from '@/components/segment/SegmentPeople.vue'
 import SegmentTerms from '@/components/segment/SegmentTerms.vue'
 import SegmentNotes from '@/components/segment/SegmentNotes.vue'
 import SegmentSources from '@/components/segment/SegmentSources.vue'
+import SegmentGlossary from '@/components/segment/SegmentGlossary.vue'
 
 const props = defineProps<{ segmentId: string }>()
 

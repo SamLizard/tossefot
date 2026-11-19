@@ -82,6 +82,9 @@ for (const theme of ['light', 'dark']) {
       await sleep(500)
     }
     if (view.startsWith('structure')) {
+      // Ouvre les panneaux Mots / Notes / Sources pour mesurer aussi les citations.
+      await evaluate(`document.querySelectorAll('.v-expansion-panel-title').forEach(b => b.click())`)
+      await sleep(600)
       await evaluate(`document.querySelector('.he-term')?.dispatchEvent(new MouseEvent('mouseenter', { bubbles: true }))`)
       await sleep(700)
       const tip = await evaluate(`(() => { const t = document.querySelector('.v-tooltip .v-overlay__content'); if (!t) return 'pas d’infobulle'; const s = getComputedStyle(t); return s.color + ' sur ' + s.backgroundColor })()`)

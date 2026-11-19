@@ -9,6 +9,19 @@
         <v-expand-transition>
           <v-sheet v-if="shown" color="surface-variant" rounded="lg" class="pa-3 mt-3">
             <HebrewText :text="question.a" tag="p" class="text-body-medium" />
+            <div v-if="question.segmentIds?.length" class="d-flex flex-wrap align-center ga-1 mt-2">
+              <span class="text-label-medium">{{ $t('synthesis.seeSegments') }}</span>
+              <v-chip
+                v-for="id in question.segmentIds"
+                :key="id"
+                size="small"
+                variant="outlined"
+                :aria-label="$t('synthesis.openSegment', { id })"
+                @click="openSegment(id)"
+              >
+                {{ id }}
+              </v-chip>
+            </div>
           </v-sheet>
         </v-expand-transition>
       </div>
@@ -30,7 +43,9 @@
 import { ref } from 'vue'
 import type { ReviewQuestion } from '@/types/tosafot'
 import HebrewText from '@/components/common/HebrewText.vue'
+import { useSegmentPanel } from '@/composables/useSegmentPanel'
 
 defineProps<{ question: ReviewQuestion; index: number }>()
 const shown = ref(false)
+const { openSegment } = useSegmentPanel()
 </script>

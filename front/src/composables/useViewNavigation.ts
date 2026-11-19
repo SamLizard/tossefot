@@ -18,14 +18,17 @@ export function useViewNavigation() {
     return isPageView(view) ? view : preferences.view
   })
 
-  /** Change de vue ; seule la vue « structure » garde la query (`open`). */
-  async function goTo(view: PageView) {
+  /**
+   * Change de vue ; seule la vue « structure » garde la query (`open`).
+   * `query` remplace la query (ex. `{ q }` pour préremplir la recherche du glossaire).
+   */
+  async function goTo(view: PageView, query?: Record<string, string>) {
     if (isMainView(view)) preferences.view = view
-    if (view === currentView.value && route.params.view === view) return
+    if (!query && view === currentView.value && route.params.view === view) return
     await router.push({
       name: 'tosafot',
       params: { slug: route.params.slug, view },
-      query: view === 'structure' ? route.query : {},
+      query: query ?? (view === 'structure' ? route.query : {}),
     })
   }
 

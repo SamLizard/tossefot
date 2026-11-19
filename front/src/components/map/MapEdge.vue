@@ -1,6 +1,23 @@
 <template>
-  <g class="map-edge" :aria-label="$t(style.labelKey)">
+  <g
+    class="map-edge"
+    :aria-label="$t(style.labelKey)"
+    @mouseenter="onPointer"
+    @mousemove="onPointer"
+    @mouseleave="emit('hover', null, null)"
+  >
+    <!-- Zone de survol large et invisible : un trait de 2 px est difficile à viser. -->
     <path
+      v-if="edge.explanation"
+      :d="edge.path"
+      class="map-edge__hit"
+      fill="none"
+      stroke="transparent"
+      stroke-width="14"
+      pointer-events="stroke"
+    />
+    <path
+      class="map-edge__line"
       :d="edge.path"
       fill="none"
       :stroke="style.color"
@@ -36,6 +53,10 @@ import { LABEL_HEIGHT, LABEL_WIDTH, type LayoutEdge } from '@/utils/argumentLayo
 import { EDGE_STYLES, markerId } from '@/utils/argumentStyles'
 
 const props = defineProps<{ edge: LayoutEdge }>()
+const emit = defineEmits<{ hover: [edge: LayoutEdge | null, point: [x: number, y: number] | null] }>()
+function onPointer(event: MouseEvent) {
+  if (props.edge.explanation) emit('hover', props.edge, [event.clientX, event.clientY])
+}
 
 const style = computed(() => EDGE_STYLES[props.edge.type])
 const marker = computed(() => (style.value.noArrow ? undefined : `url(#${markerId(props.edge.type)})`))
@@ -45,6 +66,12 @@ const crossTransform = computed(
 </script>
 
 <style scoped>
+.map-edge__line {
+  pointer-events: none;
+}
+.map-edge:hover .map-edge__line {
+  stroke-width: 3px;
+}
 .map-edge__halo {
   fill: rgb(var(--v-theme-surface));
 }

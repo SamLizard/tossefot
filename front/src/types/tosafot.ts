@@ -73,12 +73,46 @@ export interface SourceText {
   fullText: string
 }
 
+export interface PersonDates {
+  from?: number
+  to?: number
+  approx?: boolean
+}
+
+export interface PersonLinks {
+  wikipedia_he?: string
+  wikipedia_fr?: string
+  sefaria?: string
+}
+
+/** Nom proche avec lequel on confond souvent la personne (ex. רבא pour רבה). */
+export interface PersonConfusion {
+  he: string
+  note: string
+}
+
 export interface Person {
   id: string
   name: string
   full?: string
   type: string
   description: string
+  summary?: Leveled
+  /** Époque, ex. « אמוראי בבל, דור שלישי ». */
+  era?: string
+  places?: string[]
+  /** Formes du nom dans le texte. */
+  aliases?: string[]
+  confusions?: PersonConfusion[]
+  dates?: PersonDates
+  /** Ids d'autres personnes de `people`. */
+  teachers?: string[]
+  students?: string[]
+  colleagues?: string[]
+  /** URLs vérifiées par le générateur : ne pas en construire d'autres. */
+  links?: PersonLinks
+  /** Segments où la personne apparaît. */
+  segmentIds?: string[]
 }
 
 export interface StructureNode {
@@ -115,6 +149,10 @@ export interface Segment {
   notes?: string[]
   sourceIds: string[]
   tableIds?: string[]
+  /** Personnes citées dans le segment (ids de `people`). */
+  peopleIds?: string[]
+  /** Termes du glossaire présents dans l'explication (ids de `glossary`). */
+  glossaryRefs?: string[]
 }
 
 export interface DataTable {
@@ -132,15 +170,35 @@ export interface Source {
   url: string
   role?: string
   consulted: boolean
+  /** Phrase de la source citée par le תוספות. */
+  quote?: SourceQuote
+  location?: SourceLocation
+}
+
+export interface SourceQuote {
+  he: string
+  fr: string
+  /** Référence Sefaria de la citation, ex. « Bava Kamma 56b:10 ». */
+  ref: string
+}
+
+export interface SourceLocation {
+  sefariaRef: string
+  /** Libellé affichable, ex. « בבא קמא נו: · Sefaria 9-11 ». */
+  label: string
+  url?: string
 }
 
 export interface Abbreviation {
   he: string
   full: string
   warning?: string
+  /** Forme développée propre à un segment (abréviation ambiguë, ex. ר״א). */
+  bySegment?: Record<string, string>
 }
 
 export interface GlossaryEntry {
+  id: string
   he: string
   fr: string
 }
@@ -148,6 +206,8 @@ export interface GlossaryEntry {
 export interface ReviewQuestion {
   q: string
   a: string
+  /** Segments où se trouve la réponse. */
+  segmentIds?: string[]
 }
 
 export interface Synthesis {
@@ -164,6 +224,8 @@ export interface Edge {
   to: string
   type: EdgeType
   label?: string
+  /** Pourquoi cette flèche (affichable au survol). */
+  explanation?: string
 }
 
 export interface VisualSummary {
