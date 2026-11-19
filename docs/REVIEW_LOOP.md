@@ -3,6 +3,23 @@
 À ajouter aux instructions de l'IA qui génère les fichiers `data/*.json`.
 Le front (`front/`) ne modifie jamais le JSON : il sert au רב à expliquer ce qu'il faut changer.
 
+## Règles générales (génération et correction)
+
+### N'écrire que ce dont on est sûr
+- Ne rien écrire dans le JSON dont on n'est pas sûr : une explication, une attribution, une référence, une date, un lieu, un lien.
+- Un champ optionnel qu'on ne peut pas vérifier est **omis**, pas deviné.
+- Si un point est nécessaire mais incertain, l'écrire comme tel, dans un champ qui existe déjà : `segments[].notes`, le niveau `approfondi` (« non vérifié : … ») ou `meta.methodology`. Dire ce qui manque pour trancher (source non trouvée, deux lectures possibles…).
+- Idée pour plus tard : un champ dédié aux incertitudes (par exemple `uncertainties: [{ target, text, missing }]`), que le mode relecture afficherait au רב comme des points à vérifier en priorité. **Ne pas l'ajouter** tant que le front ne le gère pas.
+
+### Garder des notes d'analyse (à faire)
+- Aujourd'hui, le raisonnement suivi pendant la préparation avec `/daf` (ce que dit chaque source, pourquoi tel découpage, quelles lectures ont été écartées) n'est écrit nulle part dans le dépôt. Seul le JSON, destiné à l'élève, en garde une partie.
+- Pour chaque nouveau תוספות, écrire aussi un fichier de notes d'analyse, séparé du JSON (par exemple `analysis/<meta.id>.md`), une section par partie de la structure (I, II.A…) :
+  - les sources lues et ce qu'on en a retenu, avec la référence Sefaria exacte ;
+  - les choix de découpage et de structure, avec leur raison ;
+  - les lectures écartées et pourquoi ;
+  - les points incertains et ce qui manque pour trancher.
+- Ce fichier sert à l'IA qui corrige (nouvelle conversation) et au רב qui veut comprendre un choix. Il ne remplace pas les vérifications avec `/daf`.
+
 ## Le cycle
 
 1. L'IA génère le JSON dans une conversation, avec le skill `/daf` pour lire les sources.
@@ -73,3 +90,4 @@ Le prompt contient les consignes, puis chaque remarque sous deux formes : une li
 - [ ] Aucun id existant n'a changé.
 - [ ] `check_tosafot.py <nouveau> --sefaria tools/raw_bk56b_10.txt --previous <ancien>` passe (texte complet, structure, références, ids stables).
 - [ ] `meta.version` et `meta.previousVersion` sont à jour.
+- [ ] Rien d'incertain n'a été ajouté sans être signalé comme tel ; les champs non vérifiés sont omis.
