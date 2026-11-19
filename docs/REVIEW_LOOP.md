@@ -13,7 +13,7 @@ Le front (`front/`) ne modifie jamais le JSON : il sert au רב à expliquer ce 
 
 ### Garder des notes d'analyse (à faire)
 - Aujourd'hui, le raisonnement suivi pendant la préparation avec `/daf` (ce que dit chaque source, pourquoi tel découpage, quelles lectures ont été écartées) n'est écrit nulle part dans le dépôt. Seul le JSON, destiné à l'élève, en garde une partie.
-- Pour chaque nouveau תוספות, écrire aussi un fichier de notes d'analyse, séparé du JSON (par exemple `analysis/<meta.id>.md`), une section par partie de la structure (I, II.A…) :
+- Pour chaque nouveau תוספות, écrire aussi un fichier de notes d'analyse, séparé du JSON : `analysis/<meta.id>.md`, une section par partie de la structure (I, II.A…). Ce dossier est **publié** dans le dépôt, comme `data/` (ne pas le mettre dans `notes/`, qui est privé). Plus tard, ces fichiers pourront être générés en local puis envoyés sur un serveur, avec le JSON :
   - les sources lues et ce qu'on en a retenu, avec la référence Sefaria exacte ;
   - les choix de découpage et de structure, avec leur raison ;
   - les lectures écartées et pourquoi ;
