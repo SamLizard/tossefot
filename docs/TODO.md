@@ -35,6 +35,16 @@ Idées retirées de `JSON_IDEAS.md` (qui ne garde que le MVP). À rediscuter plu
   - [ ] publier un JSON Schema (`data/tosafot.schema.json`) pour valider les fichiers dans l'éditeur et dans `check_tosafot.py` ;
   - [ ] `meta.updatedAt`, `meta.authors` (utile pour la PWA et la relecture).
 
+## Personnes communes à tout le site
+
+Les mêmes רבנים (רבה, רב יוסף, ר״י, רש״י…) reviennent dans chaque תוספות. Aujourd'hui chaque JSON répète leur fiche.
+
+- [ ] Créer un fichier commun (ex. `data/people.json`) avec la partie stable de chaque fiche : `name`, `full`, `type`, `era`, `places`, `dates`, `aliases`, `confusions`, `teachers` / `students` / `colleagues`, `links`, `summary`.
+- [ ] Dans chaque תוספות, ne garder que ce qui lui est propre : `segmentIds`, et une note éventuelle sur le rôle de la personne dans ce passage.
+- [ ] Ids identiques partout (`rabba`, `rav-yosef`…) : à fixer avec le créateur du JSON, et à vérifier dans `check_tosafot.py`.
+- [ ] Front : fusionner la fiche commune et la partie locale dans `useTosafot` (`person(id)`), sans changer les composants.
+- [ ] Plus tard : une page « Personnes » du site, avec la liste des תוספות où chacun apparaît.
+
 ## Autres
 
 - [x] Porter `tools/check_tosafot.py` en TypeScript pour le bouton « Vérifier le texte » (`front/src/utils/integrity.ts`).
